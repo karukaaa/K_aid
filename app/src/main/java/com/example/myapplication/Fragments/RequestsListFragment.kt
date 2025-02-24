@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.Request
 import com.example.myapplication.RequestRecyclerViewAdapter
+import com.example.myapplication.RequestSampleData
 
 class RequestsListFragment : Fragment() {
 
@@ -32,17 +33,7 @@ class RequestsListFragment : Fragment() {
         recyclerView.adapter = adapter
 
 
-        val sampleRequests = listOf(
-            Request( id = 1, requestedObject = "Shoes"),
-            Request( id = 2, requestedObject = "School bag"),
-            Request( id = 3, requestedObject = "Bicycle"),
-            Request( id = 4, requestedObject = "Sweets"),
-            Request( id = 5, requestedObject = "Books"),
-
-        )
-
-        adapter.submitList(sampleRequests) // Update the RecyclerView
-
+        adapter.submitList(RequestSampleData.sampleRequests)
         return view
     }
 

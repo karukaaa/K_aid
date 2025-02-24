@@ -13,13 +13,16 @@ class RequestRecyclerViewAdapter : ListAdapter<Request, RequestRecyclerViewAdapt
 
     inner class ViewHolder(private val binding : RequestBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(request: Request) {
-            binding.text.text = request.requestedObject
+            binding.requestedObject.text = request.requestedObject
+            binding.requestDescription.text = request.description
+            binding.requestChild.text = request.child
+            binding.requestPrice.text = "$" + request.price.toString()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RequestBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding) // Directly return ViewHolder without extra brackets
+        return ViewHolder(binding)
     }
 
 
