@@ -20,7 +20,7 @@ class RequestRecyclerViewAdapter(
             binding.requestChild.text = request.child
             binding.requestPrice.text = "$" + request.price.toString()
 
-            binding.root.setOnClickListener {
+            binding.childProfilePicture.setOnClickListener {
                 onItemClick() // Call function when clicked
             }
         }
