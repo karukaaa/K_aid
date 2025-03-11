@@ -27,7 +27,9 @@ class RequestsListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_requests_list, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        val adapter = RequestRecyclerViewAdapter()
+        val adapter = RequestRecyclerViewAdapter {
+            openRequestDetailFragment() // Open new fragment
+        }
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext()) // Set LayoutManager
         recyclerView.adapter = adapter
@@ -39,5 +41,14 @@ class RequestsListFragment : Fragment() {
 
     companion object {
         fun newInstance() {}
+    }
+
+    private fun openRequestDetailFragment() {
+        val fragment = ChildProfileFragment.newInstance()
+
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment) // Replace with new fragment
+            .addToBackStack(null) // Allow back navigation
+            .commit()
     }
 }

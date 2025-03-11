@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.RequestBinding
 
-class RequestRecyclerViewAdapter : ListAdapter<Request, RequestRecyclerViewAdapter.ViewHolder>(RequestCallback()){
+class RequestRecyclerViewAdapter(
+    private val onItemClick: () -> Unit
+) : ListAdapter<Request, RequestRecyclerViewAdapter.ViewHolder>(RequestCallback()){
 
     private val requestList = ArrayList<Request>()
 
@@ -17,6 +19,10 @@ class RequestRecyclerViewAdapter : ListAdapter<Request, RequestRecyclerViewAdapt
             binding.requestDescription.text = request.description
             binding.requestChild.text = request.child
             binding.requestPrice.text = "$" + request.price.toString()
+
+            binding.root.setOnClickListener {
+                onItemClick() // Call function when clicked
+            }
         }
     }
 
