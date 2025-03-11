@@ -1,86 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_gray"
-    android:padding="16dp">
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <!-- Верхняя панель -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/light_blue"
-        android:padding="5dp">
+        <!-- Верхняя панель -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/light_blue"
+            android:padding="5dp">
 
-        <!-- Settings и Questions (слева) -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/settings_text"
+            <!-- Settings и Questions (слева) -->
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Settings"
-                android:textSize="10sp"
-                android:textColor="@color/black"
-                android:layout_marginEnd="12dp"/>
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/questions_text"
+                <TextView
+                    android:id="@+id/settings_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="Settings"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/questions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Questions"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/logo" />
+
+            <!-- Language EN и Profile (справа) -->
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Questions"
-                android:textSize="10sp"
-                android:textColor="@color/black"/>
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/language_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="Language EN"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/profile_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </LinearLayout>
 
-        <!-- Language EN и Profile (справа) -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/language_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Language EN"
-                android:textSize="10sp"
-                android:textColor="@color/black"
-                android:layout_marginEnd="12dp"/>
-
-            <TextView
-                android:id="@+id/profile_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="10sp"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-
-    </RelativeLayout>
+        </RelativeLayout>
 
 
         <!-- Карточка товара -->
@@ -99,7 +98,6 @@
                 android:src="@drawable/ic_back" />
 
             <TextView
-                android:id="@+id/profile_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -110,66 +108,73 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/rounded_background"
-            android:padding="11dp"
-            android:layout_marginTop="8dp">
+            android:padding="12dp">
 
             <!-- Название товара слева -->
             <TextView
                 android:id="@+id/bicycle_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:text="🚲 Bicycle"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="-4dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Цена справа -->
             <TextView
                 android:id="@+id/price_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="40.000 ₸"
-                android:textSize="16sp"
-                android:textColor="@color/black"
+                android:layout_centerVertical="true"
                 android:background="@drawable/price_background"
                 android:padding="6dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"/>
+                android:text="40.000 ₸"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Описание товара ниже названия -->
             <TextView
-                android:id="@+id/bicycle_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignStart="@id/bicycle_text"
+                android:layout_marginTop="6dp"
                 android:text="A small-sized bicycle for learning how to ride"
                 android:textSize="16sp"
-                android:layout_below="@id/bicycle_text"
-                android:layout_alignStart="@id/bicycle_text"
-                android:layout_marginTop="20dp"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bicycle_text" />
 
-        </RelativeLayout
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Карточка ребёнка -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/rounded_background"
-            android:padding="16dp"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:padding="16dp">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/profile_picture"
-                android:background="@drawable/circle_background"/>
+                android:background="@drawable/circle"
+                android:clipToOutline="true"/>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -195,110 +200,120 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="⭐ 5"
-                android:textSize="18sp"
-                android:textColor="@android:color/black"
                 android:layout_gravity="end"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="8dp"
+                android:text="⭐ 5"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- Описание -->
-        <TextView
-            android:text="✨ About Maria Volkova"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!--        Описание тексты -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient."
-            android:textSize="16sp" />
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:text= "📚 Love for Books and Creativity"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="✨ About Maria Volkova"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:text="Maria loves reading books📖, especially stories about adventure and hope. Inspired by them, she enjoys drawing 🎨 and expressing her emotions through art."
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"/>
-        
-        <TextView
-            android:text= "🚲 Dreaming of a Bicycle"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient."
+                android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="57dp"
-            android:layout_marginTop="4dp"
-            android:text="Maria dreams of riding through the park 🌳, feeling the wind on her face and experiencing a sense of freedom."
-            android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="📚 Love for Books and Creativity"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:text= "🎓 Dedication to Learning"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria loves reading books📖, especially stories about adventure and hope. Inspired by them, she enjoys drawing 🎨 and expressing her emotions through art."
+                android:textSize="16sp" />
 
-        <TextView
-            android:text= "She works hard at school because she aspires to become a teacher 🍎 and help other children like herself."
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="🚲 Dreaming of a Bicycle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:text= "💖 Kindness and Values"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria dreams of riding through the park 🌳, feeling the wind on her face and experiencing a sense of freedom."
+                android:textSize="16sp" />
 
-        <TextView
-            android:text="Maria believes in friendship 🤝 and kindness, always supporting those around her."
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="🎓 Dedication to Learning"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:text= "🌍 Belief in a Better Future"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="She works hard at school because she aspires to become a teacher 🍎 and help other children like herself."
+                android:textSize="16sp" />
 
-        <TextView
-            android:text="Although Maria has no family, she believes she can pave her own path and make the world a better place through education and compassion."
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"/>
-        
-            
-            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="💖 Kindness and Values"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria believes in friendship 🤝 and kindness, always supporting those around her."
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="🌍 Belief in a Better Future"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Although Maria has no family, she believes she can pave her own path and make the world a better place through education and compassion."
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
         <!-- Галерея изображений -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:scrollbars="none">
 
@@ -310,40 +325,42 @@
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/image1"
-                    android:scaleType="centerCrop"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_background"/>
+                    android:background="@drawable/rounded_background"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image1" />
 
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/image2"
-                    android:scaleType="centerCrop"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_background"/>
+                    android:background="@drawable/rounded_background"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image2" />
 
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/image3"
-                    android:scaleType="centerCrop"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_background"/>
+                    android:background="@drawable/rounded_background"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image3" />
 
             </LinearLayout>
         </HorizontalScrollView>
 
         <!-- Кнопка доната -->
         <com.google.android.material.button.MaterialButton
-            android:text="Donate"
-            android:textSize="18sp"
-            app:backgroundTint="@color/light_blue"
-            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:padding="12dp"/>
+            android:layout_marginBottom="44dp"
+            android:layout_marginHorizontal="16dp"
+            android:padding="12dp"
+            android:text="Donate"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:backgroundTint="@color/light_blue" />
 
     </LinearLayout>
 
