@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.Fragments.ChildProfileFragment
+import com.example.myapplication.Fragments.HomeFragment
 import com.example.myapplication.Fragments.RequestsListFragment
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, RequestsListFragment())
+                .replace(R.id.fragment_container, HomeFragment())
                 .commit()
         }
     }

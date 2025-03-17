@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:background="@drawable/price_background"
+                android:background="@drawable/very_rounded_background"
                 android:padding="6dp"
                 android:text="40.000 ₸"
                 android:textColor="@color/black"
