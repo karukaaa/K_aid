@@ -52,6 +52,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     implementation(libs.androidx.core.splashscreen)
+    implementation (libs.material.v1100)
+
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
