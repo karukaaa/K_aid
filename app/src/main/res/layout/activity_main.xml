@@ -16,8 +16,9 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        app:itemRippleColor="@color/blue"
         android:layout_gravity="bottom"
-        android:outlineSpotShadowColor="@color/very_light_blue"
         app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>
