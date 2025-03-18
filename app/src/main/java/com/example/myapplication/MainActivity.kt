@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.myapplication.Fragments.HomeFragment
+import com.example.myapplication.Fragments.LogInFragment
 import com.example.myapplication.Fragments.RequestsListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> loadFragment(HomeFragment())
                 R.id.nav_requests-> loadFragment(RequestsListFragment())
+                R.id.nav_login -> loadFragment(LogInFragment())
             }
             true
         }

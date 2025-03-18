@@ -10,4 +10,9 @@
         android:icon="@drawable/baseline_menu_24"
         android:title="Requests" />
 
+    <item
+        android:id="@+id/nav_login"
+        android:icon="@drawable/octagon_check_icon"
+        android:title="Login" />
+
 </menu>
