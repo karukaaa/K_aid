@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.myapplication.Fragments.AdministratorProfileFragment
 import com.example.myapplication.Fragments.HomeFragment
 import com.example.myapplication.Fragments.LogInFragment
 import com.example.myapplication.Fragments.RequestsListFragment
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> loadFragment(HomeFragment())
                 R.id.nav_requests-> loadFragment(RequestsListFragment())
                 R.id.nav_login -> loadFragment(LogInFragment())
+                R.id.nav_administrator_profile -> loadFragment(AdministratorProfileFragment())
             }
             true
         }

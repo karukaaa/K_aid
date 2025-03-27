@@ -15,4 +15,9 @@
         android:icon="@drawable/octagon_check_icon"
         android:title="Login" />
 
+    <item
+        android:id="@+id/nav_administrator_profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Administrator Profile" />
+
 </menu>
