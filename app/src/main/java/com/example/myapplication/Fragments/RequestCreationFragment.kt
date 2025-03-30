@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.R
 import com.example.myapplication.Request
 import com.example.myapplication.RequestsViewModel
 import com.example.myapplication.databinding.FragmentRequestCreationBinding
@@ -45,6 +45,11 @@ class RequestCreationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val backButton: ImageView = binding.backButton
+        backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
         val titleEditText: EditText = binding.title
         val descriptionEditText: EditText = binding.description
         val childEditText: EditText = binding.child
@@ -55,26 +60,36 @@ class RequestCreationFragment : Fragment() {
             val title = titleEditText.text.toString().trim()
             val description = descriptionEditText.text.toString().trim()
             val child = childEditText.text.toString().trim()
-            val price = priceEditText.text.toString().toDoubleOrNull() ?: 0.0
+            val priceText = priceEditText.text.toString().trim()
 
-            if (title.isNotEmpty() && description.isNotEmpty() && child.isNotEmpty()) {
-                val newRequest = Request(
-                    id = Random.nextInt(1000), // Random ID
-                    requestedObject = title,
-                    description = description,
-                    child = child,
-                    price = price
-                )
-
-                viewModel.addRequest(newRequest)
-                Toast.makeText(requireContext(), "Request created successfully!", Toast.LENGTH_SHORT).show()
-
-                val newFragment = AdministratorProfileFragment()
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, newFragment)
-                    .commit()
+            if (title.isEmpty() || description.isEmpty() || child.isEmpty() || priceText.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in all fields!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            val price = priceText.toDoubleOrNull()
+            if (price == null || price <= 0) {
+                Toast.makeText(requireContext(), "Please enter a valid price (numbers only).", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val newRequest = Request(
+                id = Random.nextInt(1000), // Random ID
+                requestedObject = title,
+                description = description,
+                child = child,
+                price = price
+            )
+
+            viewModel.addRequest(newRequest)
+            Toast.makeText(requireContext(), "Request created successfully!", Toast.LENGTH_SHORT).show()
+
+            // Go back to the previous fragment
+            parentFragmentManager.popBackStack()
         }
 
+
     }
+
+
 }

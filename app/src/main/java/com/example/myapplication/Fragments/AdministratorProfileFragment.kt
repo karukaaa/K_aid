@@ -38,6 +38,7 @@ class AdministratorProfileFragment : Fragment() {
             val newFragment = RequestCreationFragment()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null)
                 .commit()
         }
     }

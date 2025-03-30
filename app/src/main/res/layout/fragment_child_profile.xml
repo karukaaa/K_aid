@@ -92,17 +92,18 @@
 
             <ImageView
                 android:id="@+id/back_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentStart="true"
-                android:src="@drawable/ic_back" />
+                android:layout_marginStart="8dp"
+                android:src="@drawable/baseline_arrow_back_ios_24" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginEnd="4dp"
-                android:text="Profile"
+                android:text="Child's Profile"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
