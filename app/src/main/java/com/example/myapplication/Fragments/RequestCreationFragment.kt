@@ -1,18 +1,29 @@
 package com.example.myapplication.Fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentLogInBinding
+import com.example.myapplication.Request
+import com.example.myapplication.RequestsViewModel
 import com.example.myapplication.databinding.FragmentRequestCreationBinding
+import kotlin.random.Random
+
 
 class RequestCreationFragment : Fragment() {
 
     private var _binding: FragmentRequestCreationBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: RequestsViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(RequestsViewModel::class.java)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +39,42 @@ class RequestCreationFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(param1: String, param2: String) = RequestCreationFragment()
+        fun newInstance() = RequestCreationFragment()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val titleEditText: EditText = binding.title
+        val descriptionEditText: EditText = binding.description
+        val childEditText: EditText = binding.child
+        val priceEditText: EditText = binding.price
+        val publishButton: Button = binding.publishButton
+
+        publishButton.setOnClickListener {
+            val title = titleEditText.text.toString().trim()
+            val description = descriptionEditText.text.toString().trim()
+            val child = childEditText.text.toString().trim()
+            val price = priceEditText.text.toString().toDoubleOrNull() ?: 0.0
+
+            if (title.isNotEmpty() && description.isNotEmpty() && child.isNotEmpty()) {
+                val newRequest = Request(
+                    id = Random.nextInt(1000), // Random ID
+                    requestedObject = title,
+                    description = description,
+                    child = child,
+                    price = price
+                )
+
+                viewModel.addRequest(newRequest)
+                Toast.makeText(requireContext(), "Request created successfully!", Toast.LENGTH_SHORT).show()
+
+                val newFragment = AdministratorProfileFragment()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, newFragment)
+                    .commit()
+            }
+        }
+
     }
 }

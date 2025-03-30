@@ -37,7 +37,7 @@ class AdministratorProfileFragment : Fragment() {
         binding.btnCreateRequest.setOnClickListener{
             val newFragment = RequestCreationFragment()
             parentFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, newFragment)
+                .replace(R.id.fragment_container, newFragment)
                 .commit()
         }
     }

@@ -5,15 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.Request
 import com.example.myapplication.RequestRecyclerViewAdapter
-import com.example.myapplication.RequestSampleData
+import com.example.myapplication.RequestsViewModel
+
 
 class RequestsListFragment : Fragment() {
 
+    private val viewModel: RequestsViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(RequestsViewModel::class.java)
+    }
+    private lateinit var adapter: RequestRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,15 +32,18 @@ class RequestsListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_requests_list, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        val adapter = RequestRecyclerViewAdapter {
-            openRequestDetailFragment() // Open new fragment
+        adapter = RequestRecyclerViewAdapter {
+            openRequestDetailFragment()
         }
 
-        recyclerView.layoutManager = LinearLayoutManager(requireContext()) // Set LayoutManager
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
+        // Observe the ViewModel for changes
+        viewModel.requests.observe(viewLifecycleOwner) { newRequests ->
+            adapter.submitList(newRequests)
+        }
 
-        adapter.submitList(RequestSampleData.sampleRequests)
         return view
     }
 
@@ -47,8 +55,8 @@ class RequestsListFragment : Fragment() {
         val fragment = ChildProfileFragment.newInstance()
 
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment) // Replace with new fragment
-            .addToBackStack(null) // Allow back navigation
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }
