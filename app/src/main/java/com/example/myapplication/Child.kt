@@ -5,6 +5,7 @@ data class Child(
     val name: String,
     val orphanageName: String,
     val age: Int,
+    val dateOfBirthday: String,
     val description: String,
     val requests: MutableList<Request> = mutableListOf()
 ) {
