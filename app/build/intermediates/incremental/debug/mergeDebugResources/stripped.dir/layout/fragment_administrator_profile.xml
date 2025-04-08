@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/very_light_blue"
+    tools:context=".Fragments.ManagerDashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:paddingTop="8dp">
+
+        <!-- Settings Text -->
+        <TextView
+            android:id="@+id/txtSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="⚙️ Settings"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Language Text -->
+        <TextView
+            android:id="@+id/txtLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="🌍 EN"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgLogo"
+            app:layout_constraintStart_toEndOf="@id/txtSettings"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Logo: Centered Properly -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/k_aid_logo_test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Questions Text -->
+        <TextView
+            android:id="@+id/txtQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="❓ Questions"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtProfile"
+            app:layout_constraintStart_toEndOf="@+id/imgLogo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Profile Text -->
+        <TextView
+            android:id="@+id/txtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="👤 Profile"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Profile Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/blue"
+            android:background="@drawable/circle_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrator Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/profileImage"
+            app:layout_constraintTop_toTopOf="@id/profileImage"
+            app:layout_constraintBottom_toBottomOf="@id/profileImage"
+            android:layout_marginStart="12dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Create Request Button -->
+    <Button
+        android:id="@+id/btn_create_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Request"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/green"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_margin="8dp"/>
+
+    <!-- Menu Items -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Current Requests"
+                app:backgroundTint="@color/blue"
+                android:textAlignment="textStart"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Done Requests"
+                android:layout_marginBottom="4dp"
+                app:backgroundTint="@color/blue"
+                android:textAlignment="textStart"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+
+            <!-- More Items -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:text="Children"
+                android:background="@drawable/rounded_button_bg"
+                app:backgroundTint="@color/blue"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:layout_marginBottom="4dp"
+                app:backgroundTint="@color/blue"
+                android:textAlignment="textStart"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                app:backgroundTint="@color/blue"
+                android:layout_marginBottom="4dp"
+                android:textAlignment="textStart"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                app:backgroundTint="@color/blue"
+                android:layout_marginBottom="4dp"
+                android:textAlignment="textStart"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confidentiality"
+                app:backgroundTint="@color/blue"
+                android:textAlignment="textStart"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Help"
+                app:backgroundTint="@color/blue"
+                android:textAlignment="textStart"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded_button_bg"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="LOG OUT"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:layout_margin="8dp"/>
+</LinearLayout>

@@ -1,0 +1,3210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.6.0" type="incidents">
+
+    <incident
+        id="InefficientWeight"
+        severity="warning"
+        message="Use a `layout_height` of `0dp` instead of `match_parent` for better performance">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="12"
+            column="9"
+            startOffset="415"
+            endLine="12"
+            endColumn="45"
+            endOffset="451"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;⚙️ Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="26"
+            column="13"
+            startOffset="1001"
+            endLine="26"
+            endColumn="39"
+            endOffset="1027"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="28"
+            column="13"
+            startOffset="1084"
+            endLine="28"
+            endColumn="35"
+            endOffset="1106"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;🌍 EN&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="39"
+            column="13"
+            startOffset="1526"
+            endLine="39"
+            endColumn="33"
+            endOffset="1546"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="41"
+            column="13"
+            startOffset="1603"
+            endLine="41"
+            endColumn="35"
+            endOffset="1625"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="48"
+            column="10"
+            startOffset="1921"
+            endLine="48"
+            endColumn="19"
+            endOffset="1930"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;❓ Questions&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="65"
+            column="13"
+            startOffset="2623"
+            endLine="65"
+            endColumn="39"
+            endOffset="2649"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="67"
+            column="13"
+            startOffset="2706"
+            endLine="67"
+            endColumn="35"
+            endOffset="2728"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;👤 Profile&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="79"
+            column="13"
+            startOffset="3214"
+            endLine="79"
+            endColumn="38"
+            endOffset="3239"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="81"
+            column="13"
+            startOffset="3296"
+            endLine="81"
+            endColumn="35"
+            endOffset="3318"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="93"
+            column="10"
+            startOffset="3763"
+            endLine="93"
+            endColumn="19"
+            endOffset="3772"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Administrator Name&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="106"
+            column="13"
+            startOffset="4309"
+            endLine="106"
+            endColumn="46"
+            endOffset="4342"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Create Request&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="121"
+            column="9"
+            startOffset="4912"
+            endLine="121"
+            endColumn="38"
+            endOffset="4941"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Current Requests&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="144"
+            column="17"
+            startOffset="5677"
+            endLine="144"
+            endColumn="48"
+            endOffset="5708"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Done Requests&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="153"
+            column="17"
+            startOffset="6066"
+            endLine="153"
+            endColumn="45"
+            endOffset="6094"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Children&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="166"
+            column="17"
+            startOffset="6586"
+            endLine="166"
+            endColumn="40"
+            endOffset="6609"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Language&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="175"
+            column="17"
+            startOffset="6967"
+            endLine="175"
+            endColumn="40"
+            endOffset="6990"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Notifications&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="185"
+            column="17"
+            startOffset="7398"
+            endLine="185"
+            endColumn="45"
+            endOffset="7426"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="195"
+            column="17"
+            startOffset="7834"
+            endLine="195"
+            endColumn="40"
+            endOffset="7857"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Confidentiality&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="205"
+            column="17"
+            startOffset="8265"
+            endLine="205"
+            endColumn="47"
+            endOffset="8295"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Help&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="215"
+            column="17"
+            startOffset="8703"
+            endLine="215"
+            endColumn="36"
+            endOffset="8722"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;LOG OUT&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="230"
+            column="9"
+            startOffset="9198"
+            endLine="230"
+            endColumn="31"
+            endOffset="9220"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="33"
+            column="21"
+            startOffset="1299"
+            endLine="33"
+            endColumn="44"
+            endOffset="1322"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `10sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="35"
+            column="21"
+            startOffset="1398"
+            endLine="35"
+            endColumn="44"
+            endOffset="1421"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Questions&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="41"
+            column="21"
+            startOffset="1644"
+            endLine="41"
+            endColumn="45"
+            endOffset="1668"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `10sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="43"
+            column="21"
+            startOffset="1744"
+            endLine="43"
+            endColumn="44"
+            endOffset="1767"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="47"
+            column="14"
+            startOffset="1818"
+            endLine="47"
+            endColumn="23"
+            endOffset="1827"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Language EN&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="68"
+            column="21"
+            startOffset="2728"
+            endLine="68"
+            endColumn="47"
+            endOffset="2754"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `10sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="70"
+            column="21"
+            startOffset="2830"
+            endLine="70"
+            endColumn="44"
+            endOffset="2853"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Profile&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="76"
+            column="21"
+            startOffset="3074"
+            endLine="76"
+            endColumn="43"
+            endOffset="3096"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `10sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="78"
+            column="21"
+            startOffset="3172"
+            endLine="78"
+            endColumn="44"
+            endOffset="3195"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="92"
+            column="14"
+            startOffset="3525"
+            endLine="92"
+            endColumn="23"
+            endOffset="3534"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Child&apos;s Profile&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="105"
+            column="17"
+            startOffset="4101"
+            endLine="105"
+            endColumn="47"
+            endOffset="4131"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;🚲 Bicycle&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="125"
+            column="17"
+            startOffset="4911"
+            endLine="125"
+            endColumn="42"
+            endOffset="4936"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;40.000 ₸&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="139"
+            column="17"
+            startOffset="5539"
+            endLine="139"
+            endColumn="40"
+            endOffset="5562"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;A small-sized bicycle for learning how to ride&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="151"
+            column="17"
+            startOffset="6086"
+            endLine="151"
+            endColumn="78"
+            endOffset="6147"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="169"
+            column="14"
+            startOffset="6874"
+            endLine="169"
+            endColumn="23"
+            endOffset="6883"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Maria Volkova&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="189"
+            column="21"
+            startOffset="7671"
+            endLine="189"
+            endColumn="49"
+            endOffset="7699"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;03.04.2015&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="196"
+            column="21"
+            startOffset="7959"
+            endLine="196"
+            endColumn="46"
+            endOffset="7984"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;⭐ 5&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="206"
+            column="17"
+            startOffset="8358"
+            endLine="206"
+            endColumn="35"
+            endOffset="8376"/>
+    </incident>
+
+    <incident
+        id="UselessParent"
+        severity="warning"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="220"
+            column="14"
+            startOffset="8829"
+            endLine="220"
+            endColumn="26"
+            endOffset="8841"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;✨ About Maria Volkova&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="230"
+            column="21"
+            startOffset="9271"
+            endLine="230"
+            endColumn="57"
+            endOffset="9307"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient.  \n \n📚 She loves books and creativity. Maria dreams of riding through the park 🌳, feeling the wind on her face and experiencing a sense of freedom.  \n \nShe works hard at school because she aspires to become a teacher 🍎 and help other children like herself.  \n \n Maria believes in friendship 🤝 and kindness, always supporting those around her.  \n \n Although Maria has no family, she believes she can pave her own path and make the world a better place through education and compassion.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="239"
+            column="21"
+            startOffset="9670"
+            endLine="239"
+            endColumn="669"
+            endOffset="10318"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="268"
+            column="18"
+            startOffset="10941"
+            endLine="268"
+            endColumn="27"
+            endOffset="10950"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="276"
+            column="18"
+            startOffset="11302"
+            endLine="276"
+            endColumn="27"
+            endOffset="11311"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="284"
+            column="18"
+            startOffset="11663"
+            endLine="284"
+            endColumn="27"
+            endOffset="11672"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Donate&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="303"
+            column="13"
+            startOffset="12455"
+            endLine="303"
+            endColumn="34"
+            endOffset="12476"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;⚙️ Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="26"
+            column="17"
+            startOffset="1063"
+            endLine="26"
+            endColumn="43"
+            endOffset="1089"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="28"
+            column="17"
+            startOffset="1156"
+            endLine="28"
+            endColumn="39"
+            endOffset="1178"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;🌍 EN&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="39"
+            column="17"
+            startOffset="1649"
+            endLine="39"
+            endColumn="37"
+            endOffset="1669"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="41"
+            column="17"
+            startOffset="1736"
+            endLine="41"
+            endColumn="39"
+            endOffset="1758"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="48"
+            column="14"
+            startOffset="2085"
+            endLine="48"
+            endColumn="23"
+            endOffset="2094"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;❓ Questions&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="65"
+            column="17"
+            startOffset="2868"
+            endLine="65"
+            endColumn="43"
+            endOffset="2894"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="67"
+            column="17"
+            startOffset="2961"
+            endLine="67"
+            endColumn="39"
+            endOffset="2983"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;👤 Profile&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="79"
+            column="17"
+            startOffset="3525"
+            endLine="79"
+            endColumn="42"
+            endOffset="3550"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="81"
+            column="17"
+            startOffset="3617"
+            endLine="81"
+            endColumn="39"
+            endOffset="3639"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Welcome to K&apos;AID \nHelp With Us!&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="94"
+            column="13"
+            startOffset="4215"
+            endLine="94"
+            endColumn="60"
+            endOffset="4262"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="120"
+            column="22"
+            startOffset="5265"
+            endLine="120"
+            endColumn="31"
+            endOffset="5274"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="138"
+            column="22"
+            startOffset="6132"
+            endLine="138"
+            endColumn="31"
+            endOffset="6141"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="156"
+            column="22"
+            startOffset="6999"
+            endLine="156"
+            endColumn="31"
+            endOffset="7008"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;How does it work?&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="175"
+            column="13"
+            startOffset="7779"
+            endLine="175"
+            endColumn="45"
+            endOffset="7811"/>
+    </incident>
+
+    <incident
+        id="DisableBaselineAlignment"
+        severity="warning"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance">
+        <fix-attribute
+            description="Set baselineAligned=&quot;false&quot;"
+            robot="true"
+            independent="true"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="baselineAligned"
+            value="false"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="180"
+            column="10"
+            startOffset="7947"
+            endLine="180"
+            endColumn="22"
+            endOffset="7959"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="197"
+            column="18"
+            startOffset="8670"
+            endLine="197"
+            endColumn="27"
+            endOffset="8679"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Children and caregivers create requests for essential items.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="212"
+            column="21"
+            startOffset="9349"
+            endLine="212"
+            endColumn="96"
+            endOffset="9424"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="232"
+            column="18"
+            startOffset="10392"
+            endLine="232"
+            endColumn="27"
+            endOffset="10401"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Volunteers choose a request and help with a donation or gift.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="247"
+            column="21"
+            startOffset="11072"
+            endLine="247"
+            endColumn="97"
+            endOffset="11148"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="267"
+            column="18"
+            startOffset="12117"
+            endLine="267"
+            endColumn="27"
+            endOffset="12126"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;All requests are verified for transparency.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="282"
+            column="21"
+            startOffset="12806"
+            endLine="282"
+            endColumn="79"
+            endOffset="12864"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Why is this important?&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="299"
+            column="13"
+            startOffset="13645"
+            endLine="299"
+            endColumn="50"
+            endOffset="13682"/>
+    </incident>
+
+    <incident
+        id="DisableBaselineAlignment"
+        severity="warning"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance">
+        <fix-attribute
+            description="Set baselineAligned=&quot;false&quot;"
+            robot="true"
+            independent="true"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="baselineAligned"
+            value="false"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="304"
+            column="10"
+            startOffset="13818"
+            endLine="304"
+            endColumn="22"
+            endOffset="13830"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="326"
+            column="21"
+            startOffset="14775"
+            endLine="326"
+            endColumn="37"
+            endOffset="14791"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Your help brings joy and hope to children.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="336"
+            column="21"
+            startOffset="15153"
+            endLine="336"
+            endColumn="78"
+            endOffset="15210"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;2&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="356"
+            column="21"
+            startOffset="16054"
+            endLine="356"
+            endColumn="37"
+            endOffset="16070"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Small acts of kindness can change lives.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="366"
+            column="21"
+            startOffset="16432"
+            endLine="366"
+            endColumn="76"
+            endOffset="16487"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;3&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="386"
+            column="21"
+            startOffset="17331"
+            endLine="386"
+            endColumn="37"
+            endOffset="17347"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Every donation directly reaches those in need.&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="396"
+            column="21"
+            startOffset="17709"
+            endLine="396"
+            endColumn="82"
+            endOffset="17770"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="13"
+            column="6"
+            startOffset="524"
+            endLine="13"
+            endColumn="17"
+            endOffset="535"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Welcome back!&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="27"
+            column="9"
+            startOffset="1049"
+            endLine="27"
+            endColumn="37"
+            endOffset="1077"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="29"
+            column="9"
+            startOffset="1128"
+            endLine="29"
+            endColumn="32"
+            endOffset="1151"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Log in&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="38"
+            column="9"
+            startOffset="1446"
+            endLine="38"
+            endColumn="30"
+            endOffset="1467"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="40"
+            column="9"
+            startOffset="1518"
+            endLine="40"
+            endColumn="32"
+            endOffset="1541"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="48"
+            column="10"
+            startOffset="1765"
+            endLine="48"
+            endColumn="18"
+            endOffset="1773"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="48"
+            column="10"
+            startOffset="1765"
+            endLine="48"
+            endColumn="18"
+            endOffset="1773"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Email&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="54"
+            column="13"
+            startOffset="2029"
+            endLine="54"
+            endColumn="33"
+            endOffset="2049"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="65"
+            column="10"
+            startOffset="2387"
+            endLine="65"
+            endColumn="18"
+            endOffset="2395"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="65"
+            column="10"
+            startOffset="2387"
+            endLine="65"
+            endColumn="18"
+            endOffset="2395"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="71"
+            column="13"
+            startOffset="2654"
+            endLine="71"
+            endColumn="36"
+            endOffset="2677"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Forgot your password?&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="83"
+            column="9"
+            startOffset="3067"
+            endLine="83"
+            endColumn="45"
+            endOffset="3103"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Log in&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="94"
+            column="9"
+            startOffset="3452"
+            endLine="94"
+            endColumn="30"
+            endOffset="3473"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Don&apos;t have an account?&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="101"
+            column="9"
+            startOffset="3682"
+            endLine="101"
+            endColumn="46"
+            endOffset="3719"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Sign up&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="112"
+            column="9"
+            startOffset="4076"
+            endLine="112"
+            endColumn="31"
+            endOffset="4098"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;⚙️ Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="23"
+            column="13"
+            startOffset="872"
+            endLine="23"
+            endColumn="39"
+            endOffset="898"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="25"
+            column="13"
+            startOffset="957"
+            endLine="25"
+            endColumn="35"
+            endOffset="979"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;🌍 EN&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="36"
+            column="13"
+            startOffset="1410"
+            endLine="36"
+            endColumn="33"
+            endOffset="1430"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="38"
+            column="13"
+            startOffset="1489"
+            endLine="38"
+            endColumn="35"
+            endOffset="1511"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="45"
+            column="10"
+            startOffset="1814"
+            endLine="45"
+            endColumn="19"
+            endOffset="1823"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;❓ Questions&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="62"
+            column="13"
+            startOffset="2533"
+            endLine="62"
+            endColumn="39"
+            endOffset="2559"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="64"
+            column="13"
+            startOffset="2618"
+            endLine="64"
+            endColumn="35"
+            endOffset="2640"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;👤 Profile&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="76"
+            column="13"
+            startOffset="3138"
+            endLine="76"
+            endColumn="38"
+            endOffset="3163"/>
+    </incident>
+
+    <incident
+        id="SmallSp"
+        severity="warning"
+        message="Avoid using sizes smaller than `11sp`: `8sp`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="78"
+            column="13"
+            startOffset="3222"
+            endLine="78"
+            endColumn="35"
+            endOffset="3244"/>
+    </incident>
+
+    <incident
+        id="UseCompoundDrawables"
+        severity="warning"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="85"
+            column="6"
+            startOffset="3507"
+            endLine="85"
+            endColumn="18"
+            endOffset="3519"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="92"
+            column="10"
+            startOffset="3741"
+            endLine="92"
+            endColumn="19"
+            endOffset="3750"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Create request&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="102"
+            column="13"
+            startOffset="4124"
+            endLine="102"
+            endColumn="42"
+            endOffset="4153"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="117"
+            column="10"
+            startOffset="4648"
+            endLine="117"
+            endColumn="19"
+            endOffset="4657"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Add photo&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="126"
+            column="13"
+            startOffset="4974"
+            endLine="126"
+            endColumn="37"
+            endOffset="4998"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="130"
+            column="6"
+            startOffset="5052"
+            endLine="130"
+            endColumn="14"
+            endOffset="5060"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="130"
+            column="6"
+            startOffset="5052"
+            endLine="130"
+            endColumn="14"
+            endOffset="5060"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Enter price&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="135"
+            column="9"
+            startOffset="5235"
+            endLine="135"
+            endColumn="35"
+            endOffset="5261"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Heading&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="144"
+            column="9"
+            startOffset="5531"
+            endLine="144"
+            endColumn="31"
+            endOffset="5553"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="145"
+            column="9"
+            startOffset="5563"
+            endLine="145"
+            endColumn="32"
+            endOffset="5586"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="149"
+            column="6"
+            startOffset="5658"
+            endLine="149"
+            endColumn="14"
+            endOffset="5666"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="149"
+            column="6"
+            startOffset="5658"
+            endLine="149"
+            endColumn="14"
+            endOffset="5666"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Enter title&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="155"
+            column="9"
+            startOffset="5906"
+            endLine="155"
+            endColumn="35"
+            endOffset="5932"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="157"
+            column="9"
+            startOffset="5973"
+            endLine="157"
+            endColumn="32"
+            endOffset="5996"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Description&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="164"
+            column="9"
+            startOffset="6205"
+            endLine="164"
+            endColumn="35"
+            endOffset="6231"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="165"
+            column="9"
+            startOffset="6241"
+            endLine="165"
+            endColumn="32"
+            endOffset="6264"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="169"
+            column="6"
+            startOffset="6312"
+            endLine="169"
+            endColumn="14"
+            endOffset="6320"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="169"
+            column="6"
+            startOffset="6312"
+            endLine="169"
+            endColumn="14"
+            endOffset="6320"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Describe the request&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="175"
+            column="9"
+            startOffset="6566"
+            endLine="175"
+            endColumn="44"
+            endOffset="6601"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="177"
+            column="9"
+            startOffset="6642"
+            endLine="177"
+            endColumn="32"
+            endOffset="6665"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Child&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="184"
+            column="9"
+            startOffset="6874"
+            endLine="184"
+            endColumn="29"
+            endOffset="6894"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="185"
+            column="9"
+            startOffset="6904"
+            endLine="185"
+            endColumn="32"
+            endOffset="6927"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Publish&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="207"
+            column="9"
+            startOffset="7561"
+            endLine="207"
+            endColumn="31"
+            endOffset="7583"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_requests_list.xml"
+            line="15"
+            column="10"
+            startOffset="537"
+            endLine="15"
+            endColumn="19"
+            endOffset="546"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Requests&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_requests_list.xml"
+            line="24"
+            column="13"
+            startOffset="870"
+            endLine="24"
+            endColumn="36"
+            endOffset="893"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="13"
+            column="6"
+            startOffset="524"
+            endLine="13"
+            endColumn="15"
+            endOffset="533"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="36"
+            column="10"
+            startOffset="1286"
+            endLine="36"
+            endColumn="19"
+            endOffset="1295"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Upload photo&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="49"
+            column="13"
+            startOffset="1798"
+            endLine="49"
+            endColumn="40"
+            endOffset="1825"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Sign up&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="61"
+            column="9"
+            startOffset="2180"
+            endLine="61"
+            endColumn="31"
+            endOffset="2202"/>
+    </incident>
+
+    <incident
+        id="SpUsage"
+        severity="warning"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <fix-replace
+            description="Replace with sp"
+            oldPattern=".*(di?p)"
+            replacement="sp"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="63"
+            column="9"
+            startOffset="2253"
+            endLine="63"
+            endColumn="32"
+            endOffset="2276"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="71"
+            column="10"
+            startOffset="2500"
+            endLine="71"
+            endColumn="18"
+            endOffset="2508"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="71"
+            column="10"
+            startOffset="2500"
+            endLine="71"
+            endColumn="18"
+            endOffset="2508"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Email&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="77"
+            column="13"
+            startOffset="2764"
+            endLine="77"
+            endColumn="33"
+            endOffset="2784"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="94"
+            column="14"
+            startOffset="3340"
+            endLine="94"
+            endColumn="22"
+            endOffset="3348"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="94"
+            column="14"
+            startOffset="3340"
+            endLine="94"
+            endColumn="22"
+            endOffset="3348"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;First name&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="100"
+            column="17"
+            startOffset="3633"
+            endLine="100"
+            endColumn="42"
+            endOffset="3658"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="112"
+            column="14"
+            startOffset="4071"
+            endLine="112"
+            endColumn="22"
+            endOffset="4079"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="112"
+            column="14"
+            startOffset="4071"
+            endLine="112"
+            endColumn="22"
+            endOffset="4079"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Last name&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="118"
+            column="17"
+            startOffset="4363"
+            endLine="118"
+            endColumn="41"
+            endOffset="4387"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="130"
+            column="10"
+            startOffset="4758"
+            endLine="130"
+            endColumn="18"
+            endOffset="4766"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="130"
+            column="10"
+            startOffset="4758"
+            endLine="130"
+            endColumn="18"
+            endOffset="4766"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="136"
+            column="13"
+            startOffset="5025"
+            endLine="136"
+            endColumn="36"
+            endOffset="5048"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="147"
+            column="10"
+            startOffset="5386"
+            endLine="147"
+            endColumn="18"
+            endOffset="5394"/>
+    </incident>
+
+    <incident
+        id="TextFields"
+        severity="warning"
+        message="This text field does not specify an `inputType`">
+        <fix-attribute
+            description="Set inputType"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="inputType"
+            value="TODO"
+            point="4"
+            mark="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="147"
+            column="10"
+            startOffset="5386"
+            endLine="147"
+            endColumn="18"
+            endOffset="5394"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Confirm password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="153"
+            column="13"
+            startOffset="5661"
+            endLine="153"
+            endColumn="44"
+            endOffset="5692"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Next&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="165"
+            column="9"
+            startOffset="6041"
+            endLine="165"
+            endColumn="28"
+            endOffset="6060"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Already have an account?&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="172"
+            column="9"
+            startOffset="6269"
+            endLine="172"
+            endColumn="48"
+            endOffset="6308"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Log in&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="183"
+            column="9"
+            startOffset="6663"
+            endLine="183"
+            endColumn="30"
+            endOffset="6684"/>
+    </incident>
+
+    <incident
+        id="InefficientWeight"
+        severity="warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/request.xml"
+            line="19"
+            column="9"
+            startOffset="626"
+            endLine="19"
+            endColumn="44"
+            endOffset="661"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Requested Object&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/request.xml"
+            line="27"
+            column="13"
+            startOffset="955"
+            endLine="27"
+            endColumn="44"
+            endOffset="986"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;A small-sized bicycle for learning how to ride&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/request.xml"
+            line="37"
+            column="13"
+            startOffset="1323"
+            endLine="37"
+            endColumn="74"
+            endOffset="1384"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Maria Volkova&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/request.xml"
+            line="61"
+            column="17"
+            startOffset="2174"
+            endLine="61"
+            endColumn="45"
+            endOffset="2202"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;40.000 ₸&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/request.xml"
+            line="73"
+            column="9"
+            startOffset="2500"
+            endLine="73"
+            endColumn="32"
+            endOffset="2523"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Home&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/menu/bottom_nav_menu.xml"
+            line="6"
+            column="9"
+            startOffset="201"
+            endLine="6"
+            endColumn="29"
+            endOffset="221"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Requests&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/menu/bottom_nav_menu.xml"
+            line="11"
+            column="9"
+            startOffset="333"
+            endLine="11"
+            endColumn="33"
+            endOffset="357"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Login&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/menu/bottom_nav_menu.xml"
+            line="16"
+            column="9"
+            startOffset="468"
+            endLine="16"
+            endColumn="30"
+            endOffset="489"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Administrator Profile&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/menu/bottom_nav_menu.xml"
+            line="21"
+            column="9"
+            startOffset="624"
+            endLine="21"
+            endColumn="46"
+            endOffset="661"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="270"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="270"/>
+    </incident>
+
+    <incident
+        id="SuspiciousImport"
+        severity="warning"
+        message="Don&apos;t include `android.R` here; use a fully qualified name for each usage instead">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/myapplication/Fragments/RequestCreationFragment.kt"
+            line="3"
+            column="1"
+            startOffset="45"
+            endLine="3"
+            endColumn="17"
+            endOffset="61"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/myapplication/RequestRecyclerViewAdapter.kt"
+            line="21"
+            column="41"
+            startOffset="864"
+            endLine="21"
+            endColumn="71"
+            endOffset="894"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/myapplication/RequestRecyclerViewAdapter.kt"
+            line="21"
+            column="47"
+            startOffset="870"
+            endLine="21"
+            endColumn="71"
+            endOffset="894"/>
+    </incident>
+
+    <incident
+        id="SimilarGradleDependency"
+        severity="informational"
+        message="There are multiple dependencies com.google.android.material:material but with different version">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="24"
+            column="13"
+            startOffset="1057"
+            endLine="24"
+            endColumn="98"
+            endOffset="1142"/>
+    </incident>
+
+    <incident
+        id="SimilarGradleDependency"
+        severity="informational"
+        message="There are multiple dependencies com.google.android.material:material but with different version">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="27"
+            column="19"
+            startOffset="1390"
+            endLine="27"
+            endColumn="102"
+            endOffset="1473"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity than 1.9.3 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.9.3"
+            replacement="1.10.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="12"
+            startOffset="245"
+            endLine="12"
+            endColumn="19"
+            endOffset="252"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.2.0"
+            replacement="2.2.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="20"
+            startOffset="273"
+            endLine="13"
+            endColumn="27"
+            endOffset="280"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.10.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="14"
+            column="19"
+            startOffset="300"
+            endLine="14"
+            endColumn="27"
+            endOffset="308"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.6.0 is available: 8.9.1. (There is also a newer version of 8.6.𝑥 available, if upgrading to 8.9.1 is difficult: 8.6.1)">
+        <fix-alternatives>
+            <fix-replace
+                description="Change to 8.9.1"
+                family="Update versions"
+                oldString="8.6.0"
+                replacement="8.9.1"
+                priority="0"/>
+            <fix-replace
+                description="Change to 8.6.1"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="8.6.0"
+                replacement="8.6.1"
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="18"
+            endLine="2"
+            endColumn="14"
+            endOffset="25"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.1.0">
+        <fix-replace
+            description="Change to 2.1.0"
+            family="Update versions"
+            oldString="1.9.0"
+            replacement="2.1.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="4"
+            column="10"
+            startOffset="64"
+            endLine="4"
+            endColumn="17"
+            endOffset="71"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/gift_icon.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/gift_icon.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/home_icon.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/home_icon.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/ic_back.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_back.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/image1.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/image1.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/image2.jpeg` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/image2.jpeg"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/image3.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/image3.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/k_aid_logo_test.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/k_aid_logo_test.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/logo.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/logo.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/main_page_kids_image1.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/main_page_kids_image1.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/main_page_kids_image2.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/main_page_kids_image2.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/main_page_kids_image3.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/main_page_kids_image3.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/octagon_check_icon.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/octagon_check_icon.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/profile_picture.jpeg` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/profile_picture.jpeg"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/requests_top_img.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/requests_top_img.png"/>
+    </incident>
+
+    <incident
+        id="IconLocation"
+        severity="warning"
+        message="Found bitmap drawable `res/drawable/user_icon.png` in densityless folder">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/user_icon.png"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: image2.jpeg, profile_picture.jpeg">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/profile_picture.jpeg"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/image2.jpeg"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/very_light_blue` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_administrator_profile.xml"
+            line="10"
+            column="5"
+            startOffset="384"
+            endLine="10"
+            endColumn="48"
+            endOffset="427"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/white` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_child_profile.xml"
+            line="6"
+            column="5"
+            startOffset="256"
+            endLine="6"
+            endColumn="38"
+            endOffset="289"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/very_light_blue` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
+            line="6"
+            column="5"
+            startOffset="282"
+            endLine="6"
+            endColumn="48"
+            endOffset="325"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/very_light_blue` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_log_in.xml"
+            line="7"
+            column="5"
+            startOffset="310"
+            endLine="7"
+            endColumn="48"
+            endOffset="353"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/very_light_blue` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_request_creation.xml"
+            line="7"
+            column="5"
+            startOffset="260"
+            endLine="7"
+            endColumn="48"
+            endOffset="303"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/white` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_requests_list.xml"
+            line="8"
+            column="5"
+            startOffset="339"
+            endLine="8"
+            endColumn="38"
+            endOffset="372"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/very_light_blue` with a theme that also paints a background (inferred theme is `@style/Theme.MyApplication`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_sign_up.xml"
+            line="7"
+            column="5"
+            startOffset="310"
+            endLine="7"
+            endColumn="48"
+            endOffset="353"/>
+    </incident>
+
+</incidents>
