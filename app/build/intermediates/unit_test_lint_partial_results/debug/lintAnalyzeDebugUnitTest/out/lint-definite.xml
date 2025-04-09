@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.6.0" type="incidents">
+
+    <incident
+        id="SimilarGradleDependency"
+        severity="informational"
+        message="There are multiple dependencies com.google.android.material:material but with different version">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="24"
+            column="13"
+            startOffset="1057"
+            endLine="24"
+            endColumn="98"
+            endOffset="1142"/>
+    </incident>
+
+    <incident
+        id="SimilarGradleDependency"
+        severity="informational"
+        message="There are multiple dependencies com.google.android.material:material but with different version">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="27"
+            column="19"
+            startOffset="1390"
+            endLine="27"
+            endColumn="102"
+            endOffset="1473"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity than 1.9.3 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.9.3"
+            replacement="1.10.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="12"
+            startOffset="245"
+            endLine="12"
+            endColumn="19"
+            endOffset="252"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.2.0"
+            replacement="2.2.1"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="20"
+            startOffset="273"
+            endLine="13"
+            endColumn="27"
+            endOffset="280"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.10.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="14"
+            column="19"
+            startOffset="300"
+            endLine="14"
+            endColumn="27"
+            endOffset="308"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.6.0 is available: 8.9.1. (There is also a newer version of 8.6.𝑥 available, if upgrading to 8.9.1 is difficult: 8.6.1)">
+        <fix-alternatives>
+            <fix-replace
+                description="Change to 8.9.1"
+                family="Update versions"
+                oldString="8.6.0"
+                replacement="8.9.1"
+                priority="0"/>
+            <fix-replace
+                description="Change to 8.6.1"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="8.6.0"
+                replacement="8.6.1"
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="18"
+            endLine="2"
+            endColumn="14"
+            endOffset="25"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.1.0">
+        <fix-replace
+            description="Change to 2.1.0"
+            family="Update versions"
+            oldString="1.9.0"
+            replacement="2.1.0"
+            priority="0"/>
+        <location
+            file="../gradle/libs.versions.toml"
+            line="4"
+            column="10"
+            startOffset="64"
+            endLine="4"
+            endColumn="17"
+            endOffset="71"/>
+    </incident>
+
+</incidents>

@@ -1,0 +1,865 @@
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\java\com\example\myapplication\Fragments\RequestCreationFragment.kt:3: Warning: Don't include android.R here; use a fully qualified name for each usage instead [SuspiciousImport]
+import android.R
+~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SuspiciousImport":
+   Importing android.R is usually not intentional; it sometimes happens when
+   you use an IDE and ask it to automatically add imports at a time when your
+   project's R class it not present.
+
+   Once the import is there you might get a lot of "confusing" error messages
+   because of course the fields available on android.R are not the ones you'd
+   expect from just looking at your own R class.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:174: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+                android:clipToOutline="true"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:124: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+                        android:clipToOutline="true"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:142: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+                        android:clipToOutline="true"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:160: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+                        android:clipToOutline="true"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\request.xml:8: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+    android:clipToOutline="true"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedAttribute":
+   This check finds attributes set in XML files that were introduced in a
+   version newer than the oldest version targeted by your application (with
+   the minSdkVersion attribute).
+
+   This is not an error; the application will simply ignore the attribute.
+   However, if the attribute is important to the appearance or functionality
+   of your application, you should consider finding an alternative way to
+   achieve the same result with only available attributes, and then you can
+   optionally create a copy of the layout in a layout-vNN folder which will be
+   used on API NN or higher where you can take advantage of the newer
+   attribute.
+
+   Note: This check does not only apply to attributes. For example, some tags
+   can be unused too, such as the new <tag> element in layouts introduced in
+   API 21.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.6.0 is available: 8.9.1. (There is also a newer version of 8.6.𝑥 available, if upgrading to 8.9.1 is difficult: 8.6.1) [AndroidGradlePluginVersion]
+agp = "8.6.0"
+      ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.6.0 is available: 8.9.1. (There is also a newer version of 8.6.𝑥 available, if upgrading to 8.9.1 is difficult: 8.6.1) [AndroidGradlePluginVersion]
+agp = "8.6.0"
+      ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.6.0 is available: 8.9.1. (There is also a newer version of 8.6.𝑥 available, if upgrading to 8.9.1 is difficult: 8.6.1) [AndroidGradlePluginVersion]
+agp = "8.6.0"
+      ~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:4: Warning: A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.1.0 [GradleDependency]
+kotlin = "1.9.0"
+         ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:4: Warning: A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.1.0 [GradleDependency]
+kotlin = "1.9.0"
+         ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:4: Warning: A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 2.1.0 [GradleDependency]
+kotlin = "1.9.0"
+         ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:12: Warning: A newer version of androidx.activity:activity than 1.9.3 is available: 1.10.1 [GradleDependency]
+activity = "1.9.3"
+           ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:12: Warning: A newer version of androidx.activity:activity than 1.9.3 is available: 1.10.1 [GradleDependency]
+activity = "1.9.3"
+           ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:12: Warning: A newer version of androidx.activity:activity than 1.9.3 is available: 1.10.1 [GradleDependency]
+activity = "1.9.3"
+           ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:13: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1 [GradleDependency]
+constraintlayout = "2.2.0"
+                   ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:13: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1 [GradleDependency]
+constraintlayout = "2.2.0"
+                   ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:13: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1 [GradleDependency]
+constraintlayout = "2.2.0"
+                   ~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:14: Warning: A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0 [GradleDependency]
+materialVersion = "1.10.0"
+                  ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:14: Warning: A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0 [GradleDependency]
+materialVersion = "1.10.0"
+                  ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:14: Warning: A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0 [GradleDependency]
+materialVersion = "1.10.0"
+                  ~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:24: Information: There are multiple dependencies com.google.android.material:material but with different version [SimilarGradleDependency]
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:24: Information: There are multiple dependencies com.google.android.material:material but with different version [SimilarGradleDependency]
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:24: Information: There are multiple dependencies com.google.android.material:material but with different version [SimilarGradleDependency]
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:27: Information: There are multiple dependencies com.google.android.material:material but with different version [SimilarGradleDependency]
+material-v1100 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:27: Information: There are multiple dependencies com.google.android.material:material but with different version [SimilarGradleDependency]
+material-v1100 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\gradle\libs.versions.toml:27: Information: There are multiple dependencies com.google.android.material:material but with different version [SimilarGradleDependency]
+material-v1100 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SimilarGradleDependency":
+   This detector looks for usages of libraries when name and group are the
+   same but versions are different. Using multiple versions in big project is
+   fine, and there are cases where you deliberately want to stick with such
+   approach. However, you may simply not be aware that this situation happens,
+   and that is what this lint check helps find.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:29: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="32dp" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:40: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="24dp" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:145: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="20dp"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:157: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="16dp" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:165: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="20dp"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:177: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="16dp" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:185: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="20dp"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:63: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="24dp" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SpUsage":
+   When setting text sizes, you should normally use sp, or "scale-independent
+   pixels". This is like the dp unit, but it is also scaled by the user's font
+   size preference. It is recommend you use this unit when specifying font
+   sizes, so they will be adjusted for both the screen density and the user's
+   preference.
+
+   There are cases where you might need to use dp; typically this happens when
+   the text is in a container with a specific dp-size. This will prevent the
+   text from spilling outside the container. Note however that this means that
+   the user's font size settings are not respected, so consider adjusting the
+   layout itself to be more flexible.
+
+   https://developer.android.com/training/multiscreen/screendensities.html
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:85: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+    <LinearLayout
+     ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompoundDrawables":
+   A LinearLayout which contains an ImageView and a TextView can be more
+   efficiently handled as a compound drawable (a single TextView, using the
+   drawableTop, drawableLeft, drawableRight and/or drawableBottom attributes
+   to draw one or more images adjacent to the text).
+
+   If the two widgets are offset from each other with margins, this can be
+   replaced with a drawablePadding attribute.
+
+   There's a lint quickfix to perform this conversion in the Eclipse plugin.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:180: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+        <LinearLayout
+         ~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:304: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+        <LinearLayout
+         ~~~~~~~~~~~~
+
+   Explanation for issues of type "DisableBaselineAlignment":
+   When a LinearLayout is used to distribute the space proportionally between
+   nested layouts, the baseline alignment property should be turned off to
+   make the layout computation faster.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\activity_main.xml:12: Warning: Use a layout_height of 0dp instead of match_parent for better performance [InefficientWeight]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\request.xml:19: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+        android:layout_width="wrap_content"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "InefficientWeight":
+   When only a single widget in a LinearLayout defines a weight, it is more
+   efficient to assign a width/height of 0dp to it since it will absorb all
+   the remaining space anyway. With a declared width/height of 0dp it does not
+   have to measure its own size first.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:10: Warning: Possible overdraw: Root element paints background @color/very_light_blue with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/very_light_blue"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:6: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/white">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:6: Warning: Possible overdraw: Root element paints background @color/very_light_blue with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/very_light_blue">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:7: Warning: Possible overdraw: Root element paints background @color/very_light_blue with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/very_light_blue"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:7: Warning: Possible overdraw: Root element paints background @color/very_light_blue with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/very_light_blue"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_requests_list.xml:8: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:7: Warning: Possible overdraw: Root element paints background @color/very_light_blue with a theme that also paints a background (inferred theme is @style/Theme.MyApplication) [Overdraw]
+    android:background="@color/very_light_blue"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\ic_back.png: Warning: The resource R.drawable.ic_back appears to be unused [UnusedResources]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\values\strings.xml:4: Warning: The resource R.string.hello_blank_fragment appears to be unused [UnusedResources]
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\test.xml:2: Warning: The resource R.drawable.test appears to be unused [UnusedResources]
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:220: Warning: This LinearLayout layout or its LinearLayout parent is unnecessary [UselessParent]
+            <LinearLayout
+             ~~~~~~~~~~~~
+
+   Explanation for issues of type "UselessParent":
+   A layout with children that has no siblings, is not a scrollview or a root
+   layout, and does not have a background, can be removed and have its
+   children moved directly into the parent for a flatter and more efficient
+   layout hierarchy.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\gift_icon.png: Warning: Found bitmap drawable res/drawable/gift_icon.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\home_icon.png: Warning: Found bitmap drawable res/drawable/home_icon.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\ic_back.png: Warning: Found bitmap drawable res/drawable/ic_back.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\image1.png: Warning: Found bitmap drawable res/drawable/image1.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\image2.jpeg: Warning: Found bitmap drawable res/drawable/image2.jpeg in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\image3.png: Warning: Found bitmap drawable res/drawable/image3.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\k_aid_logo_test.png: Warning: Found bitmap drawable res/drawable/k_aid_logo_test.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\logo.png: Warning: Found bitmap drawable res/drawable/logo.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\main_page_kids_image1.png: Warning: Found bitmap drawable res/drawable/main_page_kids_image1.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\main_page_kids_image2.png: Warning: Found bitmap drawable res/drawable/main_page_kids_image2.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\main_page_kids_image3.png: Warning: Found bitmap drawable res/drawable/main_page_kids_image3.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\octagon_check_icon.png: Warning: Found bitmap drawable res/drawable/octagon_check_icon.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\profile_picture.jpeg: Warning: Found bitmap drawable res/drawable/profile_picture.jpeg in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\requests_top_img.png: Warning: Found bitmap drawable res/drawable/requests_top_img.png in densityless folder [IconLocation]
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\user_icon.png: Warning: Found bitmap drawable res/drawable/user_icon.png in densityless folder [IconLocation]
+
+   Explanation for issues of type "IconLocation":
+   The res/drawable folder is intended for density-independent graphics such
+   as shapes defined in XML. For bitmaps, move it to drawable-mdpi and
+   consider providing higher and lower resolution versions in drawable-ldpi,
+   drawable-hdpi and drawable-xhdpi. If the icon really is density independent
+   (for example a solid color) you can place it in drawable-nodpi.
+
+   https://developer.android.com/guide/practices/screens_support.html
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\drawable\profile_picture.jpeg: Warning: The following unrelated icon files have identical contents: image2.jpeg, profile_picture.jpeg [IconDuplicates]
+
+   Explanation for issues of type "IconDuplicates":
+   If an icon is repeated under different names, you can consolidate and just
+   use one of the icons and delete the others to make your application
+   smaller. However, duplicated icons usually are not intentional and can
+   sometimes point to icons that were accidentally overwritten or accidentally
+   not updated.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:48: Warning: This text field does not specify an inputType [TextFields]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:65: Warning: This text field does not specify an inputType [TextFields]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:130: Warning: This text field does not specify an inputType [TextFields]
+    <EditText
+     ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:149: Warning: This text field does not specify an inputType [TextFields]
+    <EditText
+     ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:169: Warning: This text field does not specify an inputType [TextFields]
+    <EditText
+     ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:71: Warning: This text field does not specify an inputType [TextFields]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:94: Warning: This text field does not specify an inputType [TextFields]
+            <EditText
+             ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:112: Warning: This text field does not specify an inputType [TextFields]
+            <EditText
+             ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:130: Warning: This text field does not specify an inputType [TextFields]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:147: Warning: This text field does not specify an inputType [TextFields]
+        <EditText
+         ~~~~~~~~
+
+   Explanation for issues of type "TextFields":
+   Providing an inputType attribute on a text field improves usability because
+   depending on the data to be input, optimized keyboards can be shown to the
+   user (such as just digits and parentheses for a phone number). 
+
+   The lint detector also looks at the id of the view, and if the id offers a
+   hint of the purpose of the field (for example, the id contains the phrase
+   phone or email), then lint will also ensure that the inputType contains the
+   corresponding type attributes.
+
+   If you really want to keep the text field generic, you can suppress this
+   warning by setting inputType="text".
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:28: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:41: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:67: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:81: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:35: Warning: Avoid using sizes smaller than 11sp: 10sp [SmallSp]
+                    android:textSize="10sp" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:43: Warning: Avoid using sizes smaller than 11sp: 10sp [SmallSp]
+                    android:textSize="10sp" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:70: Warning: Avoid using sizes smaller than 11sp: 10sp [SmallSp]
+                    android:textSize="10sp" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:78: Warning: Avoid using sizes smaller than 11sp: 10sp [SmallSp]
+                    android:textSize="10sp" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:28: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+                android:textSize="8sp"
+                ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:41: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+                android:textSize="8sp"
+                ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:67: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+                android:textSize="8sp"
+                ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:81: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+                android:textSize="8sp"
+                ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:25: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:38: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:64: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:78: Warning: Avoid using sizes smaller than 11sp: 8sp [SmallSp]
+            android:textSize="8sp"
+            ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SmallSp":
+   Avoid using sizes smaller than 11sp.
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:48: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:65: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:130: Warning: Missing autofillHints attribute [Autofill]
+    <EditText
+     ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:149: Warning: Missing autofillHints attribute [Autofill]
+    <EditText
+     ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:169: Warning: Missing autofillHints attribute [Autofill]
+    <EditText
+     ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:71: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:94: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:112: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:130: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:147: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+
+   Explanation for issues of type "Autofill":
+   Specify an autofillHints attribute when targeting SDK version 26 or higher
+   or explicitly specify that the view is not important for autofill. Your app
+   can help an autofill service classify the data correctly by providing the
+   meaning of each view that could be autofillable, such as views representing
+   usernames, passwords, credit card fields, email addresses, etc.
+
+   The hints can have any value, but it is recommended to use predefined
+   values like 'username' for a username or 'creditCardNumber' for a credit
+   card number. For a list of all predefined autofill hint constants, see the
+   AUTOFILL_HINT_ constants in the View reference at
+   https://developer.android.com/reference/android/view/View.html.
+
+   You can mark a view unimportant for autofill by specifying an
+   importantForAutofill attribute on that view or a parent view. See
+   https://developer.android.com/reference/android/view/View.html#setImportant
+   ForAutofill(int).
+
+   https://developer.android.com/guide/topics/text/autofill.html
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:48: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:93: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:47: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:92: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:169: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:268: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:276: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:284: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:48: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:120: Warning: Missing contentDescription attribute on image [ContentDescription]
+                    <ImageView
+                     ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:138: Warning: Missing contentDescription attribute on image [ContentDescription]
+                    <ImageView
+                     ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:156: Warning: Missing contentDescription attribute on image [ContentDescription]
+                    <ImageView
+                     ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:197: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:232: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:267: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:13: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageButton
+     ~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:45: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:92: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:117: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_requests_list.xml:15: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:13: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:36: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\java\com\example\myapplication\RequestRecyclerViewAdapter.kt:21: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            binding.requestPrice.text = "$" + request.price.toString()
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\java\com\example\myapplication\RequestRecyclerViewAdapter.kt:21: Warning: Number formatting does not take into account locale settings. Consider using String.format instead. [SetTextI18n]
+            binding.requestPrice.text = "$" + request.price.toString()
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\menu\bottom_nav_menu.xml:6: Warning: Hardcoded string "Home", should use @string resource [HardcodedText]
+        android:title="Home" />
+        ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\menu\bottom_nav_menu.xml:11: Warning: Hardcoded string "Requests", should use @string resource [HardcodedText]
+        android:title="Requests" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\menu\bottom_nav_menu.xml:16: Warning: Hardcoded string "Login", should use @string resource [HardcodedText]
+        android:title="Login" />
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\menu\bottom_nav_menu.xml:21: Warning: Hardcoded string "Administrator Profile", should use @string resource [HardcodedText]
+        android:title="Administrator Profile" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:26: Warning: Hardcoded string "⚙️ Settings", should use @string resource [HardcodedText]
+            android:text="⚙️ Settings"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:39: Warning: Hardcoded string "🌍 EN", should use @string resource [HardcodedText]
+            android:text="🌍 EN"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:65: Warning: Hardcoded string "❓ Questions", should use @string resource [HardcodedText]
+            android:text="❓ Questions"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:79: Warning: Hardcoded string "👤 Profile", should use @string resource [HardcodedText]
+            android:text="👤 Profile"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:106: Warning: Hardcoded string "Administrator Name", should use @string resource [HardcodedText]
+            android:text="Administrator Name"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:121: Warning: Hardcoded string "Create Request", should use @string resource [HardcodedText]
+        android:text="Create Request"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:144: Warning: Hardcoded string "Current Requests", should use @string resource [HardcodedText]
+                android:text="Current Requests"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:153: Warning: Hardcoded string "Done Requests", should use @string resource [HardcodedText]
+                android:text="Done Requests"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:166: Warning: Hardcoded string "Children", should use @string resource [HardcodedText]
+                android:text="Children"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:175: Warning: Hardcoded string "Language", should use @string resource [HardcodedText]
+                android:text="Language"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:185: Warning: Hardcoded string "Notifications", should use @string resource [HardcodedText]
+                android:text="Notifications"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:195: Warning: Hardcoded string "Settings", should use @string resource [HardcodedText]
+                android:text="Settings"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:205: Warning: Hardcoded string "Confidentiality", should use @string resource [HardcodedText]
+                android:text="Confidentiality"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:215: Warning: Hardcoded string "Help", should use @string resource [HardcodedText]
+                android:text="Help"
+                ~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_administrator_profile.xml:230: Warning: Hardcoded string "LOG OUT", should use @string resource [HardcodedText]
+        android:text="LOG OUT"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:33: Warning: Hardcoded string "Settings", should use @string resource [HardcodedText]
+                    android:text="Settings"
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:41: Warning: Hardcoded string "Questions", should use @string resource [HardcodedText]
+                    android:text="Questions"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:68: Warning: Hardcoded string "Language EN", should use @string resource [HardcodedText]
+                    android:text="Language EN"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:76: Warning: Hardcoded string "Profile", should use @string resource [HardcodedText]
+                    android:text="Profile"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:105: Warning: Hardcoded string "Child's Profile", should use @string resource [HardcodedText]
+                android:text="Child's Profile"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:125: Warning: Hardcoded string "🚲 Bicycle", should use @string resource [HardcodedText]
+                android:text="🚲 Bicycle"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:139: Warning: Hardcoded string "40.000 ₸", should use @string resource [HardcodedText]
+                android:text="40.000 ₸"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:151: Warning: Hardcoded string "A small-sized bicycle for learning how to ride", should use @string resource [HardcodedText]
+                android:text="A small-sized bicycle for learning how to ride"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:189: Warning: Hardcoded string "Maria Volkova", should use @string resource [HardcodedText]
+                    android:text="Maria Volkova"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:196: Warning: Hardcoded string "03.04.2015", should use @string resource [HardcodedText]
+                    android:text="03.04.2015"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:206: Warning: Hardcoded string "⭐ 5", should use @string resource [HardcodedText]
+                android:text="⭐ 5"
+                ~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:230: Warning: Hardcoded string "✨ About Maria Volkova", should use @string resource [HardcodedText]
+                    android:text="✨ About Maria Volkova"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:239: Warning: Hardcoded string "Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient.  n n📚 She loves books and creativity. Maria dreams of riding through the park 🌳, feeling the wind on her face and experiencing a sense of freedom.  n nShe works hard at school because she aspires to become a teacher 🍎 and help other children like herself.  n n Maria believes in friendship 🤝 and kindness, always supporting those around her.  n n Although Maria has no family, she believes she can pave her own path and make the world a better place through education and compassion.", should use @string resource [HardcodedText]
+                    android:text="Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient.
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_child_profile.xml:303: Warning: Hardcoded string "Donate", should use @string resource [HardcodedText]
+            android:text="Donate"
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:26: Warning: Hardcoded string "⚙️ Settings", should use @string resource [HardcodedText]
+                android:text="⚙️ Settings"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:39: Warning: Hardcoded string "🌍 EN", should use @string resource [HardcodedText]
+                android:text="🌍 EN"
+                ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:65: Warning: Hardcoded string "❓ Questions", should use @string resource [HardcodedText]
+                android:text="❓ Questions"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:79: Warning: Hardcoded string "👤 Profile", should use @string resource [HardcodedText]
+                android:text="👤 Profile"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:94: Warning: Hardcoded string "Welcome to K'AID nHelp With Us!", should use @string resource [HardcodedText]
+            android:text="Welcome to K'AID \nHelp With Us!"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:175: Warning: Hardcoded string "How does it work?", should use @string resource [HardcodedText]
+            android:text="How does it work?"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:212: Warning: Hardcoded string "Children and caregivers create requests for essential items.", should use @string resource [HardcodedText]
+                    android:text="Children and caregivers create requests for essential items."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:247: Warning: Hardcoded string "Volunteers choose a request and help with a donation or gift.", should use @string resource [HardcodedText]
+                    android:text="Volunteers choose a request and help with a donation or gift."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:282: Warning: Hardcoded string "All requests are verified for transparency.", should use @string resource [HardcodedText]
+                    android:text="All requests are verified for transparency."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:299: Warning: Hardcoded string "Why is this important?", should use @string resource [HardcodedText]
+            android:text="Why is this important?"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:326: Warning: Hardcoded string "1", should use @string resource [HardcodedText]
+                    android:text="1"
+                    ~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:336: Warning: Hardcoded string "Your help brings joy and hope to children.", should use @string resource [HardcodedText]
+                    android:text="Your help brings joy and hope to children."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:356: Warning: Hardcoded string "2", should use @string resource [HardcodedText]
+                    android:text="2"
+                    ~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:366: Warning: Hardcoded string "Small acts of kindness can change lives.", should use @string resource [HardcodedText]
+                    android:text="Small acts of kindness can change lives."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:386: Warning: Hardcoded string "3", should use @string resource [HardcodedText]
+                    android:text="3"
+                    ~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_home.xml:396: Warning: Hardcoded string "Every donation directly reaches those in need.", should use @string resource [HardcodedText]
+                    android:text="Every donation directly reaches those in need."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:27: Warning: Hardcoded string "Welcome back!", should use @string resource [HardcodedText]
+        android:text="Welcome back!"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:38: Warning: Hardcoded string "Log in", should use @string resource [HardcodedText]
+        android:text="Log in"
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:54: Warning: Hardcoded string "Email", should use @string resource [HardcodedText]
+            android:hint="Email"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:71: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+            android:hint="Password"
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:83: Warning: Hardcoded string "Forgot your password?", should use @string resource [HardcodedText]
+        android:text="Forgot your password?"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:94: Warning: Hardcoded string "Log in", should use @string resource [HardcodedText]
+        android:text="Log in" />
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:101: Warning: Hardcoded string "Don't have an account?", should use @string resource [HardcodedText]
+        android:text="Don't have an account?"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_log_in.xml:112: Warning: Hardcoded string "Sign up", should use @string resource [HardcodedText]
+        android:text="Sign up"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:23: Warning: Hardcoded string "⚙️ Settings", should use @string resource [HardcodedText]
+            android:text="⚙️ Settings"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:36: Warning: Hardcoded string "🌍 EN", should use @string resource [HardcodedText]
+            android:text="🌍 EN"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:62: Warning: Hardcoded string "❓ Questions", should use @string resource [HardcodedText]
+            android:text="❓ Questions"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:76: Warning: Hardcoded string "👤 Profile", should use @string resource [HardcodedText]
+            android:text="👤 Profile"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:102: Warning: Hardcoded string "Create request", should use @string resource [HardcodedText]
+            android:text="Create request"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:126: Warning: Hardcoded string "Add photo", should use @string resource [HardcodedText]
+            android:text="Add photo" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:135: Warning: Hardcoded string "Enter price", should use @string resource [HardcodedText]
+        android:hint="Enter price"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:144: Warning: Hardcoded string "Heading", should use @string resource [HardcodedText]
+        android:text="Heading"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:155: Warning: Hardcoded string "Enter title", should use @string resource [HardcodedText]
+        android:hint="Enter title"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:164: Warning: Hardcoded string "Description", should use @string resource [HardcodedText]
+        android:text="Description"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:175: Warning: Hardcoded string "Describe the request", should use @string resource [HardcodedText]
+        android:hint="Describe the request"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:184: Warning: Hardcoded string "Child", should use @string resource [HardcodedText]
+        android:text="Child"
+        ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_request_creation.xml:207: Warning: Hardcoded string "Publish", should use @string resource [HardcodedText]
+        android:text="Publish"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_requests_list.xml:24: Warning: Hardcoded string "Requests", should use @string resource [HardcodedText]
+            android:text="Requests"
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:49: Warning: Hardcoded string "Upload photo", should use @string resource [HardcodedText]
+            android:text="Upload photo"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:61: Warning: Hardcoded string "Sign up", should use @string resource [HardcodedText]
+        android:text="Sign up"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:77: Warning: Hardcoded string "Email", should use @string resource [HardcodedText]
+            android:hint="Email"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:100: Warning: Hardcoded string "First name", should use @string resource [HardcodedText]
+                android:hint="First name"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:118: Warning: Hardcoded string "Last name", should use @string resource [HardcodedText]
+                android:hint="Last name"
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:136: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+            android:hint="Password"
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:153: Warning: Hardcoded string "Confirm password", should use @string resource [HardcodedText]
+            android:hint="Confirm password"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:165: Warning: Hardcoded string "Next", should use @string resource [HardcodedText]
+        android:text="Next" />
+        ~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:172: Warning: Hardcoded string "Already have an account?", should use @string resource [HardcodedText]
+        android:text="Already have an account?"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\fragment_sign_up.xml:183: Warning: Hardcoded string "Log in", should use @string resource [HardcodedText]
+        android:text="Log in"
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\request.xml:27: Warning: Hardcoded string "Requested Object", should use @string resource [HardcodedText]
+            android:text="Requested Object"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\request.xml:37: Warning: Hardcoded string "A small-sized bicycle for learning how to ride", should use @string resource [HardcodedText]
+            android:text="A small-sized bicycle for learning how to ride"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\request.xml:61: Warning: Hardcoded string "Maria Volkova", should use @string resource [HardcodedText]
+                android:text="Maria Volkova"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Yerdaulet\Androidprojects\K_aid-master\app\src\main\res\layout\request.xml:73: Warning: Hardcoded string "40.000 ₸", should use @string resource [HardcodedText]
+        android:text="40.000 ₸"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 208 warnings
