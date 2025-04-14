@@ -20,19 +20,20 @@ class RequestsViewModel : ViewModel() {
     private fun fetchRequests() {
         db.collection("requests")
             .orderBy("createdAt", Query.Direction.DESCENDING)
-            .get()
-            .addOnSuccessListener { snapshot ->
-                val list = snapshot.documents.mapNotNull { it.toObject<Request>() }
+            .addSnapshotListener { snapshot, error ->
+                if (error != null) {
+                    _requests.value = emptyList() // or handle error
+                    return@addSnapshotListener
+                }
+
+                val list = snapshot?.documents?.mapNotNull { it.toObject(Request::class.java) } ?: emptyList()
                 _requests.value = list
-            }
-            .addOnFailureListener {
-                _requests.value = emptyList() // Optional: You can handle errors differently
             }
     }
 
+
     fun addRequest(request: Request) {
         val requestMap = hashMapOf(
-            "id" to request.id,
             "requestedObject" to request.title,
             "description" to request.description,
             "child" to request.childName,

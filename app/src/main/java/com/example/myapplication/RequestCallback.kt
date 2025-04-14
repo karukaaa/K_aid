@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.DiffUtil.ItemCallback
 
 class RequestCallback : ItemCallback<Request>() {
     override fun areItemsTheSame(oldItem: Request, newItem: Request): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem.description == newItem.description
     }
 
     override fun areContentsTheSame(oldItem: Request, newItem: Request): Boolean {

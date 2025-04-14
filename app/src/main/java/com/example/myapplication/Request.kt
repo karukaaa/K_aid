@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 data class Request(
-    val id: Int = 0,
     val title: String = "",
     val description: String = "",
     val childName: String = "",
