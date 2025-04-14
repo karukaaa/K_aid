@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.myapplication.app-debug-43:/drawable_baseline_home_24.xml.flat",
+        "source": "com.example.myapplication.app-main-45:/drawable/baseline_home_24.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\drawable_octagon_check_icon.png.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\drawable\\octagon_check_icon.png"
     },
@@ -132,10 +136,6 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.myapplication.app-debug-43:/layout_request.xml.flat",
-        "source": "com.example.myapplication.app-main-45:/layout/request.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\layout_fragment_sign_up.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_sign_up.xml"
     },
@@ -202,6 +202,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\layout_fragment_request_creation.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_request_creation.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-43:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.myapplication.app-main-45:/menu/bottom_nav_menu.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\drawable_baseline_arrow_back_ios_24.xml.flat",

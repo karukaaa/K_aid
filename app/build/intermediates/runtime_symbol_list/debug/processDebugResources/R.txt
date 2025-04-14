@@ -3044,6 +3044,7 @@ int drawable avd_hide_password 0x7f070078
 int drawable avd_show_password 0x7f070079
 int drawable baseline_account_circle_24 0x7f07007a
 int drawable baseline_arrow_back_ios_24 0x7f07007b
+int drawable baseline_home_24 0x7f07011d
 int drawable baseline_menu_24 0x7f07007c
 int drawable baseline_upload_file_24 0x7f07007d
 int drawable btn_checkbox_checked_mtrl 0x7f07007e
@@ -3085,7 +3086,6 @@ int drawable design_snackbar_background 0x7f0700a1
 int drawable gift_icon 0x7f0700a2
 int drawable googleg_disabled_color_18 0x7f0700a3
 int drawable googleg_standard_color_18 0x7f0700a4
-int drawable home_icon 0x7f0700a5
 int drawable ic_arrow_back_black_24 0x7f0700a6
 int drawable ic_back 0x7f0700a7
 int drawable ic_call_answer 0x7f0700a8
