@@ -3338,6 +3338,7 @@ id chains
 id checkbox
 id checked
 id child
+id childName
 id child_info
 id child_profile_picture
 id chronometer
@@ -3457,6 +3458,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imagePreview
 id imageView
 id imageView2
 id imageView3
@@ -3620,10 +3622,7 @@ id ratio
 id rectangles
 id recycler_view
 id report_drawn
-id request_child
 id request_description
-id request_price
-id requested_object
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3651,6 +3650,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectImageButton
 id select_dialog_listview
 id selected
 id selection_type

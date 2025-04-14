@@ -47,6 +47,7 @@ id btnGoogleSignIn
 id btn_create_request
 id btn_logout
 id child
+id childName
 id child_info
 id child_profile_picture
 id confirm_password
@@ -55,6 +56,7 @@ id email
 id first_name
 id forgot_your_password
 id fragment_container
+id imagePreview
 id imageView
 id imageView2
 id imageView3
@@ -78,10 +80,8 @@ id profile_text
 id publish_button
 id questions_text
 id recycler_view
-id request_child
 id request_description
-id request_price
-id requested_object
+id selectImageButton
 id settings_text
 id signup
 id title

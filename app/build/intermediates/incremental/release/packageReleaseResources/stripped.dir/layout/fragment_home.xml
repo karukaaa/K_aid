@@ -84,6 +84,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выйти"
+            android:layout_marginTop="20dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

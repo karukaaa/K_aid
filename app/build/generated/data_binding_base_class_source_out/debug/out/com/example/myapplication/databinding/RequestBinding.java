@@ -23,31 +23,30 @@ public final class RequestBinding implements ViewBinding {
   public final LinearLayout childInfo;
 
   @NonNull
+  public final TextView childName;
+
+  @NonNull
   public final View childProfilePicture;
 
   @NonNull
-  public final TextView requestChild;
+  public final TextView price;
 
   @NonNull
   public final TextView requestDescription;
 
   @NonNull
-  public final TextView requestPrice;
-
-  @NonNull
-  public final TextView requestedObject;
+  public final TextView title;
 
   private RequestBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout childInfo,
-      @NonNull View childProfilePicture, @NonNull TextView requestChild,
-      @NonNull TextView requestDescription, @NonNull TextView requestPrice,
-      @NonNull TextView requestedObject) {
+      @NonNull TextView childName, @NonNull View childProfilePicture, @NonNull TextView price,
+      @NonNull TextView requestDescription, @NonNull TextView title) {
     this.rootView = rootView;
     this.childInfo = childInfo;
+    this.childName = childName;
     this.childProfilePicture = childProfilePicture;
-    this.requestChild = requestChild;
+    this.price = price;
     this.requestDescription = requestDescription;
-    this.requestPrice = requestPrice;
-    this.requestedObject = requestedObject;
+    this.title = title;
   }
 
   @Override
@@ -83,15 +82,21 @@ public final class RequestBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.childName;
+      TextView childName = ViewBindings.findChildViewById(rootView, id);
+      if (childName == null) {
+        break missingId;
+      }
+
       id = R.id.child_profile_picture;
       View childProfilePicture = ViewBindings.findChildViewById(rootView, id);
       if (childProfilePicture == null) {
         break missingId;
       }
 
-      id = R.id.request_child;
-      TextView requestChild = ViewBindings.findChildViewById(rootView, id);
-      if (requestChild == null) {
+      id = R.id.price;
+      TextView price = ViewBindings.findChildViewById(rootView, id);
+      if (price == null) {
         break missingId;
       }
 
@@ -101,20 +106,14 @@ public final class RequestBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.request_price;
-      TextView requestPrice = ViewBindings.findChildViewById(rootView, id);
-      if (requestPrice == null) {
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
         break missingId;
       }
 
-      id = R.id.requested_object;
-      TextView requestedObject = ViewBindings.findChildViewById(rootView, id);
-      if (requestedObject == null) {
-        break missingId;
-      }
-
-      return new RequestBinding((LinearLayout) rootView, childInfo, childProfilePicture,
-          requestChild, requestDescription, requestPrice, requestedObject);
+      return new RequestBinding((LinearLayout) rootView, childInfo, childName, childProfilePicture,
+          price, requestDescription, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

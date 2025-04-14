@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -116,6 +117,7 @@
             android:background="@drawable/rounded_background"
             android:padding="12dp">
 
+            <!-- Название товара слева -->
             <TextView
                 android:id="@+id/bicycle_text"
                 android:layout_width="wrap_content"
@@ -167,13 +169,12 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/photo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/circle"
-                android:clipToOutline="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/profile_picture" />
+                android:src="@drawable/profile_picture"
+                android:background="@drawable/circle"
+                android:clipToOutline="true"/>
 
 
             <LinearLayout
@@ -183,7 +184,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Maria Volkova"
@@ -216,37 +216,95 @@
             android:layout_marginHorizontal="16dp"
             android:orientation="vertical">
 
-            <!--        Описание тексты -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:orientation="vertical">
+                android:layout_marginTop="16dp"
+                android:text="✨ About Maria Volkova"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="✨ About Maria Volkova"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient."
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Maria is a kind and determined girl who dreams of a brighter future. Despite facing challenges, she remains strong and resilient.
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="📚 Love for Books and Creativity"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-\n \n📚 She loves books and creativity. Maria dreams of riding through the park 🌳, feeling the wind on her face and experiencing a sense of freedom.
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria loves reading books📖, especially stories about adventure and hope. Inspired by them, she enjoys drawing 🎨 and expressing her emotions through art."
+                android:textSize="16sp" />
 
-\n \nShe works hard at school because she aspires to become a teacher 🍎 and help other children like herself.
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="🚲 Dreaming of a Bicycle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-\n \n Maria believes in friendship 🤝 and kindness, always supporting those around her.
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria dreams of riding through the park 🌳, feeling the wind on her face and experiencing a sense of freedom."
+                android:textSize="16sp" />
 
-\n \n Although Maria has no family, she believes she can pave her own path and make the world a better place through education and compassion."
-                    android:textSize="16sp" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="🎓 Dedication to Learning"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="She works hard at school because she aspires to become a teacher 🍎 and help other children like herself."
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="💖 Kindness and Values"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Maria believes in friendship 🤝 and kindness, always supporting those around her."
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="🌍 Belief in a Better Future"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Although Maria has no family, she believes she can pave her own path and make the world a better place through education and compassion."
+                android:textSize="16sp" />
 
 
         </LinearLayout>
@@ -296,9 +354,9 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="44dp"
+            android:layout_marginHorizontal="16dp"
             android:padding="12dp"
             android:text="Donate"
             android:textColor="@android:color/white"

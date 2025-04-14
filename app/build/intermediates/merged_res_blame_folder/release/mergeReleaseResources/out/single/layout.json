@@ -1,38 +1,38 @@
 [
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_child_profile.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_child_profile.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/request.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/request.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/activity_main.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/activity_main.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_sign_up.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_sign_up.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_log_in.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_log_in.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_request_creation.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_request_creation.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_administrator_profile.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_administrator_profile.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_requests_list.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_requests_list.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/request.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/request.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/activity_main.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_sign_up.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_sign_up.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_administrator_profile.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_administrator_profile.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_requests_list.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_requests_list.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_home.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_home.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_home.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_log_in.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_log_in.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeReleaseResources-32:/layout/fragment_request_creation.xml",
-        "source": "com.example.myapplication.app-main-34:/layout/fragment_request_creation.xml"
+        "merged": "com.example.myapplication.app-mergeReleaseResources-47:/layout/fragment_child_profile.xml",
+        "source": "com.example.myapplication.app-main-49:/layout/fragment_child_profile.xml"
     }
 ]

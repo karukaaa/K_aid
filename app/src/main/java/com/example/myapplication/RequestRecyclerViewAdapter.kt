@@ -15,10 +15,10 @@ class RequestRecyclerViewAdapter(
 
     inner class ViewHolder(private val binding : RequestBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(request: Request) {
-            binding.requestedObject.text = request.requestedObject
+            binding.title.text = request.title
             binding.requestDescription.text = request.description
-            binding.requestChild.text = request.child
-            binding.requestPrice.text = "$" + request.price.toString()
+            binding.childName.text = request.childName
+            binding.price.text = "$" + request.price.toString()
 
             binding.childProfilePicture.setOnClickListener {
                 onItemClick() // Call function when clicked

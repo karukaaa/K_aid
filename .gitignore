@@ -13,3 +13,19 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Android Studio
+.idea/
+.gradle/
+local.properties
+
+# Build output
+/build
+app/build
+
+# Auto-generated binding and outputs
+**/build/
+*.iml
+
+# Google Services (if not public)
+google-services.json

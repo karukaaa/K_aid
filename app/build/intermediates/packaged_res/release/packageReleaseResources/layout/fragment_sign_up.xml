@@ -162,7 +162,9 @@
         android:layout_height="44dp"
         android:layout_margin="8dp"
         android:backgroundTint="@color/blue"
+        android:enabled="true"
         android:text="Next" />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -178,7 +180,7 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="@color/white"
         android:text="Log in"
         android:textAlignment="center"
