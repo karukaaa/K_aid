@@ -8,10 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.Request
+import com.example.myapplication.RequestAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ChildProfileFragment : Fragment() {
+
+    private lateinit var requestAdapter: RequestAdapter
 
     companion object {
         private const val ARG_CHILD_ID = "childID"
@@ -28,21 +34,18 @@ class ChildProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return inflater.inflate(R.layout.fragment_child_profile, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val childID = arguments?.getString(ARG_CHILD_ID)
-        if (childID == null) {
-            Toast.makeText(requireContext(), "Child ID is missing", Toast.LENGTH_SHORT).show()
-            parentFragmentManager.popBackStack()
-            return
-        }
+        val recyclerView = view.findViewById<RecyclerView>(R.id.child_requests_recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        requestAdapter = RequestAdapter()
+        recyclerView.adapter = requestAdapter
 
-        // Find views
         val nameText = view.findViewById<TextView>(R.id.child_name)
         val ageText = view.findViewById<TextView>(R.id.child_age)
         val aboutText = view.findViewById<TextView>(R.id.about_text)
@@ -53,8 +56,17 @@ class ChildProfileFragment : Fragment() {
             parentFragmentManager.popBackStack()
         }
 
-        FirebaseFirestore.getInstance()
-            .collection("children")
+        val childID = arguments?.getString(ARG_CHILD_ID)
+        if (childID == null) {
+            Toast.makeText(requireContext(), "Child ID is missing", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.popBackStack()
+            return
+        }
+
+        val firestore = FirebaseFirestore.getInstance()
+
+        // Load child info first
+        firestore.collection("children")
             .document(childID)
             .get()
             .addOnSuccessListener { doc ->
@@ -66,6 +78,18 @@ class ChildProfileFragment : Fragment() {
                 ageText.text = if (age > 0) "Is $age years old" else "Age unknown"
                 bioText.text = bio
                 aboutText.text = "✨ About $name"
+
+                // 🔍 Load requests for this child
+                firestore.collection("requests")
+                    .whereEqualTo("childName", name)
+                    .get()
+                    .addOnSuccessListener { result ->
+                        val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }
+                        requestAdapter.submitList(requests)
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(requireContext(), "Failed to load requests", Toast.LENGTH_SHORT).show()
+                    }
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT).show()

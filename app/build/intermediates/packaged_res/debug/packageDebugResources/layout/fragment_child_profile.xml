@@ -12,76 +12,79 @@
         android:orientation="vertical">
 
         <!-- Top Bar -->
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:background="@color/light_blue"
-            android:padding="5dp">
+            android:paddingTop="8dp">
 
-            <!-- Left buttons -->
-            <LinearLayout
+            <!-- Settings Text -->
+            <TextView
+                android:id="@+id/txtSettings"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="⚙️ Settings"
+                android:textColor="@color/blue"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/settings_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:text=""
-                    tools:text="Settings"
-                    android:textColor="@color/black"
-                    android:textSize="10sp" />
+            <!-- Language Text -->
+            <TextView
+                android:id="@+id/txtLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🌍 EN"
+                android:textColor="@color/blue"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imgLogo"
+                app:layout_constraintStart_toEndOf="@id/txtSettings"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/questions_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    tools:text="Questions"
-                    android:textColor="@color/black"
-                    android:textSize="10sp" />
-            </LinearLayout>
-
+            <!-- Logo: Centered Properly -->
             <ImageView
-                android:id="@+id/logo"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/logo" />
+                android:id="@+id/imgLogo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/k_aid_logo_test"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Right buttons -->
-            <LinearLayout
+            <!-- Questions Text -->
+            <TextView
+                android:id="@+id/txtQuestions"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="❓ Questions"
+                android:textColor="@color/blue"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/txtProfile"
+                app:layout_constraintStart_toEndOf="@+id/imgLogo"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/language_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:text=""
-                    tools:text="Language EN"
-                    android:textColor="@color/black"
-                    android:textSize="10sp" />
-
-                <TextView
-                    android:id="@+id/profile_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    tools:text="Profile"
-                    android:textColor="@color/black"
-                    android:textSize="10sp" />
-            </LinearLayout>
-        </RelativeLayout>
+            <!-- Profile Text -->
+            <TextView
+                android:id="@+id/txtProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="👤 Profile"
+                android:textColor="@color/blue"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Title bar -->
         <RelativeLayout
@@ -103,10 +106,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginEnd="4dp"
-                android:text=""
-                tools:text="Child's Profile"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:text="Child's Profile" />
         </RelativeLayout>
 
         <!-- Child card -->
@@ -138,18 +140,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    tools:text="Maria Volkova"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Maria Volkova" />
 
                 <TextView
                     android:id="@+id/child_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    tools:text="10 years old"
                     android:textColor="@color/gray"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    tools:text="10 years old" />
             </LinearLayout>
 
             <TextView
@@ -158,9 +160,9 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
                 android:text=""
-                tools:text="⭐ 5"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="⭐ 5" />
         </LinearLayout>
 
         <!-- Bio section -->
@@ -176,9 +178,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text=""
-                tools:text="✨ About"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="✨ About" />
 
             <TextView
                 android:id="@+id/bio_text"
@@ -186,8 +188,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text=""
-                tools:text="This child loves drawing, biking, and spending time with friends."
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="This child loves drawing, biking, and spending time with friends." />
         </LinearLayout>
 
         <!-- Gallery -->
@@ -229,17 +231,14 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <!-- Donate Button -->
-        <com.google.android.material.button.MaterialButton
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/child_requests_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="44dp"
-            android:padding="12dp"
-            android:text="Donate"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:backgroundTint="@color/light_blue" />
+            android:layout_marginHorizontal="16dp"
+            android:nestedScrollingEnabled="false" />
+
+
     </LinearLayout>
 </ScrollView>

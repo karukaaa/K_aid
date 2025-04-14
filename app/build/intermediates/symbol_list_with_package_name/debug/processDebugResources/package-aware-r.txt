@@ -3343,6 +3343,7 @@ id child_age
 id child_info
 id child_name
 id child_profile_picture
+id child_requests_recyclerview
 id child_spinner
 id chronometer
 id circle_center
@@ -3477,7 +3478,6 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
-id language_text
 id last_name
 id layout
 id left
@@ -3491,7 +3491,6 @@ id listMode
 id list_item
 id login
 id login_button
-id logo
 id logout_button
 id m3_side_sheet
 id marquee
@@ -3614,11 +3613,9 @@ id postLayout
 id pressed
 id price
 id profileImage
-id profile_text
 id progress_circular
 id progress_horizontal
 id publish_button
-id questions_text
 id radio
 id ratio
 id rectangles
@@ -3656,9 +3653,9 @@ id selectImageButton
 id select_dialog_listview
 id selected
 id selection_type
-id settings_text
 id sharedValueSet
 id sharedValueUnset
+id shop_url
 id shortcut
 id showCustom
 id showHome
@@ -3921,6 +3918,7 @@ layout fragment_requests_list
 layout fragment_sign_up
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_request
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

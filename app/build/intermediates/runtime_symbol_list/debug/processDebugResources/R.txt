@@ -3342,6 +3342,7 @@ int id child_age 0x7f09023c
 int id child_info 0x7f090082
 int id child_name 0x7f09023d
 int id child_profile_picture 0x7f090083
+int id child_requests_recyclerview 0x7f09023f
 int id child_spinner 0x7f09023a
 int id chronometer 0x7f090084
 int id circle_center 0x7f090085
@@ -3476,7 +3477,6 @@ int id item_touch_helper_previous_elevation 0x7f090105
 int id jumpToEnd 0x7f090106
 int id jumpToStart 0x7f090107
 int id labeled 0x7f090108
-int id language_text 0x7f090109
 int id last_name 0x7f09010a
 int id layout 0x7f09010b
 int id left 0x7f09010c
@@ -3490,7 +3490,6 @@ int id listMode 0x7f090113
 int id list_item 0x7f090114
 int id login 0x7f090115
 int id login_button 0x7f090116
-int id logo 0x7f090117
 int id logout_button 0x7f090118
 int id m3_side_sheet 0x7f090119
 int id marquee 0x7f09011a
@@ -3613,11 +3612,9 @@ int id postLayout 0x7f09018e
 int id pressed 0x7f09018f
 int id price 0x7f090190
 int id profileImage 0x7f090192
-int id profile_text 0x7f090193
 int id progress_circular 0x7f090194
 int id progress_horizontal 0x7f090195
 int id publish_button 0x7f090196
-int id questions_text 0x7f090197
 int id radio 0x7f090198
 int id ratio 0x7f090199
 int id rectangles 0x7f09019a
@@ -3655,9 +3652,9 @@ int id selectImageButton 0x7f0901bc
 int id select_dialog_listview 0x7f0901bd
 int id selected 0x7f0901be
 int id selection_type 0x7f0901bf
-int id settings_text 0x7f0901c0
 int id sharedValueSet 0x7f0901c1
 int id sharedValueUnset 0x7f0901c2
+int id shop_url 0x7f090240
 int id shortcut 0x7f0901c3
 int id showCustom 0x7f0901c4
 int id showHome 0x7f0901c5
@@ -3920,6 +3917,7 @@ int layout fragment_requests_list 0x7f0c0034
 int layout fragment_sign_up 0x7f0c0035
 int layout ime_base_split_test_activity 0x7f0c0036
 int layout ime_secondary_split_test_activity 0x7f0c0037
+int layout item_request 0x7f0c0077
 int layout m3_alert_dialog 0x7f0c0038
 int layout m3_alert_dialog_actions 0x7f0c0039
 int layout m3_alert_dialog_title 0x7f0c003a

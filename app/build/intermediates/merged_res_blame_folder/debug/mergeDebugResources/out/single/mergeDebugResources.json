@@ -24,6 +24,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\layout_item_request.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\item_request.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\drawable_baseline_menu_24.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\drawable\\baseline_menu_24.xml"
     },

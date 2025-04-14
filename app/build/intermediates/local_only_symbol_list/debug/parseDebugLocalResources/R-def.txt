@@ -52,6 +52,7 @@ id child_age
 id child_info
 id child_name
 id child_profile_picture
+id child_requests_recyclerview
 id child_spinner
 id confirm_password
 id description
@@ -64,11 +65,9 @@ id imageView
 id imageView2
 id imageView3
 id imgLogo
-id language_text
 id last_name
 id login
 id login_button
-id logo
 id logout_button
 id nav_administrator_profile
 id nav_home
@@ -78,13 +77,11 @@ id next_button
 id password
 id price
 id profileImage
-id profile_text
 id publish_button
-id questions_text
 id recycler_view
 id request_description
 id selectImageButton
-id settings_text
+id shop_url
 id signup
 id title
 id txtLanguage
@@ -100,6 +97,7 @@ layout fragment_log_in
 layout fragment_request_creation
 layout fragment_requests_list
 layout fragment_sign_up
+layout item_request
 layout request
 menu bottom_nav_menu
 mipmap ic_launcher

@@ -24,6 +24,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_log_in.xml"
     },
     {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\item_request.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\item_request.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\request.xml",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\request.xml"
     },
