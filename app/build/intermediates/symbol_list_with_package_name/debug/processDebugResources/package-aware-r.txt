@@ -3222,6 +3222,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id about_text
 id above
 id accelerate
 id accessibility_action_clickable_span
@@ -3306,7 +3307,7 @@ id beginOnFirstDraw
 id beginning
 id below
 id bestChoice
-id bicycle_text
+id bio_text
 id blocking
 id bottom
 id bottom_navigation
@@ -3338,7 +3339,9 @@ id chains
 id checkbox
 id checked
 id childName
+id child_age
 id child_info
+id child_name
 id child_profile_picture
 id child_spinner
 id chronometer
@@ -3610,7 +3613,6 @@ id position
 id postLayout
 id pressed
 id price
-id price_text
 id profileImage
 id profile_text
 id progress_circular

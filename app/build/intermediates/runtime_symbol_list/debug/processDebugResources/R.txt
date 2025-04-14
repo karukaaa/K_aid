@@ -3221,6 +3221,7 @@ int id SHOW_PROGRESS 0x7f09000a
 int id SYM 0x7f09000b
 int id TOP_END 0x7f09000c
 int id TOP_START 0x7f09000d
+int id about_text 0x7f09023b
 int id above 0x7f09000e
 int id accelerate 0x7f09000f
 int id accessibility_action_clickable_span 0x7f090010
@@ -3305,7 +3306,7 @@ int id beginOnFirstDraw 0x7f09005e
 int id beginning 0x7f09005f
 int id below 0x7f090060
 int id bestChoice 0x7f090061
-int id bicycle_text 0x7f090062
+int id bio_text 0x7f09023e
 int id blocking 0x7f090063
 int id bottom 0x7f090064
 int id bottom_navigation 0x7f090065
@@ -3337,7 +3338,9 @@ int id chains 0x7f09007e
 int id checkbox 0x7f09007f
 int id checked 0x7f090080
 int id childName 0x7f090239
+int id child_age 0x7f09023c
 int id child_info 0x7f090082
+int id child_name 0x7f09023d
 int id child_profile_picture 0x7f090083
 int id child_spinner 0x7f09023a
 int id chronometer 0x7f090084
@@ -3609,7 +3612,6 @@ int id position 0x7f09018d
 int id postLayout 0x7f09018e
 int id pressed 0x7f09018f
 int id price 0x7f090190
-int id price_text 0x7f090191
 int id profileImage 0x7f090192
 int id profile_text 0x7f090193
 int id progress_circular 0x7f090194

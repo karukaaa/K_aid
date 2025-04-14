@@ -32,9 +32,10 @@ class RequestsListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_requests_list, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        adapter = RequestRecyclerViewAdapter {
-            openRequestDetailFragment()
+        adapter = RequestRecyclerViewAdapter { request ->
+            openChildProfileFragment(request.childID)
         }
+
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
@@ -51,12 +52,12 @@ class RequestsListFragment : Fragment() {
         fun newInstance() {}
     }
 
-    private fun openRequestDetailFragment() {
-        val fragment = ChildProfileFragment.newInstance()
-
+    private fun openChildProfileFragment(childID: String?) {
+        val fragment = ChildProfileFragment.newInstance(childID)
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
     }
+
 }

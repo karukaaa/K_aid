@@ -40,14 +40,17 @@ drawable user_icon
 drawable very_rounded_background
 font poppins_bold
 font poppins_extra_bold
+id about_text
 id back_button
-id bicycle_text
+id bio_text
 id bottom_navigation
 id btnGoogleSignIn
 id btn_create_request
 id btn_logout
 id childName
+id child_age
 id child_info
+id child_name
 id child_profile_picture
 id child_spinner
 id confirm_password
@@ -74,7 +77,6 @@ id nav_requests
 id next_button
 id password
 id price
-id price_text
 id profileImage
 id profile_text
 id publish_button

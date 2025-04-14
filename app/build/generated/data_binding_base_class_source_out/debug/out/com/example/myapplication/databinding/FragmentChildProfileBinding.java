@@ -21,19 +21,25 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final TextView aboutText;
+
+  @NonNull
   public final ImageView backButton;
 
   @NonNull
-  public final TextView bicycleText;
+  public final TextView bioText;
+
+  @NonNull
+  public final TextView childAge;
+
+  @NonNull
+  public final TextView childName;
 
   @NonNull
   public final TextView languageText;
 
   @NonNull
   public final ImageView logo;
-
-  @NonNull
-  public final TextView priceText;
 
   @NonNull
   public final TextView profileText;
@@ -44,16 +50,19 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   @NonNull
   public final TextView settingsText;
 
-  private FragmentChildProfileBinding(@NonNull ScrollView rootView, @NonNull ImageView backButton,
-      @NonNull TextView bicycleText, @NonNull TextView languageText, @NonNull ImageView logo,
-      @NonNull TextView priceText, @NonNull TextView profileText, @NonNull TextView questionsText,
+  private FragmentChildProfileBinding(@NonNull ScrollView rootView, @NonNull TextView aboutText,
+      @NonNull ImageView backButton, @NonNull TextView bioText, @NonNull TextView childAge,
+      @NonNull TextView childName, @NonNull TextView languageText, @NonNull ImageView logo,
+      @NonNull TextView profileText, @NonNull TextView questionsText,
       @NonNull TextView settingsText) {
     this.rootView = rootView;
+    this.aboutText = aboutText;
     this.backButton = backButton;
-    this.bicycleText = bicycleText;
+    this.bioText = bioText;
+    this.childAge = childAge;
+    this.childName = childName;
     this.languageText = languageText;
     this.logo = logo;
-    this.priceText = priceText;
     this.profileText = profileText;
     this.questionsText = questionsText;
     this.settingsText = settingsText;
@@ -86,15 +95,33 @@ public final class FragmentChildProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.about_text;
+      TextView aboutText = ViewBindings.findChildViewById(rootView, id);
+      if (aboutText == null) {
+        break missingId;
+      }
+
       id = R.id.back_button;
       ImageView backButton = ViewBindings.findChildViewById(rootView, id);
       if (backButton == null) {
         break missingId;
       }
 
-      id = R.id.bicycle_text;
-      TextView bicycleText = ViewBindings.findChildViewById(rootView, id);
-      if (bicycleText == null) {
+      id = R.id.bio_text;
+      TextView bioText = ViewBindings.findChildViewById(rootView, id);
+      if (bioText == null) {
+        break missingId;
+      }
+
+      id = R.id.child_age;
+      TextView childAge = ViewBindings.findChildViewById(rootView, id);
+      if (childAge == null) {
+        break missingId;
+      }
+
+      id = R.id.child_name;
+      TextView childName = ViewBindings.findChildViewById(rootView, id);
+      if (childName == null) {
         break missingId;
       }
 
@@ -107,12 +134,6 @@ public final class FragmentChildProfileBinding implements ViewBinding {
       id = R.id.logo;
       ImageView logo = ViewBindings.findChildViewById(rootView, id);
       if (logo == null) {
-        break missingId;
-      }
-
-      id = R.id.price_text;
-      TextView priceText = ViewBindings.findChildViewById(rootView, id);
-      if (priceText == null) {
         break missingId;
       }
 
@@ -134,8 +155,8 @@ public final class FragmentChildProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentChildProfileBinding((ScrollView) rootView, backButton, bicycleText,
-          languageText, logo, priceText, profileText, questionsText, settingsText);
+      return new FragmentChildProfileBinding((ScrollView) rootView, aboutText, backButton, bioText,
+          childAge, childName, languageText, logo, profileText, questionsText, settingsText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
