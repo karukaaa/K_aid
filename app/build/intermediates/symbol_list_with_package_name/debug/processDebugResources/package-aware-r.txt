@@ -3337,10 +3337,10 @@ id chain2
 id chains
 id checkbox
 id checked
-id child
 id childName
 id child_info
 id child_profile_picture
+id child_spinner
 id chronometer
 id circle_center
 id clear_text

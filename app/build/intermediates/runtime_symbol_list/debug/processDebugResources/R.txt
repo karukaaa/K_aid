@@ -3336,10 +3336,10 @@ int id chain2 0x7f09007d
 int id chains 0x7f09007e
 int id checkbox 0x7f09007f
 int id checked 0x7f090080
-int id child 0x7f090081
 int id childName 0x7f090239
 int id child_info 0x7f090082
 int id child_profile_picture 0x7f090083
+int id child_spinner 0x7f09023a
 int id chronometer 0x7f090084
 int id circle_center 0x7f090085
 int id clear_text 0x7f090086

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +27,7 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   public final ImageView backButton;
 
   @NonNull
-  public final EditText child;
+  public final Spinner childSpinner;
 
   @NonNull
   public final EditText description;
@@ -62,14 +63,14 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   public final TextView txtSettings;
 
   private FragmentRequestCreationBinding(@NonNull ScrollView rootView,
-      @NonNull ImageView backButton, @NonNull EditText child, @NonNull EditText description,
+      @NonNull ImageView backButton, @NonNull Spinner childSpinner, @NonNull EditText description,
       @NonNull ImageView imagePreview, @NonNull ImageView imgLogo, @NonNull EditText price,
       @NonNull Button publishButton, @NonNull Button selectImageButton, @NonNull EditText title,
       @NonNull TextView txtLanguage, @NonNull TextView txtProfile, @NonNull TextView txtQuestions,
       @NonNull TextView txtSettings) {
     this.rootView = rootView;
     this.backButton = backButton;
-    this.child = child;
+    this.childSpinner = childSpinner;
     this.description = description;
     this.imagePreview = imagePreview;
     this.imgLogo = imgLogo;
@@ -116,9 +117,9 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.child;
-      EditText child = ViewBindings.findChildViewById(rootView, id);
-      if (child == null) {
+      id = R.id.child_spinner;
+      Spinner childSpinner = ViewBindings.findChildViewById(rootView, id);
+      if (childSpinner == null) {
         break missingId;
       }
 
@@ -188,7 +189,7 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRequestCreationBinding((ScrollView) rootView, backButton, child,
+      return new FragmentRequestCreationBinding((ScrollView) rootView, backButton, childSpinner,
           description, imagePreview, imgLogo, price, publishButton, selectImageButton, title,
           txtLanguage, txtProfile, txtQuestions, txtSettings);
     }

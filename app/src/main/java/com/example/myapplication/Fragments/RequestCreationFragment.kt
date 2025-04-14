@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -19,6 +20,9 @@ class RequestCreationFragment : Fragment() {
 
     private var _binding: FragmentRequestCreationBinding? = null
     private val binding get() = _binding!!
+
+    private val childNames = mutableListOf<String>()
+    private val childIdMap = mutableMapOf<String, String>()
 
     private var imageUri: Uri? = null
     private val storage = FirebaseStorage.getInstance()
@@ -48,13 +52,16 @@ class RequestCreationFragment : Fragment() {
             pickImage.launch("image/*")
         }
 
+        fetchChildren()
+
         binding.publishButton.setOnClickListener {
             val title = binding.title.text.toString().trim()
             val description = binding.description.text.toString().trim()
-            val child = binding.child.text.toString().trim()
+            val childName = binding.childSpinner.selectedItem?.toString()?.trim()
+            val childID = childIdMap[childName]
             val priceText = binding.price.text.toString().trim()
 
-            if (title.isEmpty() || description.isEmpty() || child.isEmpty() || priceText.isEmpty()) {
+            if (title.isEmpty() || description.isEmpty() || childName.isNullOrEmpty() || priceText.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -66,14 +73,15 @@ class RequestCreationFragment : Fragment() {
             }
 
             if (imageUri != null) {
-                uploadImageAndSaveRequest(title, description, child, price, imageUri!!)
+                uploadImageAndSaveRequest(title, description, childName, childID, price, imageUri!!)
             } else {
                 val request = Request(
                     title = title,
                     description = description,
-                    childName = child,
+                    childName = childName,
+                    childID = childID ?: "",
                     price = price,
-                    photoUrl = UUID.randomUUID().toString(), // placeholder
+                    photoUrl = UUID.randomUUID().toString(),
                     createdAt = Timestamp.now()
                 )
                 saveRequestToFirestore(request)
@@ -84,7 +92,8 @@ class RequestCreationFragment : Fragment() {
     private fun uploadImageAndSaveRequest(
         title: String,
         description: String,
-        child: String,
+        childName: String,
+        childID: String?,
         price: Double,
         imageUri: Uri
     ) {
@@ -97,7 +106,8 @@ class RequestCreationFragment : Fragment() {
                     val request = Request(
                         title = title,
                         description = description,
-                        childName = child,
+                        childName = childName,
+                        childID = childID ?: "",
                         price = price,
                         photoUrl = uri.toString(),
                         createdAt = Timestamp.now()
@@ -119,6 +129,27 @@ class RequestCreationFragment : Fragment() {
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "Error saving request", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun fetchChildren() {
+        firestore.collection("children").get()
+            .addOnSuccessListener { result ->
+                childNames.clear()
+                childIdMap.clear()
+                for (document in result) {
+                    val name = document.getString("childName") ?: continue
+                    val id = document.id
+                    childNames.add(name)
+                    childIdMap[name] = id
+                }
+
+                val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, childNames)
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                binding.childSpinner.adapter = adapter
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Failed to load children", Toast.LENGTH_SHORT).show()
             }
     }
 

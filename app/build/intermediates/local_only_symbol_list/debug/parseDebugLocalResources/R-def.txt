@@ -46,10 +46,10 @@ id bottom_navigation
 id btnGoogleSignIn
 id btn_create_request
 id btn_logout
-id child
 id childName
 id child_info
 id child_profile_picture
+id child_spinner
 id confirm_password
 id description
 id email
