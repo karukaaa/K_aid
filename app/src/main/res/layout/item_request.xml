@@ -1,73 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_background"
-    android:clipToOutline="true"
-    android:layout_marginVertical="12dp"
-    android:layoutDirection="ltr"
-    android:orientation="horizontal">
-
-    <!-- Small Blue Line on the Left -->
-    <View
-        android:layout_width="8dp"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="12dp"
-        android:background="@color/blue" />
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layoutDirection="ltr"
+        android:orientation="horizontal">
+
+        <!-- Small Blue Line on the Left -->
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="12dp"
+            android:background="@color/blue" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Requested Object"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/request_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="A small-sized bicycle for learning how to ride"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/donate_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:backgroundTint="@color/light_blue"
+                android:padding="4dp"
+                android:text="Donate"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Requested Object"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Description -->
-        <TextView
-            android:id="@+id/request_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="A small-sized bicycle for learning how to ride"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/very_rounded_background"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="40.000 ₸"
+            android:textColor="@color/black"
             android:textSize="12sp" />
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/donate_button"
-            android:backgroundTint="@color/light_blue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
-            android:padding="4dp"
-            android:text="Donate"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/very_rounded_background"
-        android:gravity="center"
-        android:padding="6dp"
-        android:text="40.000 ₸"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

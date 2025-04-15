@@ -1,248 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- Top Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/very_light_blue"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:paddingTop="8dp">
 
-        <!-- Top Bar -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <!-- Settings Text -->
+        <TextView
+            android:id="@+id/txtSettings"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/light_blue"
-            android:paddingTop="8dp">
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="⚙️ Settings"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Settings Text -->
-            <TextView
-                android:id="@+id/txtSettings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="⚙️ Settings"
-                android:textColor="@color/blue"
-                android:textSize="8sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Language Text -->
-            <TextView
-                android:id="@+id/txtLanguage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="🌍 EN"
-                android:textColor="@color/blue"
-                android:textSize="8sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imgLogo"
-                app:layout_constraintStart_toEndOf="@id/txtSettings"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Logo: Centered Properly -->
-            <ImageView
-                android:id="@+id/imgLogo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/k_aid_logo_test"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Questions Text -->
-            <TextView
-                android:id="@+id/txtQuestions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp"
-                android:text="❓ Questions"
-                android:textColor="@color/blue"
-                android:textSize="8sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/txtProfile"
-                app:layout_constraintStart_toEndOf="@+id/imgLogo"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Profile Text -->
-            <TextView
-                android:id="@+id/txtProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="👤 Profile"
-                android:textColor="@color/blue"
-                android:textSize="8sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- Title bar -->
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <!-- Language Text -->
+        <TextView
+            android:id="@+id/txtLanguage"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/light_blue"
-            android:padding="5dp">
+            android:layout_marginEnd="8dp"
+            android:text="🌍 EN"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgLogo"
+            app:layout_constraintStart_toEndOf="@id/txtSettings"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/back_button"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/baseline_arrow_back_ios_24" />
+        <!-- Logo: Centered Properly -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/k_aid_logo_test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="4dp"
-                android:text="Child's Profile"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+        <!-- Questions Text -->
+        <TextView
+            android:id="@+id/txtQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="❓ Questions"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtProfile"
+            app:layout_constraintStart_toEndOf="@+id/imgLogo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Profile Text -->
+        <TextView
+            android:id="@+id/txtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="👤 Profile"
+            android:textColor="@color/blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-    </ScrollView>
-
-        <!-- Child card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_background"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/circle"
-                android:clipToOutline="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/profile_picture" />
+            <!-- Child card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/circle"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_picture" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/child_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="Maria Volkova" />
+
+                    <TextView
+                        android:id="@+id/orphanage_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        tools:text="Orphanage name" />
+
+                    <TextView
+                        android:id="@+id/child_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        tools:text="10 years old" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/gray"/>
+
+            <!-- Bio section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/child_name"
+                    android:id="@+id/about_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text=""
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
-                    tools:text="Maria Volkova" />
+                    tools:text="✨ About" />
 
                 <TextView
-                    android:id="@+id/child_age"
+                    android:id="@+id/bio_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/gray"
-                    android:textSize="14sp"
-                    tools:text="10 years old" />
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"
+                    tools:text="This child loves drawing, biking, and spending time with friends." />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Gallery -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="8dp"
-                android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                tools:text="⭐ 5" />
-        </LinearLayout>
-
-        <!-- Bio section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/about_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:text=""
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="✨ About" />
+                android:scrollbars="none">
 
-            <TextView
-                android:id="@+id/bio_text"
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image1" />
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image2" />
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image3" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/child_requests_recyclerview"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text=""
-                android:textSize="16sp"
-                tools:text="This child loves drawing, biking, and spending time with friends." />
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"/>
         </LinearLayout>
-
-        <!-- Gallery -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_background"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image1" />
-
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_background"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image2" />
-
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_background"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image3" />
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/child_requests_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:nestedScrollingEnabled="false" />
-
-    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
 

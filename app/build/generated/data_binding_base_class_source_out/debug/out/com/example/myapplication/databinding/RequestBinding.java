@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.myapplication.R;
@@ -18,7 +19,7 @@ import java.lang.String;
 
 public final class RequestBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CardView rootView;
 
   @NonNull
   public final LinearLayout childInfo;
@@ -41,7 +42,7 @@ public final class RequestBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private RequestBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout childInfo,
+  private RequestBinding(@NonNull CardView rootView, @NonNull LinearLayout childInfo,
       @NonNull TextView childName, @NonNull View childProfilePicture,
       @NonNull MaterialButton markAsDoneButton, @NonNull TextView price,
       @NonNull TextView requestDescription, @NonNull TextView title) {
@@ -57,7 +58,7 @@ public final class RequestBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -124,7 +125,7 @@ public final class RequestBinding implements ViewBinding {
         break missingId;
       }
 
-      return new RequestBinding((LinearLayout) rootView, childInfo, childName, childProfilePicture,
+      return new RequestBinding((CardView) rootView, childInfo, childName, childProfilePicture,
           markAsDoneButton, price, requestDescription, title);
     }
     String missingId = rootView.getResources().getResourceName(id);

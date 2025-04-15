@@ -57,6 +57,7 @@ class ChildProfileFragment : Fragment() {
         val ageText = view.findViewById<TextView>(R.id.child_age)
         val aboutText = view.findViewById<TextView>(R.id.about_text)
         val bioText = view.findViewById<TextView>(R.id.bio_text)
+        val orphanageNameText = view.findViewById<TextView>(R.id.orphanage_name)
         val backButton = view.findViewById<ImageView>(R.id.back_button)
 
         backButton.setOnClickListener {
@@ -80,11 +81,28 @@ class ChildProfileFragment : Fragment() {
                 val name = doc.getString("childName") ?: "Unknown"
                 val age = doc.getLong("childAge")?.toInt() ?: -1
                 val bio = doc.getString("childBio") ?: "No bio available."
+                val orphanageID = doc.getString("orphanageID")
 
                 nameText.text = name
-                ageText.text = if (age > 0) "Is $age years old" else "Age unknown"
+                ageText.text = if (age > 0) "$age years old" else "Age unknown"
                 bioText.text = bio
                 aboutText.text = "✨ About $name"
+
+                // 🏠 Fetch orphanage name
+                if (!orphanageID.isNullOrEmpty()) {
+                    firestore.collection("orphanages")
+                        .document(orphanageID)
+                        .get()
+                        .addOnSuccessListener { orphanageDoc ->
+                            val orphanageName = orphanageDoc.getString("orphanageName")
+                            orphanageNameText.text = orphanageName ?: "Unknown orphanage"
+                        }
+                        .addOnFailureListener {
+                            orphanageNameText.text = "Unknown orphanage"
+                        }
+                } else {
+                    orphanageNameText.text = "No orphanage assigned"
+                }
 
                 // 🔍 Load requests for this child
                 firestore.collection("requests")
@@ -92,22 +110,15 @@ class ChildProfileFragment : Fragment() {
                     .whereEqualTo("status", "Waiting")
                     .get()
                     .addOnSuccessListener { result ->
-                        val requests =
-                            result.documents.mapNotNull { it.toObject(Request::class.java) }
+                        val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }
                         requestAdapter.submitList(requests)
                     }
-
                     .addOnFailureListener {
-                        Toast.makeText(
-                            requireContext(),
-                            "Failed to load requests",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(requireContext(), "Failed to load requests", Toast.LENGTH_SHORT).show()
                     }
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT).show()
             }
     }
 }

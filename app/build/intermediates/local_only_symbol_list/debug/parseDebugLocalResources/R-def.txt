@@ -80,6 +80,7 @@ id nav_home
 id nav_login
 id nav_requests
 id next_button
+id orphanage_name
 id password
 id price
 id profileImage

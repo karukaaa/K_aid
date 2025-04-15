@@ -43,6 +43,9 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   public final ImageView imgLogo;
 
   @NonNull
+  public final TextView orphanageName;
+
+  @NonNull
   public final TextView txtLanguage;
 
   @NonNull
@@ -57,8 +60,8 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   private FragmentChildProfileBinding(@NonNull LinearLayout rootView, @NonNull TextView aboutText,
       @NonNull ImageView backButton, @NonNull TextView bioText, @NonNull TextView childAge,
       @NonNull TextView childName, @NonNull RecyclerView childRequestsRecyclerview,
-      @NonNull ImageView imgLogo, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
-      @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
+      @NonNull ImageView imgLogo, @NonNull TextView orphanageName, @NonNull TextView txtLanguage,
+      @NonNull TextView txtProfile, @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
     this.rootView = rootView;
     this.aboutText = aboutText;
     this.backButton = backButton;
@@ -67,6 +70,7 @@ public final class FragmentChildProfileBinding implements ViewBinding {
     this.childName = childName;
     this.childRequestsRecyclerview = childRequestsRecyclerview;
     this.imgLogo = imgLogo;
+    this.orphanageName = orphanageName;
     this.txtLanguage = txtLanguage;
     this.txtProfile = txtProfile;
     this.txtQuestions = txtQuestions;
@@ -142,6 +146,12 @@ public final class FragmentChildProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.orphanage_name;
+      TextView orphanageName = ViewBindings.findChildViewById(rootView, id);
+      if (orphanageName == null) {
+        break missingId;
+      }
+
       id = R.id.txtLanguage;
       TextView txtLanguage = ViewBindings.findChildViewById(rootView, id);
       if (txtLanguage == null) {
@@ -167,8 +177,8 @@ public final class FragmentChildProfileBinding implements ViewBinding {
       }
 
       return new FragmentChildProfileBinding((LinearLayout) rootView, aboutText, backButton,
-          bioText, childAge, childName, childRequestsRecyclerview, imgLogo, txtLanguage, txtProfile,
-          txtQuestions, txtSettings);
+          bioText, childAge, childName, childRequestsRecyclerview, imgLogo, orphanageName,
+          txtLanguage, txtProfile, txtQuestions, txtSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
