@@ -90,7 +90,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/light_gray"
+            android:background="@color/light_blue"
             android:padding="5dp">
 
             <ImageView

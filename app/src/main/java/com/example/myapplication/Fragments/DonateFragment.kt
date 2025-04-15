@@ -50,31 +50,36 @@ class DonateFragment : Fragment() {
         // Fetch orphanage address using childID
         val firestore = FirebaseFirestore.getInstance()
         if (request != null) {
-            request.childID?.let {
-                firestore.collection("children")
-                    .document(it)
+            val addressTextView = view.findViewById<TextView>(R.id.address)
+            request.childID?.let { childId ->
+                FirebaseFirestore.getInstance().collection("children")
+                    .document(childId)
                     .get()
                     .addOnSuccessListener { childSnapshot ->
                         val orphanageID = childSnapshot.getString("orphanageID")
                         if (orphanageID != null) {
-                            firestore.collection("orphanages")
+                            FirebaseFirestore.getInstance().collection("orphanages")
                                 .document(orphanageID)
                                 .get()
                                 .addOnSuccessListener { orphanageSnapshot ->
-                                    val address =
-                                        orphanageSnapshot.getString("address") ?: "Unknown address"
-
-                                    val addressTextView = view.findViewById<TextView>(R.id.address)
+                                    val address = orphanageSnapshot.getString("address") ?: "Unknown address"
                                     addressTextView.text = address
                                 }
-                                .addOnFailureListener { e ->
-                                    val addressTextView = view.findViewById<TextView>(R.id.address)
-                                    addressTextView.text = "Failed to fetch address"
+                                .addOnFailureListener {
+                                    addressTextView.text = "Failed to fetch orphanage address"
                                 }
+                        } else {
+                            addressTextView.text = "No orphanage assigned"
                         }
                     }
+                    .addOnFailureListener {
+                        addressTextView.text = "Failed to fetch child"
+                    }
+            } ?: run {
+                addressTextView.text = "No child ID provided"
             }
         }
+
 
         emailButton.setOnClickListener {
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
