@@ -103,72 +103,98 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <!-- 💳 Content -->
-    <LinearLayout
-        android:id="@+id/donationContent"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/very_light_blue"
-        android:gravity="center_horizontal"
-        android:layout_marginHorizontal="8dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+        <!-- 💳 Content -->
+        <LinearLayout
+            android:id="@+id/donationContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:backgroundTint="@color/very_light_blue"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/instruction_text"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            tools:text="Hi this is intruction" />
+            <TextView
+                android:id="@+id/instruction_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                tools:text="Hi this is intruction" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="Title" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/request_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            tools:text="Description of the request" />
 
-        <TextView
-            android:id="@+id/shop_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/blue"
-            android:textSize="12sp"
-            android:textStyle="italic"
-            tools:text="this is the url of kaspi" />
+            </ScrollView>
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/very_rounded_background"
-            android:gravity="center"
-            android:padding="6dp"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            tools:text="10000" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_background"
+                android:backgroundTint="@color/very_light_blue"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/email_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/blue"
-            android:text="Send email"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/shop_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    tools:text="this is the url of kaspi" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Title" />
+
+                <TextView
+                    android:id="@+id/request_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    tools:text="Description of the request" />
+
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:background="@drawable/very_rounded_background"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    tools:text="10000" />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/email_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/blue"
+                android:text="Send email"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

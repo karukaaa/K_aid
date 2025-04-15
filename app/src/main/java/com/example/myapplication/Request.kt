@@ -1,13 +1,15 @@
 package com.example.myapplication
 
+import java.io.Serializable
+
 data class Request(
     val title: String = "",
     val description: String = "",
-    val childName: String = "",
     val price: Double = 0.0,
-    val childID: String = "",
     val photoUrl: String = "",
-    val kaspiUrl: String = " ",
-    val status: String = "waiting",
+    val kaspiUrl: String = "",
+    val childID: String = "",
+    val childName: String = "",
+    val status: String = "",
     val createdAt: com.google.firebase.Timestamp? = null
-)
+) : Serializable

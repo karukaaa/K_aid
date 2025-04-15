@@ -44,7 +44,7 @@ class ChildProfileFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.child_requests_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         requestAdapter = RequestAdapter { request ->
-            val fragment = DonateFragment.newInstance(request.title, request.description, request.price, request.kaspiUrl)
+            val fragment = DonateFragment.newInstance(request)
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(null)
