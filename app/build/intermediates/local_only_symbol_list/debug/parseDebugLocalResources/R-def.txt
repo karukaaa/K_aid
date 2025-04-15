@@ -41,6 +41,7 @@ drawable very_rounded_background
 font poppins_bold
 font poppins_extra_bold
 id about_text
+id address
 id back_button
 id bio_text
 id bottom_navigation
@@ -57,7 +58,6 @@ id child_spinner
 id confirm_password
 id description
 id donate_button
-id donationContent
 id email
 id email_button
 id first_name
@@ -68,7 +68,6 @@ id imageView
 id imageView2
 id imageView3
 id imgLogo
-id instruction_text
 id last_name
 id login
 id login_button

@@ -3280,6 +3280,7 @@ int id action_text 0x7f090045
 int id actions 0x7f090046
 int id activity_chooser_view_content 0x7f090047
 int id add 0x7f090048
+int id address 0x7f09023b
 int id adjust_height 0x7f090049
 int id adjust_width 0x7f09004a
 int id alertTitle 0x7f09004b
@@ -3392,7 +3393,6 @@ int id disablePostScroll 0x7f0900b5
 int id disableScroll 0x7f0900b6
 int id disjoint 0x7f0900b7
 int id donate_button 0x7f0900b8
-int id donationContent 0x7f0900b9
 int id dragAnticlockwise 0x7f0900ba
 int id dragClockwise 0x7f0900bb
 int id dragDown 0x7f0900bc
@@ -3473,7 +3473,6 @@ int id immediateStop 0x7f090106
 int id included 0x7f090107
 int id indeterminate 0x7f090108
 int id info 0x7f090109
-int id instruction_text 0x7f09010a
 int id invisible 0x7f09010b
 int id inward 0x7f09010c
 int id italic 0x7f09010d
