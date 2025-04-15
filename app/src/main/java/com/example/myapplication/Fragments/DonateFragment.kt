@@ -80,11 +80,13 @@ class DonateFragment : Fragment() {
                📦 Auezova 54, Orphanage #3, Almaty, Kazakhstan
             3. Save the Kaspi check after purchase.
             4. Tap the button below and attach the check to your email.
+            5. Once the delivery arrives and child receives the gift, you'll receive photo report in email
         """.trimIndent()
 
         emailButton.setOnClickListener {
-            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:example@kaid.kz") // Replace with your email
+            val emailIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "message/rfc822" // Ensures only email apps handle this
+                putExtra(Intent.EXTRA_EMAIL, arrayOf("arukhanym.zhaidary@kbtu.kz"))
                 putExtra(Intent.EXTRA_SUBJECT, "Donation Receipt for \"$title\"")
                 putExtra(
                     Intent.EXTRA_TEXT,
@@ -92,10 +94,10 @@ class DonateFragment : Fragment() {
                 )
             }
 
-            if (emailIntent.resolveActivity(requireActivity().packageManager) != null) {
-                startActivity(emailIntent)
-            }
+            // Open chooser to select an email app
+            startActivity(Intent.createChooser(emailIntent, "Send Email"))
         }
+
 
         backButton.setOnClickListener {
             parentFragmentManager.popBackStack()
