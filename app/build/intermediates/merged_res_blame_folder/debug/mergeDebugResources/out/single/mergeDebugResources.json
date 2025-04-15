@@ -4,8 +4,8 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\drawable\\octagon_check_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-debug-43:/layout_fragment_child_profile.xml.flat",
-        "source": "com.example.myapplication.app-main-45:/layout/fragment_child_profile.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\layout_fragment_donate.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_donate.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\drawable_image1.png.flat",
@@ -218,6 +218,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\drawable_ic_google.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\drawable\\ic_google.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-43:/layout_fragment_donate.xml.flat",
+        "source": "com.example.myapplication.app-main-45:/layout/fragment_donate.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-debug-43:\\mipmap-xhdpi_ic_launcher_round.webp.flat",

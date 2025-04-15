@@ -3392,6 +3392,8 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id donate_button
+id donationContent
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3410,6 +3412,7 @@ id edit_query
 id edit_text_id
 id elastic
 id email
+id email_button
 id embed
 id end
 id endToStart
@@ -3471,6 +3474,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id instruction_text
 id invisible
 id inward
 id italic
@@ -3730,6 +3734,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id top
+id topBar
 id topPanel
 id touch_outside
 id transitionToEnd
@@ -3911,6 +3916,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_administrator_profile
 layout fragment_child_profile
+layout fragment_donate
 layout fragment_home
 layout fragment_log_in
 layout fragment_request_creation

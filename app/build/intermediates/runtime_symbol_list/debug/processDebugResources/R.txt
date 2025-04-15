@@ -3391,6 +3391,8 @@ int id disableIntraAutoTransition 0x7f0900af
 int id disablePostScroll 0x7f0900b0
 int id disableScroll 0x7f0900b1
 int id disjoint 0x7f0900b2
+int id donate_button 0x7f090241
+int id donationContent 0x7f090242
 int id dragAnticlockwise 0x7f0900b3
 int id dragClockwise 0x7f0900b4
 int id dragDown 0x7f0900b5
@@ -3409,6 +3411,7 @@ int id edit_query 0x7f0900c1
 int id edit_text_id 0x7f0900c2
 int id elastic 0x7f0900c3
 int id email 0x7f0900c4
+int id email_button 0x7f090243
 int id embed 0x7f0900c5
 int id end 0x7f0900c6
 int id endToStart 0x7f0900c7
@@ -3470,6 +3473,7 @@ int id immediateStop 0x7f0900fe
 int id included 0x7f0900ff
 int id indeterminate 0x7f090100
 int id info 0x7f090101
+int id instruction_text 0x7f090244
 int id invisible 0x7f090102
 int id inward 0x7f090103
 int id italic 0x7f090104
@@ -3729,6 +3733,7 @@ int id titleDividerNoCustom 0x7f090209
 int id title_template 0x7f09020a
 int id toggle 0x7f09020b
 int id top 0x7f09020c
+int id topBar 0x7f090245
 int id topPanel 0x7f09020d
 int id touch_outside 0x7f09020e
 int id transitionToEnd 0x7f09020f
@@ -3910,6 +3915,7 @@ int layout design_text_input_end_icon 0x7f0c002d
 int layout design_text_input_start_icon 0x7f0c002e
 int layout fragment_administrator_profile 0x7f0c002f
 int layout fragment_child_profile 0x7f0c0030
+int layout fragment_donate 0x7f0c0078
 int layout fragment_home 0x7f0c0031
 int layout fragment_log_in 0x7f0c0032
 int layout fragment_request_creation 0x7f0c0033

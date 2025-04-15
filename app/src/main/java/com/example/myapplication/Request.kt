@@ -7,6 +7,7 @@ data class Request(
     val price: Double = 0.0,
     val childID: String = "",
     val photoUrl: String = "",
+    val kaspiUrl: String = " ",
     val status: String = "waiting",
     val createdAt: com.google.firebase.Timestamp? = null
 )

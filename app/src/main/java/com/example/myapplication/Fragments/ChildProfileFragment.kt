@@ -43,7 +43,14 @@ class ChildProfileFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.child_requests_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        requestAdapter = RequestAdapter()
+        requestAdapter = RequestAdapter { request ->
+            val fragment = DonateFragment.newInstance(request.title, request.description, request.price, request.kaspiUrl)
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
         recyclerView.adapter = requestAdapter
 
         val nameText = view.findViewById<TextView>(R.id.child_name)

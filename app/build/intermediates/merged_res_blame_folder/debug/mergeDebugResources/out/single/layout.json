@@ -4,28 +4,12 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_child_profile.xml",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_child_profile.xml"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_sign_up.xml",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_requests_list.xml",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_requests_list.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-42:/layout/fragment_child_profile.xml",
-        "source": "com.example.myapplication.app-main-45:/layout/fragment_child_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_log_in.xml",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_log_in.xml"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\item_request.xml",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\item_request.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\request.xml",
@@ -34,6 +18,26 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_administrator_profile.xml",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_administrator_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_donate.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_donate.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_child_profile.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_child_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_sign_up.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\fragment_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\item_request.xml",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-main-45:\\layout\\item_request.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-mergeDebugResources-42:/layout/fragment_donate.xml",
+        "source": "com.example.myapplication.app-main-45:/layout/fragment_donate.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.7\\com.example.myapplication.app-mergeDebugResources-42:\\layout\\fragment_home.xml",

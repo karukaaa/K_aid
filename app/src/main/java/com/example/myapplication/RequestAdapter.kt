@@ -1,20 +1,26 @@
 package com.example.myapplication
 
-import androidx.recyclerview.widget.DiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemRequestBinding
+import com.google.android.material.button.MaterialButton
 
 
-class RequestAdapter : ListAdapter<Request, RequestAdapter.ViewHolder>(RequestCallback()) {
+class RequestAdapter(
+    private val onDonateClick: (Request) -> Unit
+) : ListAdapter<Request, RequestAdapter.ViewHolder>(RequestCallback()) {
 
     class ViewHolder(val binding: ItemRequestBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(request: Request) {
+        fun bind(request: Request, onDonateClick: (Request) -> Unit) {
             binding.title.text = request.title
             binding.requestDescription.text = request.description
             binding.price.text = "${request.price} ₸"
+
+            binding.root.findViewById<MaterialButton>(R.id.donate_button).setOnClickListener {
+                onDonateClick(request)
+            }
         }
     }
 
@@ -24,7 +30,7 @@ class RequestAdapter : ListAdapter<Request, RequestAdapter.ViewHolder>(RequestCa
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onDonateClick)
     }
 }
 

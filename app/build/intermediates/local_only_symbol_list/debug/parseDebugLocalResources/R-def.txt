@@ -56,7 +56,10 @@ id child_requests_recyclerview
 id child_spinner
 id confirm_password
 id description
+id donate_button
+id donationContent
 id email
+id email_button
 id first_name
 id forgot_your_password
 id fragment_container
@@ -65,6 +68,7 @@ id imageView
 id imageView2
 id imageView3
 id imgLogo
+id instruction_text
 id last_name
 id login
 id login_button
@@ -84,6 +88,7 @@ id selectImageButton
 id shop_url
 id signup
 id title
+id topBar
 id txtLanguage
 id txtProfile
 id txtQuestions
@@ -92,6 +97,7 @@ id upload_photo
 layout activity_main
 layout fragment_administrator_profile
 layout fragment_child_profile
+layout fragment_donate
 layout fragment_home
 layout fragment_log_in
 layout fragment_request_creation
