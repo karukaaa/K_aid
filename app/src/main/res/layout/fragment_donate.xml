@@ -82,8 +82,7 @@
     <!-- ⬅️ Back Bar -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/back_button"
@@ -106,7 +105,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_extra_bold"
         android:gravity="center"
         android:text="You are about to \ndonate!"
@@ -116,12 +114,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="346dp">
+        android:layout_height="wrap_content"
+        android:padding="20dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginStart="28dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/very_light_blue"
             android:orientation="vertical"
@@ -164,9 +163,9 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginEnd="28dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/very_light_blue"
             android:orientation="vertical"
@@ -198,16 +197,16 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/very_light_blue"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <TextView
                 android:layout_width="match_parent"
@@ -243,17 +242,15 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/very_light_blue"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <TextView
                 android:layout_width="match_parent"

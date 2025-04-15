@@ -3489,6 +3489,8 @@ int id light 0x7f090117
 int id line1 0x7f090118
 int id line3 0x7f090119
 int id linear 0x7f09011a
+int id linearLayout 0x7f09023c
+int id linearLayout2 0x7f09023d
 int id listMode 0x7f09011b
 int id list_item 0x7f09011c
 int id login 0x7f09011d

@@ -10,6 +10,5 @@ data class Request(
     val kaspiUrl: String = "",
     val childID: String = "",
     val childName: String = "",
-    val status: String = "",
-    val createdAt: com.google.firebase.Timestamp? = null
+    val status: String = ""
 ) : Serializable

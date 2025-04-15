@@ -69,6 +69,8 @@ id imageView2
 id imageView3
 id imgLogo
 id last_name
+id linearLayout
+id linearLayout2
 id login
 id login_button
 id logout_button

@@ -82,7 +82,6 @@ class RequestCreationFragment : Fragment() {
                     childID = childID ?: "",
                     price = price,
                     photoUrl = UUID.randomUUID().toString(),
-                    createdAt = Timestamp.now()
                 )
                 saveRequestToFirestore(request)
             }
@@ -110,7 +109,6 @@ class RequestCreationFragment : Fragment() {
                         childID = childID ?: "",
                         price = price,
                         photoUrl = uri.toString(),
-                        createdAt = Timestamp.now()
                     )
                     saveRequestToFirestore(request)
                 }
