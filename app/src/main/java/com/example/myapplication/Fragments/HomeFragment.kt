@@ -1,7 +1,5 @@
 package com.example.myapplication.Fragments
 
-import com.example.myapplication.Fragments.LogInFragment  // Если фрагмент находится в папке Fragments
-import com.example.myapplication.Fragments.SignUpFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

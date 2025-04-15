@@ -50,28 +50,30 @@ class DonateFragment : Fragment() {
         // Fetch orphanage address using childID
         val firestore = FirebaseFirestore.getInstance()
         if (request != null) {
-            firestore.collection("children")
-                .document(request.childID)
-                .get()
-                .addOnSuccessListener { childSnapshot ->
-                    val orphanageID = childSnapshot.getString("orphanageID")
-                    if (orphanageID != null) {
-                        firestore.collection("orphanages")
-                            .document(orphanageID)
-                            .get()
-                            .addOnSuccessListener { orphanageSnapshot ->
-                                val address =
-                                    orphanageSnapshot.getString("address") ?: "Unknown address"
+            request.childID?.let {
+                firestore.collection("children")
+                    .document(it)
+                    .get()
+                    .addOnSuccessListener { childSnapshot ->
+                        val orphanageID = childSnapshot.getString("orphanageID")
+                        if (orphanageID != null) {
+                            firestore.collection("orphanages")
+                                .document(orphanageID)
+                                .get()
+                                .addOnSuccessListener { orphanageSnapshot ->
+                                    val address =
+                                        orphanageSnapshot.getString("address") ?: "Unknown address"
 
-                                val addressTextView = view.findViewById<TextView>(R.id.address)
-                                addressTextView.text = address
-                            }
-                            .addOnFailureListener { e ->
-                                val addressTextView = view.findViewById<TextView>(R.id.address)
-                                addressTextView.text = "Failed to fetch address"
-                            }
+                                    val addressTextView = view.findViewById<TextView>(R.id.address)
+                                    addressTextView.text = address
+                                }
+                                .addOnFailureListener { e ->
+                                    val addressTextView = view.findViewById<TextView>(R.id.address)
+                                    addressTextView.text = "Failed to fetch address"
+                                }
+                        }
                     }
-                }
+            }
         }
 
         emailButton.setOnClickListener {

@@ -11,7 +11,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.myapplication.Request
 import com.example.myapplication.databinding.FragmentRequestCreationBinding
-import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
@@ -60,8 +59,9 @@ class RequestCreationFragment : Fragment() {
             val childName = binding.childSpinner.selectedItem?.toString()?.trim()
             val childID = childIdMap[childName]
             val priceText = binding.price.text.toString().trim()
+            val kaspiUrl = binding.shopUrl.text.toString().trim()
 
-            if (title.isEmpty() || description.isEmpty() || childName.isNullOrEmpty() || priceText.isEmpty()) {
+            if (title.isEmpty() || description.isEmpty() || childName.isNullOrEmpty() || priceText.isEmpty() || kaspiUrl.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -73,7 +73,7 @@ class RequestCreationFragment : Fragment() {
             }
 
             if (imageUri != null) {
-                uploadImageAndSaveRequest(title, description, childName, childID, price, imageUri!!)
+                uploadImageAndSaveRequest(title, description, childName, childID, price, kaspiUrl, imageUri!!)
             } else {
                 val request = Request(
                     title = title,
@@ -81,7 +81,8 @@ class RequestCreationFragment : Fragment() {
                     childName = childName,
                     childID = childID ?: "",
                     price = price,
-                    photoUrl = UUID.randomUUID().toString(),
+                    photoUrl = "",  // you can generate UUID here if needed
+                    kaspiUrl = kaspiUrl,
                 )
                 saveRequestToFirestore(request)
             }
@@ -94,6 +95,7 @@ class RequestCreationFragment : Fragment() {
         childName: String,
         childID: String?,
         price: Double,
+        kaspiUrl: String,
         imageUri: Uri
     ) {
         val fileName = "photos/${UUID.randomUUID()}.jpg"
@@ -109,6 +111,7 @@ class RequestCreationFragment : Fragment() {
                         childID = childID ?: "",
                         price = price,
                         photoUrl = uri.toString(),
+                        kaspiUrl = kaspiUrl
                     )
                     saveRequestToFirestore(request)
                 }

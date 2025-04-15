@@ -21,11 +21,12 @@ class RequestRecyclerViewAdapter(
         }
 
         fun bind(request: Request) {
-            binding.title.text = request.title
-            binding.requestDescription.text = request.description
-            binding.childName.text = request.childName
-            binding.price.text = "$" + request.price.toString()
+            binding.title.text = request.title ?: "No title"
+            binding.requestDescription.text = request.description ?: "No description"
+            binding.childName.text = request.childName ?: "No name"
+            binding.price.text = "${request.price ?: 0.0} ₸"
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

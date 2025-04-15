@@ -48,6 +48,9 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   public final Button selectImageButton;
 
   @NonNull
+  public final EditText shopUrl;
+
+  @NonNull
   public final EditText title;
 
   @NonNull
@@ -65,9 +68,9 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   private FragmentRequestCreationBinding(@NonNull ScrollView rootView,
       @NonNull ImageView backButton, @NonNull Spinner childSpinner, @NonNull EditText description,
       @NonNull ImageView imagePreview, @NonNull ImageView imgLogo, @NonNull EditText price,
-      @NonNull Button publishButton, @NonNull Button selectImageButton, @NonNull EditText title,
-      @NonNull TextView txtLanguage, @NonNull TextView txtProfile, @NonNull TextView txtQuestions,
-      @NonNull TextView txtSettings) {
+      @NonNull Button publishButton, @NonNull Button selectImageButton, @NonNull EditText shopUrl,
+      @NonNull EditText title, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
+      @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.childSpinner = childSpinner;
@@ -77,6 +80,7 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
     this.price = price;
     this.publishButton = publishButton;
     this.selectImageButton = selectImageButton;
+    this.shopUrl = shopUrl;
     this.title = title;
     this.txtLanguage = txtLanguage;
     this.txtProfile = txtProfile;
@@ -159,6 +163,12 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.shop_url;
+      EditText shopUrl = ViewBindings.findChildViewById(rootView, id);
+      if (shopUrl == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       EditText title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
@@ -190,8 +200,8 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
       }
 
       return new FragmentRequestCreationBinding((ScrollView) rootView, backButton, childSpinner,
-          description, imagePreview, imgLogo, price, publishButton, selectImageButton, title,
-          txtLanguage, txtProfile, txtQuestions, txtSettings);
+          description, imagePreview, imgLogo, price, publishButton, selectImageButton, shopUrl,
+          title, txtLanguage, txtProfile, txtQuestions, txtSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -19,7 +19,6 @@ class RequestsViewModel : ViewModel() {
 
     private fun fetchRequests() {
         db.collection("requests")
-            .orderBy("createdAt", Query.Direction.DESCENDING)
             .addSnapshotListener { snapshot, error ->
                 if (error != null) {
                     _requests.value = emptyList() // or handle error
@@ -40,7 +39,6 @@ class RequestsViewModel : ViewModel() {
             "price" to request.price,
             "status" to "ожидает",
             "photoUrl" to request.photoUrl,
-            "createdAt" to com.google.firebase.Timestamp.now()
         )
 
         db.collection("requests")
