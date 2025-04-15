@@ -84,8 +84,8 @@ class DonateFragment : Fragment() {
         """.trimIndent()
 
         emailButton.setOnClickListener {
-            val emailIntent = Intent(Intent.ACTION_SEND).apply {
-                type = "message/rfc822" // Ensures only email apps handle this
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:") // This ensures only email apps respond
                 putExtra(Intent.EXTRA_EMAIL, arrayOf("arukhanym.zhaidary@kbtu.kz"))
                 putExtra(Intent.EXTRA_SUBJECT, "Donation Receipt for \"$title\"")
                 putExtra(
@@ -94,8 +94,8 @@ class DonateFragment : Fragment() {
                 )
             }
 
-            // Open chooser to select an email app
-            startActivity(Intent.createChooser(emailIntent, "Send Email"))
+            // Start with chooser to let user pick email app only
+            startActivity(Intent.createChooser(emailIntent, "Send email via..."))
         }
 
 

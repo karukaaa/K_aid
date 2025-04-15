@@ -135,9 +135,9 @@
                     "from": {
                         "startLines": "1,3",
                         "startColumns": "4,4",
-                        "startOffsets": "17,129",
+                        "startOffsets": "16,126",
                         "endColumns": "51,69",
-                        "endOffsets": "64,194"
+                        "endOffsets": "63,191"
                     },
                     "to": {
                         "startLines": "2020,2074",
