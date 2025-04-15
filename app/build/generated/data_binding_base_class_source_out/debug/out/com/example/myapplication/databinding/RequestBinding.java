@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.myapplication.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -29,6 +30,9 @@ public final class RequestBinding implements ViewBinding {
   public final View childProfilePicture;
 
   @NonNull
+  public final MaterialButton markAsDoneButton;
+
+  @NonNull
   public final TextView price;
 
   @NonNull
@@ -38,12 +42,14 @@ public final class RequestBinding implements ViewBinding {
   public final TextView title;
 
   private RequestBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout childInfo,
-      @NonNull TextView childName, @NonNull View childProfilePicture, @NonNull TextView price,
+      @NonNull TextView childName, @NonNull View childProfilePicture,
+      @NonNull MaterialButton markAsDoneButton, @NonNull TextView price,
       @NonNull TextView requestDescription, @NonNull TextView title) {
     this.rootView = rootView;
     this.childInfo = childInfo;
     this.childName = childName;
     this.childProfilePicture = childProfilePicture;
+    this.markAsDoneButton = markAsDoneButton;
     this.price = price;
     this.requestDescription = requestDescription;
     this.title = title;
@@ -94,6 +100,12 @@ public final class RequestBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.mark_as_done_button;
+      MaterialButton markAsDoneButton = ViewBindings.findChildViewById(rootView, id);
+      if (markAsDoneButton == null) {
+        break missingId;
+      }
+
       id = R.id.price;
       TextView price = ViewBindings.findChildViewById(rootView, id);
       if (price == null) {
@@ -113,7 +125,7 @@ public final class RequestBinding implements ViewBinding {
       }
 
       return new RequestBinding((LinearLayout) rootView, childInfo, childName, childProfilePicture,
-          price, requestDescription, title);
+          markAsDoneButton, price, requestDescription, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

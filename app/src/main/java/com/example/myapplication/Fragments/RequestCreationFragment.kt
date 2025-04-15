@@ -81,8 +81,9 @@ class RequestCreationFragment : Fragment() {
                     childName = childName,
                     childID = childID ?: "",
                     price = price,
-                    photoUrl = "",  // you can generate UUID here if needed
+                    photoUrl = "",
                     kaspiUrl = kaspiUrl,
+                    status = "Waiting"
                 )
                 saveRequestToFirestore(request)
             }
@@ -111,7 +112,8 @@ class RequestCreationFragment : Fragment() {
                         childID = childID ?: "",
                         price = price,
                         photoUrl = uri.toString(),
-                        kaspiUrl = kaspiUrl
+                        kaspiUrl = kaspiUrl,
+                        status = "Waiting"
                     )
                     saveRequestToFirestore(request)
                 }

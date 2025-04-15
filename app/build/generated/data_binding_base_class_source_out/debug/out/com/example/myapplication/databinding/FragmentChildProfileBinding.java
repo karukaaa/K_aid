@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class FragmentChildProfileBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final TextView aboutText;
@@ -54,7 +54,7 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   @NonNull
   public final TextView txtSettings;
 
-  private FragmentChildProfileBinding(@NonNull ScrollView rootView, @NonNull TextView aboutText,
+  private FragmentChildProfileBinding(@NonNull LinearLayout rootView, @NonNull TextView aboutText,
       @NonNull ImageView backButton, @NonNull TextView bioText, @NonNull TextView childAge,
       @NonNull TextView childName, @NonNull RecyclerView childRequestsRecyclerview,
       @NonNull ImageView imgLogo, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
@@ -75,7 +75,7 @@ public final class FragmentChildProfileBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -166,8 +166,8 @@ public final class FragmentChildProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentChildProfileBinding((ScrollView) rootView, aboutText, backButton, bioText,
-          childAge, childName, childRequestsRecyclerview, imgLogo, txtLanguage, txtProfile,
+      return new FragmentChildProfileBinding((LinearLayout) rootView, aboutText, backButton,
+          bioText, childAge, childName, childRequestsRecyclerview, imgLogo, txtLanguage, txtProfile,
           txtQuestions, txtSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);

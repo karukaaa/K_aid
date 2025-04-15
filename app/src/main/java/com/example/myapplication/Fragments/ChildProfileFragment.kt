@@ -88,18 +88,26 @@ class ChildProfileFragment : Fragment() {
 
                 // 🔍 Load requests for this child
                 firestore.collection("requests")
-                    .whereEqualTo("childName", name)
+                    .whereEqualTo("childID", childID)
+                    .whereEqualTo("status", "Waiting")
                     .get()
                     .addOnSuccessListener { result ->
-                        val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }
+                        val requests =
+                            result.documents.mapNotNull { it.toObject(Request::class.java) }
                         requestAdapter.submitList(requests)
                     }
+
                     .addOnFailureListener {
-                        Toast.makeText(requireContext(), "Failed to load requests", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            requireContext(),
+                            "Failed to load requests",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT)
+                    .show()
             }
     }
 }

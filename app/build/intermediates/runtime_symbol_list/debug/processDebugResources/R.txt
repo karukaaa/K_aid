@@ -3497,6 +3497,7 @@ int id login 0x7f09011d
 int id login_button 0x7f09011e
 int id logout_button 0x7f09011f
 int id m3_side_sheet 0x7f090120
+int id mark_as_done_button 0x7f09023e
 int id marquee 0x7f090121
 int id masked 0x7f090122
 int id match_constraint 0x7f090123

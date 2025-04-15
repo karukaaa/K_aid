@@ -74,6 +74,7 @@ id linearLayout2
 id login
 id login_button
 id logout_button
+id mark_as_done_button
 id nav_administrator_profile
 id nav_home
 id nav_login
