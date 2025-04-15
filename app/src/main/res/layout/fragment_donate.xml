@@ -83,7 +83,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/light_gray"
         android:padding="5dp">
 
         <ImageView
@@ -102,6 +101,148 @@
             android:textSize="18sp"
             android:textStyle="bold" />
     </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_extra_bold"
+        android:gravity="center"
+        android:text="You are about to \ndonate!"
+        android:textColor="@color/blue"
+        android:textSize="28dp" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="346dp">
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="28dp"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/very_light_blue"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:background="@drawable/very_rounded_background"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins_extra_bold"
+                android:gravity="center"
+                android:text="Step 1"
+                android:textColor="@color/blue"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Tap the link"
+                android:textColor="@color/blue"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Open in Kaspi \n shop"
+                android:textColor="@color/blue"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/very_light_blue"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/very_rounded_background"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins_extra_bold"
+                android:gravity="center"
+                android:text="Step 2"
+                android:textColor="@color/blue"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Purchase the item"
+                android:textColor="@color/blue"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/very_light_blue"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:background="@drawable/very_rounded_background"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins_extra_bold"
+                android:gravity="center"
+                android:text="Step 3"
+                android:textColor="@color/blue"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Set delivery address to"
+                android:textColor="@color/blue"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Set delivery address to"
+                android:textColor="@color/blue"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ScrollView
