@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.databinding.RequestBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -25,15 +26,33 @@ class RequestRecyclerViewAdapter(
             binding.title.text = request.title
             binding.requestDescription.text = request.description
             binding.childName.text = request.childName
-            binding.price.text = "$" + request.price.toString()
+            binding.price.text = "${request.price?.toInt()} ₸"
 
-//            if (isAdmin) {                      TODO: when role based access is implemented add the check
-            binding.markAsDoneButton.visibility = View.VISIBLE
+            // Mark as Done button visibility and action
+            binding.markAsDoneButton.visibility = View.VISIBLE             //TODO this is only admin's functionality
             binding.markAsDoneButton.setOnClickListener {
                 markRequestAsDone(request)
-//                }
+            }
+
+            // Load child profile picture from Firestore
+            val db = FirebaseFirestore.getInstance()
+            val childId = request.childID
+            if (!childId.isNullOrEmpty()) {
+                db.collection("children")
+                    .document(childId)
+                    .get()
+                    .addOnSuccessListener { doc ->
+                        val photoUrl = doc.getString("photoUrl")
+                        if (!photoUrl.isNullOrEmpty()) {
+                            Glide.with(binding.childProfilePicture.context)
+                                .load(photoUrl)
+                                .placeholder(R.drawable.baseline_account_circle_24)
+                                .into(binding.childProfilePicture)
+                        }
+                    }
             }
         }
+
 
 
     }

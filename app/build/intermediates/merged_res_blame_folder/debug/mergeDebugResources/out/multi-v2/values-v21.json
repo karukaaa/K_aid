@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.myapplication.app-mergeDebugResources-41:/values-v21/values-v21.xml",
+            "outputFile": "com.example.myapplication.app-mergeDebugResources-42:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-4\\b14f3ac6b3c59c10e7a43a607695d5b9\\transformed\\jetified-credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",

@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.myapplication.PhotoAdapter
 import com.example.myapplication.R
 import com.example.myapplication.Request
 import com.example.myapplication.RequestAdapter
@@ -53,12 +55,19 @@ class ChildProfileFragment : Fragment() {
 
         recyclerView.adapter = requestAdapter
 
+        val photosRecyclerView = view.findViewById<RecyclerView>(R.id.photosRecyclerView)
+        photosRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+
         val nameText = view.findViewById<TextView>(R.id.child_name)
         val ageText = view.findViewById<TextView>(R.id.child_age)
         val aboutText = view.findViewById<TextView>(R.id.about_text)
         val bioText = view.findViewById<TextView>(R.id.bio_text)
         val orphanageNameText = view.findViewById<TextView>(R.id.orphanage_name)
         val backButton = view.findViewById<ImageView>(R.id.back_button)
+        val profileImage = view.findViewById<ImageView>(R.id.profile_image)
+
+
 
         backButton.setOnClickListener {
             parentFragmentManager.popBackStack()
@@ -82,6 +91,20 @@ class ChildProfileFragment : Fragment() {
                 val age = doc.getLong("childAge")?.toInt() ?: -1
                 val bio = doc.getString("childBio") ?: "No bio available."
                 val orphanageID = doc.getString("orphanageID")
+
+                val photos = doc.get("photos") as? List<String>
+                if (!photos.isNullOrEmpty()) {
+                    val photoAdapter = PhotoAdapter(photos)
+                    photosRecyclerView.adapter = photoAdapter
+                }
+                val profilePhotoUrl = doc.getString("photoUrl")
+                if (!profilePhotoUrl.isNullOrEmpty()) {
+                    Glide.with(this)
+                        .load(profilePhotoUrl)
+                        .placeholder(R.drawable.baseline_account_circle_24) // default placeholder
+                        .into(profileImage)
+                }
+
 
                 nameText.text = name
                 ageText.text = if (age > 0) "$age years old" else "Age unknown"

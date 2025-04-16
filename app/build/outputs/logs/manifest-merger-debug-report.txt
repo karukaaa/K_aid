@@ -9,6 +9,7 @@ MERGED from [com.google.android.material:material:1.12.0] C:\Users\admin\.gradle
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\admin\.gradle\caches\transforms-4\0dabef8d5241ca24ce3c56b086d9a379\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\admin\.gradle\caches\transforms-4\c0965bca3f73a9a316f76312208f342c\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\admin\.gradle\caches\transforms-4\a04dc3e727203f6039a1e2c575316a2c\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\admin\.gradle\caches\transforms-4\6bc7fd8f69baa414d38ad8aca3884ef3\transformed\jetified-glide-4.16.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\admin\.gradle\caches\transforms-4\167b68d524db86dc2ba3af79365b8d62\transformed\jetified-firebase-auth-ktx-23.2.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\admin\.gradle\caches\transforms-4\e3a392364652284ebd3aa83aa2535167\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:17:1-75:12
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\admin\.gradle\caches\transforms-4\6af7bf7b615e4fb3e5876d66e09a35b8\transformed\jetified-credentials-1.2.0-rc01\AndroidManifest.xml:2:1-7:12
@@ -65,6 +66,8 @@ MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] C:\U
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\admin\.gradle\caches\transforms-4\e98536b74ab1af0f0cc98e5d95f8242f\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\admin\.gradle\caches\transforms-4\c9343f817164059e2985572f718c82b4\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\admin\.gradle\caches\transforms-4\d120bef943824fc6f13b3acae270cfa5\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:17:1-55:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\admin\.gradle\caches\transforms-4\edf59d58be4691919b324b64bf995295\transformed\jetified-gifdecoder-4.16.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\admin\.gradle\caches\transforms-4\70c36041c5e8781730bef188f6d2b51c\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\admin\.gradle\caches\transforms-4\31be86863f687dc0f2ccb405ada9f993\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\admin\.gradle\caches\transforms-4\94f3abfa7e3ff0a62b2559aa161a693f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\admin\.gradle\caches\transforms-4\b2782fbfde970b673f3ab240867991b0\transformed\jetified-tracing-1.2.0\AndroidManifest.xml:17:1-22:12
@@ -197,6 +200,8 @@ MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\admin\.gradl
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\admin\.gradle\caches\transforms-4\c0965bca3f73a9a316f76312208f342c\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\admin\.gradle\caches\transforms-4\a04dc3e727203f6039a1e2c575316a2c\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\admin\.gradle\caches\transforms-4\a04dc3e727203f6039a1e2c575316a2c\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\admin\.gradle\caches\transforms-4\6bc7fd8f69baa414d38ad8aca3884ef3\transformed\jetified-glide-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\admin\.gradle\caches\transforms-4\6bc7fd8f69baa414d38ad8aca3884ef3\transformed\jetified-glide-4.16.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\admin\.gradle\caches\transforms-4\167b68d524db86dc2ba3af79365b8d62\transformed\jetified-firebase-auth-ktx-23.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\admin\.gradle\caches\transforms-4\167b68d524db86dc2ba3af79365b8d62\transformed\jetified-firebase-auth-ktx-23.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\admin\.gradle\caches\transforms-4\e3a392364652284ebd3aa83aa2535167\transformed\jetified-firebase-auth-23.2.0\AndroidManifest.xml:21:5-23:151
@@ -309,6 +314,10 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\admin\.gradle\caches\tra
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\admin\.gradle\caches\transforms-4\c9343f817164059e2985572f718c82b4\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\admin\.gradle\caches\transforms-4\d120bef943824fc6f13b3acae270cfa5\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\admin\.gradle\caches\transforms-4\d120bef943824fc6f13b3acae270cfa5\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\admin\.gradle\caches\transforms-4\edf59d58be4691919b324b64bf995295\transformed\jetified-gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\admin\.gradle\caches\transforms-4\edf59d58be4691919b324b64bf995295\transformed\jetified-gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\admin\.gradle\caches\transforms-4\70c36041c5e8781730bef188f6d2b51c\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\admin\.gradle\caches\transforms-4\70c36041c5e8781730bef188f6d2b51c\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\admin\.gradle\caches\transforms-4\31be86863f687dc0f2ccb405ada9f993\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\admin\.gradle\caches\transforms-4\31be86863f687dc0f2ccb405ada9f993\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:18:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\admin\.gradle\caches\transforms-4\94f3abfa7e3ff0a62b2559aa161a693f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41

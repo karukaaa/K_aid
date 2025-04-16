@@ -82,8 +82,11 @@ id nav_requests
 id next_button
 id orphanage_name
 id password
+id photoImageView
+id photosRecyclerView
 id price
 id profileImage
+id profile_image
 id publish_button
 id recycler_view
 id request_description
@@ -106,6 +109,7 @@ layout fragment_log_in
 layout fragment_request_creation
 layout fragment_requests_list
 layout fragment_sign_up
+layout item_photo
 layout item_request
 layout request
 menu bottom_nav_menu

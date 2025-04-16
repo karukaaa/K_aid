@@ -4,6 +4,7 @@ package com.example.myapplication.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -28,7 +29,7 @@ public final class RequestBinding implements ViewBinding {
   public final TextView childName;
 
   @NonNull
-  public final View childProfilePicture;
+  public final ImageView childProfilePicture;
 
   @NonNull
   public final MaterialButton markAsDoneButton;
@@ -43,7 +44,7 @@ public final class RequestBinding implements ViewBinding {
   public final TextView title;
 
   private RequestBinding(@NonNull CardView rootView, @NonNull LinearLayout childInfo,
-      @NonNull TextView childName, @NonNull View childProfilePicture,
+      @NonNull TextView childName, @NonNull ImageView childProfilePicture,
       @NonNull MaterialButton markAsDoneButton, @NonNull TextView price,
       @NonNull TextView requestDescription, @NonNull TextView title) {
     this.rootView = rootView;
@@ -96,7 +97,7 @@ public final class RequestBinding implements ViewBinding {
       }
 
       id = R.id.child_profile_picture;
-      View childProfilePicture = ViewBindings.findChildViewById(rootView, id);
+      ImageView childProfilePicture = ViewBindings.findChildViewById(rootView, id);
       if (childProfilePicture == null) {
         break missingId;
       }

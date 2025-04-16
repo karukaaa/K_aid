@@ -46,6 +46,12 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   public final TextView orphanageName;
 
   @NonNull
+  public final RecyclerView photosRecyclerView;
+
+  @NonNull
+  public final ImageView profileImage;
+
+  @NonNull
   public final TextView txtLanguage;
 
   @NonNull
@@ -60,8 +66,10 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   private FragmentChildProfileBinding(@NonNull LinearLayout rootView, @NonNull TextView aboutText,
       @NonNull ImageView backButton, @NonNull TextView bioText, @NonNull TextView childAge,
       @NonNull TextView childName, @NonNull RecyclerView childRequestsRecyclerview,
-      @NonNull ImageView imgLogo, @NonNull TextView orphanageName, @NonNull TextView txtLanguage,
-      @NonNull TextView txtProfile, @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
+      @NonNull ImageView imgLogo, @NonNull TextView orphanageName,
+      @NonNull RecyclerView photosRecyclerView, @NonNull ImageView profileImage,
+      @NonNull TextView txtLanguage, @NonNull TextView txtProfile, @NonNull TextView txtQuestions,
+      @NonNull TextView txtSettings) {
     this.rootView = rootView;
     this.aboutText = aboutText;
     this.backButton = backButton;
@@ -71,6 +79,8 @@ public final class FragmentChildProfileBinding implements ViewBinding {
     this.childRequestsRecyclerview = childRequestsRecyclerview;
     this.imgLogo = imgLogo;
     this.orphanageName = orphanageName;
+    this.photosRecyclerView = photosRecyclerView;
+    this.profileImage = profileImage;
     this.txtLanguage = txtLanguage;
     this.txtProfile = txtProfile;
     this.txtQuestions = txtQuestions;
@@ -152,6 +162,18 @@ public final class FragmentChildProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.photosRecyclerView;
+      RecyclerView photosRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (photosRecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.profile_image;
+      ImageView profileImage = ViewBindings.findChildViewById(rootView, id);
+      if (profileImage == null) {
+        break missingId;
+      }
+
       id = R.id.txtLanguage;
       TextView txtLanguage = ViewBindings.findChildViewById(rootView, id);
       if (txtLanguage == null) {
@@ -178,7 +200,7 @@ public final class FragmentChildProfileBinding implements ViewBinding {
 
       return new FragmentChildProfileBinding((LinearLayout) rootView, aboutText, backButton,
           bioText, childAge, childName, childRequestsRecyclerview, imgLogo, orphanageName,
-          txtLanguage, txtProfile, txtQuestions, txtSettings);
+          photosRecyclerView, profileImage, txtLanguage, txtProfile, txtQuestions, txtSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

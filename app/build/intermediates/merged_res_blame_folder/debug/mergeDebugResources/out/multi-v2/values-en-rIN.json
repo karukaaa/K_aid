@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.myapplication.app-mergeDebugResources-41:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.example.myapplication.app-mergeDebugResources-42:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-4\\a04dc3e727203f6039a1e2c575316a2c\\transformed\\appcompat-1.7.0\\res\\values-en-rIN\\values-en-rIN.xml",

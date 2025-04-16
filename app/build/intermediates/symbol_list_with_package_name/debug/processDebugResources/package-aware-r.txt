@@ -3444,6 +3444,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -3614,12 +3615,15 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id photoImageView
+id photosRecyclerView
 id pin
 id position
 id postLayout
 id pressed
 id price
 id profileImage
+id profile_image
 id progress_circular
 id progress_horizontal
 id publish_button
@@ -3927,6 +3931,7 @@ layout fragment_requests_list
 layout fragment_sign_up
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_photo
 layout item_request
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
