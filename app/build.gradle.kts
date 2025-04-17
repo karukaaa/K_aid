@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.gms.google-services") version "4.4.2" apply false
 }
 
 android {
@@ -14,7 +13,6 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -40,24 +38,21 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    tasks.withType<Test> {
-        enabled = false
-    }
 }
 
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material) // Оставим только одну версию Material
+    implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation("com.google.firebase:firebase-auth-ktx:23.2.0")
-    implementation("androidx.activity:activity-ktx:1.10.1")
-    implementation("androidx.fragment:fragment-ktx:1.4.0")
     implementation("com.google.android.gms:play-services-auth:21.3.0")
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

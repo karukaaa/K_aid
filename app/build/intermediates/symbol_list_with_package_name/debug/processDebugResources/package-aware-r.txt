@@ -3045,6 +3045,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_account_circle_24
 drawable baseline_arrow_back_ios_24
+drawable baseline_home_24
 drawable baseline_menu_24
 drawable baseline_upload_file_24
 drawable btn_checkbox_checked_mtrl
@@ -3320,6 +3321,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnGoogleSignIn
+id btnLogout
 id btn_create_request
 id btn_logout
 id buttonPanel
@@ -3338,6 +3340,7 @@ id chains
 id checkbox
 id checked
 id child
+id childName
 id child_info
 id child_profile_picture
 id chronometer
@@ -3457,6 +3460,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imagePreview
 id imageView
 id imageView2
 id imageView3
@@ -3487,7 +3491,6 @@ id list_item
 id login
 id login_button
 id logo
-id logout_button
 id m3_side_sheet
 id marquee
 id masked
@@ -3548,9 +3551,8 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id nav_administrator_profile
 id nav_home
-id nav_login
+id nav_profile
 id nav_requests
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3620,10 +3622,7 @@ id ratio
 id rectangles
 id recycler_view
 id report_drawn
-id request_child
 id request_description
-id request_price
-id requested_object
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3651,6 +3650,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectImageButton
 id select_dialog_listview
 id selected
 id selection_type

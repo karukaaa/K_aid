@@ -4,7 +4,6 @@ package com.example.myapplication.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
@@ -25,17 +24,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final BottomNavigationView bottomNavigation;
 
   @NonNull
-  public final Button btnGoogleSignIn;
-
-  @NonNull
   public final FrameLayout fragmentContainer;
 
   private ActivityMainBinding(@NonNull LinearLayout rootView,
-      @NonNull BottomNavigationView bottomNavigation, @NonNull Button btnGoogleSignIn,
-      @NonNull FrameLayout fragmentContainer) {
+      @NonNull BottomNavigationView bottomNavigation, @NonNull FrameLayout fragmentContainer) {
     this.rootView = rootView;
     this.bottomNavigation = bottomNavigation;
-    this.btnGoogleSignIn = btnGoogleSignIn;
     this.fragmentContainer = fragmentContainer;
   }
 
@@ -72,20 +66,13 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnGoogleSignIn;
-      Button btnGoogleSignIn = ViewBindings.findChildViewById(rootView, id);
-      if (btnGoogleSignIn == null) {
-        break missingId;
-      }
-
       id = R.id.fragment_container;
       FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
       if (fragmentContainer == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, bottomNavigation, btnGoogleSignIn,
-          fragmentContainer);
+      return new ActivityMainBinding((LinearLayout) rootView, bottomNavigation, fragmentContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

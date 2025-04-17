@@ -22,6 +22,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final Button btnLogout;
+
+  @NonNull
   public final ImageView imageView;
 
   @NonNull
@@ -32,9 +35,6 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public final ImageView imgLogo;
-
-  @NonNull
-  public final Button logoutButton;
 
   @NonNull
   public final TextView txtLanguage;
@@ -48,16 +48,16 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView txtSettings;
 
-  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull ImageView imageView,
-      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull ImageView imgLogo,
-      @NonNull Button logoutButton, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
+  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull Button btnLogout,
+      @NonNull ImageView imageView, @NonNull ImageView imageView2, @NonNull ImageView imageView3,
+      @NonNull ImageView imgLogo, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
       @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
     this.rootView = rootView;
+    this.btnLogout = btnLogout;
     this.imageView = imageView;
     this.imageView2 = imageView2;
     this.imageView3 = imageView3;
     this.imgLogo = imgLogo;
-    this.logoutButton = logoutButton;
     this.txtLanguage = txtLanguage;
     this.txtProfile = txtProfile;
     this.txtQuestions = txtQuestions;
@@ -91,6 +91,12 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnLogout;
+      Button btnLogout = ViewBindings.findChildViewById(rootView, id);
+      if (btnLogout == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -112,12 +118,6 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.imgLogo;
       ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
       if (imgLogo == null) {
-        break missingId;
-      }
-
-      id = R.id.logout_button;
-      Button logoutButton = ViewBindings.findChildViewById(rootView, id);
-      if (logoutButton == null) {
         break missingId;
       }
 
@@ -145,8 +145,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, imageView, imageView2, imageView3,
-          imgLogo, logoutButton, txtLanguage, txtProfile, txtQuestions, txtSettings);
+      return new FragmentHomeBinding((ScrollView) rootView, btnLogout, imageView, imageView2,
+          imageView3, imgLogo, txtLanguage, txtProfile, txtQuestions, txtSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,7 +1,5 @@
 package com.example.myapplication.Fragments
 
-import com.example.myapplication.Fragments.LogInFragment  // Если фрагмент находится в папке Fragments
-import com.example.myapplication.Fragments.SignUpFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,14 +20,13 @@ class HomeFragment : Fragment() {
         // Инициализируем FirebaseAuth
         auth = FirebaseAuth.getInstance()
 
-        // Возвращаем разметку фрагмента
+        // Загружаем layout фрагмента
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        // Кнопка выхода из аккаунта
-        val logoutButton: Button = view.findViewById(R.id.logout_button)
-        logoutButton.setOnClickListener {
-            auth.signOut()  // Выход из Firebase
-            // Переход к экрану логина
+        // Обработка кнопки выхода
+        val btnLogout: Button = view.findViewById(R.id.btnLogout)
+        btnLogout.setOnClickListener {
+            auth.signOut()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LogInFragment())
                 .commit()
@@ -42,7 +39,7 @@ class HomeFragment : Fragment() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser == null) {
-            // Если пользователь не авторизован, редиректим на экран логина
+            // Если пользователь не авторизован, открываем логин
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LogInFragment())
                 .commit()

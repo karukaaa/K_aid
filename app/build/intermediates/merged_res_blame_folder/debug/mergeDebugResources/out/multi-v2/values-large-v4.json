@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.myapplication.app-mergeDebugResources-46:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.example.myapplication.app-mergeDebugResources-41:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Yerdaulet\\.gradle\\caches\\transforms-4\\1009cd79add291e0713b5a48eb9e4e2c\\transformed\\material-1.12.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Yerdaulet\\.gradle\\caches\\transforms-4\\fde2ad3de98f5d9f953362a482796705\\transformed\\material-1.12.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Yerdaulet\\.gradle\\caches\\transforms-4\\55ea2df0df4c0fc518337c366d3781b5\\transformed\\appcompat-1.7.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Yerdaulet\\.gradle\\caches\\transforms-4\\a04dc3e727203f6039a1e2c575316a2c\\transformed\\appcompat-1.7.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

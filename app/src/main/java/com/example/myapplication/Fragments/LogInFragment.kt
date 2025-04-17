@@ -2,11 +2,11 @@ package com.example.myapplication.Fragments
 
 import android.content.Intent
 import android.os.Bundle
-import com.example.myapplication.Fragments.HomeFragment
-import com.example.myapplication.Fragments.SignUpFragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.myapplication.MainActivity
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
@@ -17,7 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LogInFragment : Fragment() {
 
@@ -40,7 +40,6 @@ class LogInFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
 
-        // Вход пользователя
         binding.loginButton.setOnClickListener {
             val email = binding.email.text.toString().trim()
             val password = binding.password.text.toString().trim()
@@ -49,14 +48,7 @@ class LogInFragment : Fragment() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(
-                                requireContext(),
-                                "Авторизация прошла успешно!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            parentFragmentManager.beginTransaction()
-                                .replace(R.id.fragment_container, HomeFragment()) // Пример
-                                .commit()
+                            onLoginSuccess()
                         } else {
                             Toast.makeText(
                                 requireContext(),
@@ -66,41 +58,32 @@ class LogInFragment : Fragment() {
                         }
                     }
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Введите Email и пароль",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(requireContext(), "Введите Email и пароль", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Переход на экран регистрации
         binding.signup.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SignUpFragment())
                 .commit()
         }
 
-        // Google Sign-In кнопка
         binding.btnGoogleSignIn.setOnClickListener {
             signInWithGoogle()
         }
     }
 
-    // Google Sign-In
     private fun signInWithGoogle() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id)) // Получи этот ID из Firebase
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
         val googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
-
         val signInIntent: Intent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    // Обработка результата Google Sign-In
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -115,29 +98,43 @@ class LogInFragment : Fragment() {
         }
     }
 
-    // Firebase аутентификация с использованием Google
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?) {
         val credential = GoogleAuthProvider.getCredential(account?.idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(requireContext(), "Google Sign-In успешен", Toast.LENGTH_SHORT).show()
-                    parentFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, HomeFragment()) // Пример
-                        .commit()
+                    onLoginSuccess()
                 } else {
-                    Toast.makeText(requireContext(), "Ошибка: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Ошибка: ${task.exception?.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
     }
 
-    override fun onStart() {
-        super.onStart()
-        val currentUser = auth.currentUser
+    private fun onLoginSuccess() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()) // Пример
-                .commit()
+            Log.d("LogInFragment", "User UID: ${currentUser.uid}")
+
+            val db = FirebaseFirestore.getInstance()
+            db.collection("users").document(currentUser.uid).get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        val role = document.getString("role")
+                        Log.d("LogInFragment", "User role: $role")
+                        // После успешного входа просто вызовем onLoginSuccess() у MainActivity,
+                        // чтобы MainActivity загрузила нужный интерфейс.
+                        (activity as? MainActivity)?.onLoginSuccess()
+                    } else {
+                        Toast.makeText(requireContext(), "Ошибка: Документ не найден", Toast.LENGTH_LONG).show()
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(requireContext(), "Ошибка получения данных: ${exception.message}", Toast.LENGTH_LONG).show()
+                }
         }
     }
 

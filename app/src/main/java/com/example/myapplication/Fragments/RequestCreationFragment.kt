@@ -1,95 +1,133 @@
 package com.example.myapplication.Fragments
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.Request
-import com.example.myapplication.RequestsViewModel
 import com.example.myapplication.databinding.FragmentRequestCreationBinding
-import kotlin.random.Random
-
+import com.google.firebase.Timestamp
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import java.util.*
 
 class RequestCreationFragment : Fragment() {
 
     private var _binding: FragmentRequestCreationBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: RequestsViewModel by lazy {
-        ViewModelProvider(requireActivity()).get(RequestsViewModel::class.java)
-    }
+    private var imageUri: Uri? = null
+    private val storage = FirebaseStorage.getInstance()
+    private val firestore = FirebaseFirestore.getInstance()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri != null) {
+            imageUri = uri
+            binding.imagePreview.setImageURI(uri)
+        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentRequestCreationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    companion object {
-        fun newInstance() = RequestCreationFragment()
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val backButton: ImageView = binding.backButton
-        backButton.setOnClickListener {
+        binding.backButton.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
 
-        val titleEditText: EditText = binding.title
-        val descriptionEditText: EditText = binding.description
-        val childEditText: EditText = binding.child
-        val priceEditText: EditText = binding.price
-        val publishButton: Button = binding.publishButton
+        binding.selectImageButton.setOnClickListener {
+            pickImage.launch("image/*")
+        }
 
-        publishButton.setOnClickListener {
-            val title = titleEditText.text.toString().trim()
-            val description = descriptionEditText.text.toString().trim()
-            val child = childEditText.text.toString().trim()
-            val priceText = priceEditText.text.toString().trim()
+        binding.publishButton.setOnClickListener {
+            val title = binding.title.text.toString().trim()
+            val description = binding.description.text.toString().trim()
+            val child = binding.child.text.toString().trim()
+            val priceText = binding.price.text.toString().trim()
 
             if (title.isEmpty() || description.isEmpty() || child.isEmpty() || priceText.isEmpty()) {
-                Toast.makeText(requireContext(), "Please fill in all fields!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             val price = priceText.toDoubleOrNull()
             if (price == null || price <= 0) {
-                Toast.makeText(requireContext(), "Please enter a valid price (numbers only).", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please enter a valid price", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val newRequest = Request(
-                id = Random.nextInt(1000), // Random ID
-                requestedObject = title,
-                description = description,
-                child = child,
-                price = price
-            )
-
-            viewModel.addRequest(newRequest)
-            Toast.makeText(requireContext(), "Request created successfully!", Toast.LENGTH_SHORT).show()
-
-            // Go back to the previous fragment
-            parentFragmentManager.popBackStack()
+            if (imageUri != null) {
+                uploadImageAndSaveRequest(title, description, child, price, imageUri!!)
+            } else {
+                val request = Request(
+                    title = title,
+                    description = description,
+                    childName = child,
+                    price = price,
+                    photoUrl = UUID.randomUUID().toString(), // placeholder
+                    createdAt = Timestamp.now()
+                )
+                saveRequestToFirestore(request)
+            }
         }
-
-
     }
 
+    private fun uploadImageAndSaveRequest(
+        title: String,
+        description: String,
+        child: String,
+        price: Double,
+        imageUri: Uri
+    ) {
+        val fileName = "photos/${UUID.randomUUID()}.jpg"
+        val imageRef = storage.reference.child(fileName)
 
+        imageRef.putFile(imageUri)
+            .addOnSuccessListener {
+                imageRef.downloadUrl.addOnSuccessListener { uri ->
+                    val request = Request(
+                        title = title,
+                        description = description,
+                        childName = child,
+                        price = price,
+                        photoUrl = uri.toString(),
+                        createdAt = Timestamp.now()
+                    )
+                    saveRequestToFirestore(request)
+                }
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Photo upload failed", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun saveRequestToFirestore(request: Request) {
+        firestore.collection("requests")
+            .add(request)
+            .addOnSuccessListener {
+                Toast.makeText(requireContext(), "Request created successfully!", Toast.LENGTH_SHORT).show()
+                parentFragmentManager.popBackStack()
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Error saving request", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    companion object {
+        fun newInstance() = RequestCreationFragment()
+    }
 }

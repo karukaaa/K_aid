@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class FragmentRequestCreationBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final ImageView backButton;
@@ -32,6 +32,9 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   public final EditText description;
 
   @NonNull
+  public final ImageView imagePreview;
+
+  @NonNull
   public final ImageView imgLogo;
 
   @NonNull
@@ -39,6 +42,9 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
 
   @NonNull
   public final Button publishButton;
+
+  @NonNull
+  public final Button selectImageButton;
 
   @NonNull
   public final EditText title;
@@ -55,18 +61,21 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   @NonNull
   public final TextView txtSettings;
 
-  private FragmentRequestCreationBinding(@NonNull LinearLayout rootView,
+  private FragmentRequestCreationBinding(@NonNull ScrollView rootView,
       @NonNull ImageView backButton, @NonNull EditText child, @NonNull EditText description,
-      @NonNull ImageView imgLogo, @NonNull EditText price, @NonNull Button publishButton,
-      @NonNull EditText title, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
-      @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
+      @NonNull ImageView imagePreview, @NonNull ImageView imgLogo, @NonNull EditText price,
+      @NonNull Button publishButton, @NonNull Button selectImageButton, @NonNull EditText title,
+      @NonNull TextView txtLanguage, @NonNull TextView txtProfile, @NonNull TextView txtQuestions,
+      @NonNull TextView txtSettings) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.child = child;
     this.description = description;
+    this.imagePreview = imagePreview;
     this.imgLogo = imgLogo;
     this.price = price;
     this.publishButton = publishButton;
+    this.selectImageButton = selectImageButton;
     this.title = title;
     this.txtLanguage = txtLanguage;
     this.txtProfile = txtProfile;
@@ -76,7 +85,7 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -119,6 +128,12 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imagePreview;
+      ImageView imagePreview = ViewBindings.findChildViewById(rootView, id);
+      if (imagePreview == null) {
+        break missingId;
+      }
+
       id = R.id.imgLogo;
       ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
       if (imgLogo == null) {
@@ -134,6 +149,12 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
       id = R.id.publish_button;
       Button publishButton = ViewBindings.findChildViewById(rootView, id);
       if (publishButton == null) {
+        break missingId;
+      }
+
+      id = R.id.selectImageButton;
+      Button selectImageButton = ViewBindings.findChildViewById(rootView, id);
+      if (selectImageButton == null) {
         break missingId;
       }
 
@@ -167,9 +188,9 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRequestCreationBinding((LinearLayout) rootView, backButton, child,
-          description, imgLogo, price, publishButton, title, txtLanguage, txtProfile, txtQuestions,
-          txtSettings);
+      return new FragmentRequestCreationBinding((ScrollView) rootView, backButton, child,
+          description, imagePreview, imgLogo, price, publishButton, selectImageButton, title,
+          txtLanguage, txtProfile, txtQuestions, txtSettings);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
