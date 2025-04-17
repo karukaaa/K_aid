@@ -13,7 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
-
 # Android Studio
 .idea/
 .gradle/
@@ -29,3 +28,4 @@ app/build
 
 # Google Services (if not public)
 google-services.json
+/app/build/

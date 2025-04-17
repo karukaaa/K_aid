@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpFragment : Fragment() {
 
@@ -45,16 +46,35 @@ class SignUpFragment : Fragment() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
-                            // Успех
-                            Toast.makeText(
-                                requireContext(),
-                                "Регистрация прошла успешно!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            // Переход на экран входа
-                            parentFragmentManager.beginTransaction()
-                                .replace(R.id.fragment_container, LogInFragment())
-                                .commit()
+                            val user = auth.currentUser
+                            val uid = user?.uid
+
+                            val db = FirebaseFirestore.getInstance()
+                            val userData = hashMapOf(
+                                "role" to "user",
+                                "email" to email
+                            )
+
+                            db.collection("users").document(uid!!)
+                                .set(userData)
+                                .addOnSuccessListener {
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "Регистрация прошла успешно!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    parentFragmentManager.beginTransaction()
+                                        .replace(R.id.fragment_container, LogInFragment())
+                                        .commit()
+                                }
+                                .addOnFailureListener { e ->
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "Ошибка при сохранении данных: ${e.message}",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+
                         } else {
                             // Ошибка
                             Toast.makeText(

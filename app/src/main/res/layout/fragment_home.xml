@@ -11,13 +11,6 @@
         android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/logout_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Выйти"
-            android:layout_marginTop="20dp" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,6 +21,18 @@
             android:text="Welcome to K'AID \nHelp With Us!"
             android:textColor="@color/blue"
             android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="12dp"/>
 
         <HorizontalScrollView
             android:layout_width="match_parent"

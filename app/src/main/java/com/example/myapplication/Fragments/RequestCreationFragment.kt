@@ -68,7 +68,7 @@ class RequestCreationFragment : Fragment() {
 
             val price = priceText.toDoubleOrNull()
             if (price == null || price <= 0) {
-                Toast.makeText(requireContext(), "Please enter a valid price", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please enter a valid price (numbers only).", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
