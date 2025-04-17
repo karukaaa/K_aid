@@ -27,5 +27,5 @@ app/build
 *.iml
 
 # Google Services (if not public)
-google-services.json
+
 /app/build/
