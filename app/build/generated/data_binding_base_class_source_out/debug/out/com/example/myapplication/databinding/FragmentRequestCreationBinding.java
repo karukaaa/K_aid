@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -36,9 +35,6 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   public final ImageView imagePreview;
 
   @NonNull
-  public final ImageView imgLogo;
-
-  @NonNull
   public final EditText price;
 
   @NonNull
@@ -53,39 +49,20 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
   @NonNull
   public final EditText title;
 
-  @NonNull
-  public final TextView txtLanguage;
-
-  @NonNull
-  public final TextView txtProfile;
-
-  @NonNull
-  public final TextView txtQuestions;
-
-  @NonNull
-  public final TextView txtSettings;
-
   private FragmentRequestCreationBinding(@NonNull ScrollView rootView,
       @NonNull ImageView backButton, @NonNull Spinner childSpinner, @NonNull EditText description,
-      @NonNull ImageView imagePreview, @NonNull ImageView imgLogo, @NonNull EditText price,
-      @NonNull Button publishButton, @NonNull Button selectImageButton, @NonNull EditText shopUrl,
-      @NonNull EditText title, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
-      @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
+      @NonNull ImageView imagePreview, @NonNull EditText price, @NonNull Button publishButton,
+      @NonNull Button selectImageButton, @NonNull EditText shopUrl, @NonNull EditText title) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.childSpinner = childSpinner;
     this.description = description;
     this.imagePreview = imagePreview;
-    this.imgLogo = imgLogo;
     this.price = price;
     this.publishButton = publishButton;
     this.selectImageButton = selectImageButton;
     this.shopUrl = shopUrl;
     this.title = title;
-    this.txtLanguage = txtLanguage;
-    this.txtProfile = txtProfile;
-    this.txtQuestions = txtQuestions;
-    this.txtSettings = txtSettings;
   }
 
   @Override
@@ -139,12 +116,6 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imgLogo;
-      ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
-      if (imgLogo == null) {
-        break missingId;
-      }
-
       id = R.id.price;
       EditText price = ViewBindings.findChildViewById(rootView, id);
       if (price == null) {
@@ -175,33 +146,8 @@ public final class FragmentRequestCreationBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtLanguage;
-      TextView txtLanguage = ViewBindings.findChildViewById(rootView, id);
-      if (txtLanguage == null) {
-        break missingId;
-      }
-
-      id = R.id.txtProfile;
-      TextView txtProfile = ViewBindings.findChildViewById(rootView, id);
-      if (txtProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.txtQuestions;
-      TextView txtQuestions = ViewBindings.findChildViewById(rootView, id);
-      if (txtQuestions == null) {
-        break missingId;
-      }
-
-      id = R.id.txtSettings;
-      TextView txtSettings = ViewBindings.findChildViewById(rootView, id);
-      if (txtSettings == null) {
-        break missingId;
-      }
-
       return new FragmentRequestCreationBinding((ScrollView) rootView, backButton, childSpinner,
-          description, imagePreview, imgLogo, price, publishButton, selectImageButton, shopUrl,
-          title, txtLanguage, txtProfile, txtQuestions, txtSettings);
+          description, imagePreview, price, publishButton, selectImageButton, shopUrl, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

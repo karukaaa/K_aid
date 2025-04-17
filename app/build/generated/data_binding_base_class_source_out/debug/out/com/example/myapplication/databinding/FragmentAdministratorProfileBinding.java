@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -28,36 +27,15 @@ public final class FragmentAdministratorProfileBinding implements ViewBinding {
   public final Button btnLogout;
 
   @NonNull
-  public final ImageView imgLogo;
-
-  @NonNull
   public final ImageView profileImage;
 
-  @NonNull
-  public final TextView txtLanguage;
-
-  @NonNull
-  public final TextView txtProfile;
-
-  @NonNull
-  public final TextView txtQuestions;
-
-  @NonNull
-  public final TextView txtSettings;
-
   private FragmentAdministratorProfileBinding(@NonNull LinearLayout rootView,
-      @NonNull Button btnCreateRequest, @NonNull Button btnLogout, @NonNull ImageView imgLogo,
-      @NonNull ImageView profileImage, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
-      @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
+      @NonNull Button btnCreateRequest, @NonNull Button btnLogout,
+      @NonNull ImageView profileImage) {
     this.rootView = rootView;
     this.btnCreateRequest = btnCreateRequest;
     this.btnLogout = btnLogout;
-    this.imgLogo = imgLogo;
     this.profileImage = profileImage;
-    this.txtLanguage = txtLanguage;
-    this.txtProfile = txtProfile;
-    this.txtQuestions = txtQuestions;
-    this.txtSettings = txtSettings;
   }
 
   @Override
@@ -99,44 +77,14 @@ public final class FragmentAdministratorProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imgLogo;
-      ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
-      if (imgLogo == null) {
-        break missingId;
-      }
-
       id = R.id.profileImage;
       ImageView profileImage = ViewBindings.findChildViewById(rootView, id);
       if (profileImage == null) {
         break missingId;
       }
 
-      id = R.id.txtLanguage;
-      TextView txtLanguage = ViewBindings.findChildViewById(rootView, id);
-      if (txtLanguage == null) {
-        break missingId;
-      }
-
-      id = R.id.txtProfile;
-      TextView txtProfile = ViewBindings.findChildViewById(rootView, id);
-      if (txtProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.txtQuestions;
-      TextView txtQuestions = ViewBindings.findChildViewById(rootView, id);
-      if (txtQuestions == null) {
-        break missingId;
-      }
-
-      id = R.id.txtSettings;
-      TextView txtSettings = ViewBindings.findChildViewById(rootView, id);
-      if (txtSettings == null) {
-        break missingId;
-      }
-
       return new FragmentAdministratorProfileBinding((LinearLayout) rootView, btnCreateRequest,
-          btnLogout, imgLogo, profileImage, txtLanguage, txtProfile, txtQuestions, txtSettings);
+          btnLogout, profileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

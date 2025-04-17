@@ -40,9 +40,6 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   public final RecyclerView childRequestsRecyclerview;
 
   @NonNull
-  public final ImageView imgLogo;
-
-  @NonNull
   public final TextView orphanageName;
 
   @NonNull
@@ -51,25 +48,11 @@ public final class FragmentChildProfileBinding implements ViewBinding {
   @NonNull
   public final ImageView profileImage;
 
-  @NonNull
-  public final TextView txtLanguage;
-
-  @NonNull
-  public final TextView txtProfile;
-
-  @NonNull
-  public final TextView txtQuestions;
-
-  @NonNull
-  public final TextView txtSettings;
-
   private FragmentChildProfileBinding(@NonNull LinearLayout rootView, @NonNull TextView aboutText,
       @NonNull ImageView backButton, @NonNull TextView bioText, @NonNull TextView childAge,
       @NonNull TextView childName, @NonNull RecyclerView childRequestsRecyclerview,
-      @NonNull ImageView imgLogo, @NonNull TextView orphanageName,
-      @NonNull RecyclerView photosRecyclerView, @NonNull ImageView profileImage,
-      @NonNull TextView txtLanguage, @NonNull TextView txtProfile, @NonNull TextView txtQuestions,
-      @NonNull TextView txtSettings) {
+      @NonNull TextView orphanageName, @NonNull RecyclerView photosRecyclerView,
+      @NonNull ImageView profileImage) {
     this.rootView = rootView;
     this.aboutText = aboutText;
     this.backButton = backButton;
@@ -77,14 +60,9 @@ public final class FragmentChildProfileBinding implements ViewBinding {
     this.childAge = childAge;
     this.childName = childName;
     this.childRequestsRecyclerview = childRequestsRecyclerview;
-    this.imgLogo = imgLogo;
     this.orphanageName = orphanageName;
     this.photosRecyclerView = photosRecyclerView;
     this.profileImage = profileImage;
-    this.txtLanguage = txtLanguage;
-    this.txtProfile = txtProfile;
-    this.txtQuestions = txtQuestions;
-    this.txtSettings = txtSettings;
   }
 
   @Override
@@ -150,12 +128,6 @@ public final class FragmentChildProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imgLogo;
-      ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
-      if (imgLogo == null) {
-        break missingId;
-      }
-
       id = R.id.orphanage_name;
       TextView orphanageName = ViewBindings.findChildViewById(rootView, id);
       if (orphanageName == null) {
@@ -174,33 +146,9 @@ public final class FragmentChildProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtLanguage;
-      TextView txtLanguage = ViewBindings.findChildViewById(rootView, id);
-      if (txtLanguage == null) {
-        break missingId;
-      }
-
-      id = R.id.txtProfile;
-      TextView txtProfile = ViewBindings.findChildViewById(rootView, id);
-      if (txtProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.txtQuestions;
-      TextView txtQuestions = ViewBindings.findChildViewById(rootView, id);
-      if (txtQuestions == null) {
-        break missingId;
-      }
-
-      id = R.id.txtSettings;
-      TextView txtSettings = ViewBindings.findChildViewById(rootView, id);
-      if (txtSettings == null) {
-        break missingId;
-      }
-
       return new FragmentChildProfileBinding((LinearLayout) rootView, aboutText, backButton,
-          bioText, childAge, childName, childRequestsRecyclerview, imgLogo, orphanageName,
-          photosRecyclerView, profileImage, txtLanguage, txtProfile, txtQuestions, txtSettings);
+          bioText, childAge, childName, childRequestsRecyclerview, orphanageName,
+          photosRecyclerView, profileImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

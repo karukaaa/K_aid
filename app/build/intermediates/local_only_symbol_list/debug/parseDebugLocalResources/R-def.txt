@@ -94,11 +94,6 @@ id selectImageButton
 id shop_url
 id signup
 id title
-id topBar
-id txtLanguage
-id txtProfile
-id txtQuestions
-id txtSettings
 id upload_photo
 layout activity_main
 layout fragment_administrator_profile

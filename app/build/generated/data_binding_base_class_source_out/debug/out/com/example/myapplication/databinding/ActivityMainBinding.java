@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,11 +27,16 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final FrameLayout fragmentContainer;
 
+  @NonNull
+  public final ImageView imgLogo;
+
   private ActivityMainBinding(@NonNull LinearLayout rootView,
-      @NonNull BottomNavigationView bottomNavigation, @NonNull FrameLayout fragmentContainer) {
+      @NonNull BottomNavigationView bottomNavigation, @NonNull FrameLayout fragmentContainer,
+      @NonNull ImageView imgLogo) {
     this.rootView = rootView;
     this.bottomNavigation = bottomNavigation;
     this.fragmentContainer = fragmentContainer;
+    this.imgLogo = imgLogo;
   }
 
   @Override
@@ -72,7 +78,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, bottomNavigation, fragmentContainer);
+      id = R.id.imgLogo;
+      ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
+      if (imgLogo == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((LinearLayout) rootView, bottomNavigation, fragmentContainer,
+          imgLogo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -10,12 +10,6 @@
     android:paddingHorizontal="40dp"
     tools:context=".Fragments.LogInFragment">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/k_aid_logo_test" />
 
     <FrameLayout
 

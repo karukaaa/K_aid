@@ -3741,7 +3741,6 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id top
-id topBar
 id topPanel
 id touch_outside
 id transitionToEnd
@@ -3755,10 +3754,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id txtLanguage
-id txtProfile
-id txtQuestions
-id txtSettings
 id unchecked
 id uniform
 id unlabeled

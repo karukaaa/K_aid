@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -31,37 +30,15 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView imageView3;
 
   @NonNull
-  public final ImageView imgLogo;
-
-  @NonNull
   public final Button logoutButton;
 
-  @NonNull
-  public final TextView txtLanguage;
-
-  @NonNull
-  public final TextView txtProfile;
-
-  @NonNull
-  public final TextView txtQuestions;
-
-  @NonNull
-  public final TextView txtSettings;
-
   private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull ImageView imageView,
-      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull ImageView imgLogo,
-      @NonNull Button logoutButton, @NonNull TextView txtLanguage, @NonNull TextView txtProfile,
-      @NonNull TextView txtQuestions, @NonNull TextView txtSettings) {
+      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull Button logoutButton) {
     this.rootView = rootView;
     this.imageView = imageView;
     this.imageView2 = imageView2;
     this.imageView3 = imageView3;
-    this.imgLogo = imgLogo;
     this.logoutButton = logoutButton;
-    this.txtLanguage = txtLanguage;
-    this.txtProfile = txtProfile;
-    this.txtQuestions = txtQuestions;
-    this.txtSettings = txtSettings;
   }
 
   @Override
@@ -109,44 +86,14 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imgLogo;
-      ImageView imgLogo = ViewBindings.findChildViewById(rootView, id);
-      if (imgLogo == null) {
-        break missingId;
-      }
-
       id = R.id.logout_button;
       Button logoutButton = ViewBindings.findChildViewById(rootView, id);
       if (logoutButton == null) {
         break missingId;
       }
 
-      id = R.id.txtLanguage;
-      TextView txtLanguage = ViewBindings.findChildViewById(rootView, id);
-      if (txtLanguage == null) {
-        break missingId;
-      }
-
-      id = R.id.txtProfile;
-      TextView txtProfile = ViewBindings.findChildViewById(rootView, id);
-      if (txtProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.txtQuestions;
-      TextView txtQuestions = ViewBindings.findChildViewById(rootView, id);
-      if (txtQuestions == null) {
-        break missingId;
-      }
-
-      id = R.id.txtSettings;
-      TextView txtSettings = ViewBindings.findChildViewById(rootView, id);
-      if (txtSettings == null) {
-        break missingId;
-      }
-
       return new FragmentHomeBinding((ScrollView) rootView, imageView, imageView2, imageView3,
-          imgLogo, logoutButton, txtLanguage, txtProfile, txtQuestions, txtSettings);
+          logoutButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
