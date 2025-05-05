@@ -23,15 +23,6 @@ class HomeFragment : Fragment() {
         // Загружаем layout фрагмента
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        // Обработка кнопки выхода
-        val btnLogout: Button = view.findViewById(R.id.btnLogout)
-        btnLogout.setOnClickListener {
-            auth.signOut()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, LogInFragment())
-                .commit()
-        }
-
         return view
     }
 

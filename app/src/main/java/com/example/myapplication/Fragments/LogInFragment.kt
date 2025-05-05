@@ -93,7 +93,7 @@ class LogInFragment : Fragment() {
                 val account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogle(account)
             } catch (e: ApiException) {
-                Toast.makeText(requireContext(), "Google Sign-In failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Google Sign-In failed: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }

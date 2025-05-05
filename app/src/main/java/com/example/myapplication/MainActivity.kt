@@ -1,20 +1,30 @@
 package com.example.myapplication
 
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.Fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private val auth = FirebaseAuth.getInstance()
 
+    private lateinit var networkReceiver: NetworkChangeReceiver
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.activity_main)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
@@ -28,6 +38,16 @@ class MainActivity : AppCompatActivity() {
             hideBottomNavigation()
             loadLoginFragment()
         }
+
+        networkReceiver = NetworkChangeReceiver {
+            // Call sync logic here
+            lifecycleScope.launch {
+                syncLocalRequestsToFirestore()
+            }
+        }
+
+        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        registerReceiver(networkReceiver, filter)
     }
 
     fun onLoginSuccess() {
@@ -91,4 +111,24 @@ class MainActivity : AppCompatActivity() {
             androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
         )
     }
+
+    suspend fun syncLocalRequestsToFirestore() {
+        val db = AppDatabase.getDatabase(applicationContext)
+        val localRequests = db.requestDao().getAllRequests()
+
+        val firestore = FirebaseFirestore.getInstance()
+        localRequests.forEach { request ->
+            firestore.collection("requests")
+                .add(request)
+                .addOnSuccessListener {
+                    lifecycleScope.launch {
+                        db.requestDao().deleteRequest(request)
+                    }
+                }
+                .addOnFailureListener {
+                    // Retry later
+                }
+        }
+    }
+
 }
