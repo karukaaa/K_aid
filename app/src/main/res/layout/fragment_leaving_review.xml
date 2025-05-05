@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="12dp"
+    tools:context=".reviews.LeavingReviewFragment">
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/baseline_arrow_back_ios_24" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="800">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reviewInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write your review here"
+            android:gravity="top"
+            android:background="@drawable/transparent_frame"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:maxLines="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <Button
+        android:id="@+id/submit_review_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/blue"
+        android:text="Submit Review"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Your username and personal information will not be
+visible in the Reviews section,
+but the moderators will be able to see it"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

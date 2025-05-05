@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.myapplication.HistoryFragment
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentProfileBinding
 import com.example.myapplication.requestcreation.RequestCreationFragment
+import com.example.myapplication.reviews.ApprovingReviewsFragment
+import com.example.myapplication.reviews.LeavingReviewFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -39,21 +40,29 @@ class ProfileFragment : Fragment() {
         if (currentUser != null) {
             db.collection("users").document(currentUser.uid).get()
                 .addOnSuccessListener { document ->
+                    if (!isAdded || _binding == null) return@addOnSuccessListener
                     val role = document.getString("role")
                     if (role == "admin") {
                         binding.btnCreateRequest.visibility = View.VISIBLE
+                        binding.reviewButton.visibility = View.GONE
+                        binding.approvingReviewsButton.visibility = View.VISIBLE
                     } else {
                         binding.btnCreateRequest.visibility = View.GONE
+                        binding.reviewButton.visibility = View.VISIBLE
+                        binding.approvingReviewsButton.visibility = View.GONE
                     }
                 }
                 .addOnFailureListener {
+                    if (!isAdded || _binding == null) return@addOnFailureListener
                     Toast.makeText(
                         requireContext(),
                         "Ошибка при получении роли",
                         Toast.LENGTH_SHORT
                     ).show()
                     binding.btnCreateRequest.visibility = View.GONE
+                    binding.reviewButton.visibility = View.GONE
                 }
+
         }
 
         binding.btnCreateRequest.setOnClickListener {
@@ -69,12 +78,27 @@ class ProfileFragment : Fragment() {
             (activity as? MainActivity)?.onLogout()
         }
 
-        binding.historyButton.setOnClickListener{
+        binding.historyButton.setOnClickListener {
             val newFragment = HistoryFragment()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, newFragment)
                 .addToBackStack(null)
                 .commit()
+        }
+
+        binding.reviewButton.setOnClickListener {
+            val newFragment = LeavingReviewFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        binding.approvingReviewsButton.setOnClickListener {
+            val newFragment = ApprovingReviewsFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null).commit()
         }
     }
 

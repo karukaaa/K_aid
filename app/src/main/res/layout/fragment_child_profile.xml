@@ -9,9 +9,6 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <!-- Top Bar -->
-
-
 
     <ImageView
         android:id="@+id/back_button"

@@ -1,13 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.profileauth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.childprofile.ChildProfileFragment
 import com.example.myapplication.requestlist.Request
 import com.example.myapplication.requestlist.RequestRecyclerViewAdapter
@@ -53,6 +55,11 @@ class HistoryFragment : Fragment() {
                 .addOnFailureListener {
                     Toast.makeText(requireContext(), "Failed to load donation history", Toast.LENGTH_SHORT).show()
                 }
+        }
+
+        val backButton = view.findViewById<ImageView>(R.id.back_button)
+        backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
 
     }

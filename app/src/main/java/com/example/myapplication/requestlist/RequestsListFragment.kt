@@ -1,17 +1,17 @@
 package com.example.myapplication.requestlist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Spinner
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.childprofile.ChildProfileFragment
 import com.example.myapplication.R
+import com.example.myapplication.childprofile.ChildProfileFragment
 
 
 class RequestsListFragment : Fragment() {
@@ -20,10 +20,6 @@ class RequestsListFragment : Fragment() {
         ViewModelProvider(requireActivity()).get(RequestsViewModel::class.java)
     }
     private lateinit var adapter: RequestRecyclerViewAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +38,12 @@ class RequestsListFragment : Fragment() {
 
         val spinner: Spinner = view.findViewById(R.id.status_filter_spinner)
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 val selectedStatus = parent.getItemAtPosition(position) as String
                 viewModel.filterRequestsByStatus(selectedStatus)
             }
