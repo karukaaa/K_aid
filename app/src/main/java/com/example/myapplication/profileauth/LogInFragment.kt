@@ -1,4 +1,4 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication.profileauth
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myapplication.MainActivity
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentLogInBinding
 import com.google.firebase.auth.FirebaseAuth

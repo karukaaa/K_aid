@@ -8,7 +8,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingHorizontal="40dp"
-    tools:context=".Fragments.LogInFragment">
+    tools:context=".profileauth.LogInFragment">
 
 
     <FrameLayout

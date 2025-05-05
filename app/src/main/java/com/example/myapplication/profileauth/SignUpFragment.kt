@@ -1,8 +1,6 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication.profileauth
 
 import android.os.Bundle
-import com.example.myapplication.Fragments.LogInFragment
-import com.example.myapplication.Fragments.HomeFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

@@ -1,12 +1,11 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.myapplication.R
+import com.example.myapplication.profileauth.LogInFragment
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {

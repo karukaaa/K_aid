@@ -1,4 +1,4 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication.childprofile
 
 import android.content.Intent
 import android.net.Uri
@@ -11,7 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
-import com.example.myapplication.Request
+import com.example.myapplication.requestlist.Request
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DonateFragment : Fragment() {

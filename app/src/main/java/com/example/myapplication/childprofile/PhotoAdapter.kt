@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.childprofile
 
 
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.myapplication.R
 
 class PhotoAdapter(private val urls: List<String>) :
     RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {

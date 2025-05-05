@@ -1,4 +1,4 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication.childprofile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.myapplication.PhotoAdapter
 import com.example.myapplication.R
-import com.example.myapplication.Request
-import com.example.myapplication.RequestAdapter
+import com.example.myapplication.requestlist.Request
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ChildProfileFragment : Fragment() {
@@ -111,7 +109,7 @@ class ChildProfileFragment : Fragment() {
                 bioText.text = bio
                 aboutText.text = "✨ About $name"
 
-                // 🏠 Fetch orphanage name
+                // Fetch orphanage name
                 if (!orphanageID.isNullOrEmpty()) {
                     firestore.collection("orphanages")
                         .document(orphanageID)
@@ -127,10 +125,9 @@ class ChildProfileFragment : Fragment() {
                     orphanageNameText.text = "No orphanage assigned"
                 }
 
-                // 🔍 Load requests for this child
+                // Load requests for this child
                 firestore.collection("requests")
                     .whereEqualTo("childID", childID)
-                    .whereEqualTo("status", "Waiting")
                     .get()
                     .addOnSuccessListener { result ->
                         val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }

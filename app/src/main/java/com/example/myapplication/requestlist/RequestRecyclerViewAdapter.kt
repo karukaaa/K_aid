@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.requestlist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.myapplication.R
 import com.example.myapplication.databinding.RequestBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -28,13 +29,20 @@ class RequestRecyclerViewAdapter(
             binding.childName.text = request.childName
             binding.price.text = "${request.price?.toInt()} ₸"
 
-            // Mark as Done button visibility and action
-            binding.markAsDoneButton.visibility = View.VISIBLE             //TODO this is only admin's functionality
+            // Change line color based on request status
+            when (request.status) {
+                "Done" -> binding.line.setBackgroundResource(R.color.green)
+                "In process" -> binding.line.setBackgroundResource(R.color.yellow)
+                else -> binding.line.setBackgroundResource(R.color.blue)
+            }
+
+            // Show "Mark as done" button (admin functionality, visible always for now)
+            binding.markAsDoneButton.visibility = View.VISIBLE
             binding.markAsDoneButton.setOnClickListener {
                 markRequestAsDone(request)
             }
 
-            // Load child profile picture from Firestore
+            // Load child profile picture
             val db = FirebaseFirestore.getInstance()
             val childId = request.childID
             if (!childId.isNullOrEmpty()) {
@@ -52,7 +60,6 @@ class RequestRecyclerViewAdapter(
                     }
             }
         }
-
 
 
     }

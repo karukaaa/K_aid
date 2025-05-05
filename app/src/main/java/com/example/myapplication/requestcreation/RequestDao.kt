@@ -1,6 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.requestcreation
 
 import androidx.room.*
+import com.example.myapplication.requestlist.Request
 
 @Dao
 interface RequestDao {

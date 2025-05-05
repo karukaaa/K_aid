@@ -7,7 +7,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.myapplication.Fragments.*
+import com.example.myapplication.profileauth.AdministratorProfileFragment
+import com.example.myapplication.profileauth.LogInFragment
+import com.example.myapplication.requestlist.RequestsListFragment
+import com.example.myapplication.requestcreation.AppDatabase
+import com.example.myapplication.requestcreation.NetworkChangeReceiver
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

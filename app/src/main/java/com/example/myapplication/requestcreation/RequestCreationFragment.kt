@@ -1,4 +1,4 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication.requestcreation
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -10,9 +10,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.myapplication.AppDatabase
-import com.example.myapplication.Request
 import com.example.myapplication.databinding.FragmentRequestCreationBinding
+import com.example.myapplication.requestlist.Request
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.launch

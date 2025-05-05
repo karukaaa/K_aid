@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Fragments.RequestsListFragment">
+    tools:context=".requestlist.RequestsListFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -31,6 +31,13 @@
             android:shadowDy="2"
             android:shadowRadius="8"/>
     </FrameLayout>
+
+    <Spinner
+        android:id="@+id/status_filter_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:entries="@array/request_status_options" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

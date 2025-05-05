@@ -1,9 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.requestcreation
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.myapplication.requestlist.Request
 
 @Database(entities = [Request::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {

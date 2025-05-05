@@ -15,8 +15,8 @@
         android:layoutDirection="ltr"
         android:orientation="horizontal">
 
-        <!-- Small Blue Line on the Left -->
         <View
+            android:id="@+id/line"
             android:layout_width="8dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="12dp"

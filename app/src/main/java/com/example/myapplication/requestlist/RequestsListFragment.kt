@@ -1,16 +1,17 @@
-package com.example.myapplication.Fragments
+package com.example.myapplication.requestlist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.Spinner
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.childprofile.ChildProfileFragment
 import com.example.myapplication.R
-import com.example.myapplication.RequestRecyclerViewAdapter
-import com.example.myapplication.RequestsViewModel
 
 
 class RequestsListFragment : Fragment() {
@@ -36,9 +37,18 @@ class RequestsListFragment : Fragment() {
             openChildProfileFragment(request.childID)
         }
 
-
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
+
+        val spinner: Spinner = view.findViewById(R.id.status_filter_spinner)
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedStatus = parent.getItemAtPosition(position) as String
+                viewModel.filterRequestsByStatus(selectedStatus)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
 
         // Observe the ViewModel for changes
         viewModel.requests.observe(viewLifecycleOwner) { newRequests ->
