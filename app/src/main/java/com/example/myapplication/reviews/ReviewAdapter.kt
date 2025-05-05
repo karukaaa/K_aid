@@ -11,13 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ReviewAdapter :
+class ReviewAdapter(private val approvalMode: Boolean = true) :
     ListAdapter<Review, ReviewAdapter.ViewHolder>(ReviewDiffCallback()) {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val reviewText: TextView = itemView.findViewById(R.id.review_text)
         val approveButton: Button = itemView.findViewById(R.id.approve_button)
         val rejectButton: Button = itemView.findViewById(R.id.reject_button)
+        val timestampText: TextView = itemView.findViewById(R.id.timestamp_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,32 +30,41 @@ class ReviewAdapter :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val review = getItem(position)
         holder.reviewText.text = review.text
+        holder.timestampText.text ="Published: ${review.timestamp?.toDate()?.toString()}" ?: "Unknown"
 
-        holder.approveButton.setOnClickListener {
-            FirebaseFirestore.getInstance().collection("reviews")
-                .document(review.id)
-                .update("status", "Approved")
-                .addOnSuccessListener {
-                    val updatedList = currentList.toMutableList().apply {
-                        removeAt(position)
+        if (approvalMode) {
+            holder.approveButton.visibility = View.VISIBLE
+            holder.rejectButton.visibility = View.VISIBLE
+
+            holder.approveButton.setOnClickListener {
+                FirebaseFirestore.getInstance().collection("reviews")
+                    .document(review.id)
+                    .update("status", "Approved")
+                    .addOnSuccessListener {
+                        val updatedList = currentList.toMutableList().apply {
+                            removeAt(position)
+                        }
+                        submitList(updatedList)
                     }
-                    submitList(updatedList)
-                }
-        }
+            }
 
-        holder.rejectButton.setOnClickListener {
-            FirebaseFirestore.getInstance().collection("reviews")
-                .document(review.id)
-                .update("status", "Rejected")
-                .addOnSuccessListener {
-                    val updatedList = currentList.toMutableList().apply {
-                        removeAt(position)
+            holder.rejectButton.setOnClickListener {
+                FirebaseFirestore.getInstance().collection("reviews")
+                    .document(review.id)
+                    .update("status", "Rejected")
+                    .addOnSuccessListener {
+                        val updatedList = currentList.toMutableList().apply {
+                            removeAt(position)
+                        }
+                        submitList(updatedList)
                     }
-                    submitList(updatedList)
-                }
+            }
+        } else {
+            holder.approveButton.visibility = View.GONE
+            holder.rejectButton.visibility = View.GONE
         }
-
     }
+
 }
 
 class ReviewDiffCallback : DiffUtil.ItemCallback<Review>() {

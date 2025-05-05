@@ -45,5 +45,14 @@
                 android:backgroundTint="@color/red"
                 android:textColor="@android:color/white" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/timestamp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Published"
+            android:textSize="12sp"
+            android:textColor="@color/blue"
+            android:layout_marginBottom="12dp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

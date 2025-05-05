@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:counterEnabled="true"
-        app:counterMaxLength="800">
+        app:counterMaxLength="500">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/reviewInput"
@@ -44,6 +44,18 @@
         android:backgroundTint="@color/blue"
         android:text="Submit Review"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/review_info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:text="✨ You must fulfill at least one request to leave a review." />
+
 
     <TextView
         android:layout_width="wrap_content"

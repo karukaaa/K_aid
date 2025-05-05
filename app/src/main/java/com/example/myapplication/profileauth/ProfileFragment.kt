@@ -44,12 +44,9 @@ class ProfileFragment : Fragment() {
                     val role = document.getString("role")
                     if (role == "admin") {
                         binding.btnCreateRequest.visibility = View.VISIBLE
-                        binding.reviewButton.visibility = View.GONE
                         binding.approvingReviewsButton.visibility = View.VISIBLE
-                    } else {
-                        binding.btnCreateRequest.visibility = View.GONE
+                    } else if (role == "user") {
                         binding.reviewButton.visibility = View.VISIBLE
-                        binding.approvingReviewsButton.visibility = View.GONE
                     }
                 }
                 .addOnFailureListener {

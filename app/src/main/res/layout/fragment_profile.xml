@@ -88,6 +88,7 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Leave a review"
                 android:textAlignment="textStart"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/blue" />
 
@@ -99,19 +100,10 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Approve the reviews"
                 android:textAlignment="textStart"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/blue" />
 
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/rounded_button_bg"
-                android:text="Children"
-                android:textAlignment="textStart"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/blue" />
 
             <Button
                 android:layout_width="match_parent"
@@ -119,6 +111,7 @@
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/rounded_button_bg"
                 android:text="Language"
+                android:layout_marginTop="36dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/blue" />
