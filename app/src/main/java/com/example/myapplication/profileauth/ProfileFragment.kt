@@ -45,8 +45,9 @@ class ProfileFragment : Fragment() {
                     if (role == "admin") {
                         binding.btnCreateRequest.visibility = View.VISIBLE
                         binding.approvingReviewsButton.visibility = View.VISIBLE
-                    } else if (role == "user") {
+                    } else if(role == "user"){
                         binding.reviewButton.visibility = View.VISIBLE
+                        binding.historyButton.visibility = View.VISIBLE
                     }
                 }
                 .addOnFailureListener {
