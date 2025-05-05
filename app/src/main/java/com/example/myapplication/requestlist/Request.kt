@@ -15,4 +15,5 @@ data class Request(
     val childID: String? = null,
     val childName: String? = null,
     val status: String? = null,
+    val donatedBy: String? = null
 ) : Serializable

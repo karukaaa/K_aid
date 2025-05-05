@@ -7,7 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.myapplication.profileauth.AdministratorProfileFragment
+import com.example.myapplication.profileauth.ProfileFragment
 import com.example.myapplication.profileauth.LogInFragment
 import com.example.myapplication.requestlist.RequestsListFragment
 import com.example.myapplication.requestcreation.AppDatabase
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_profile -> {
-                    loadFragment(AdministratorProfileFragment())
+                    loadFragment(ProfileFragment())
                     true
                 }
                 else -> false

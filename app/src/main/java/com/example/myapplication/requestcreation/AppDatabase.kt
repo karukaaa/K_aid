@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.myapplication.requestlist.Request
 
-@Database(entities = [Request::class], version = 1)
+@Database(entities = [Request::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun requestDao(): RequestDao
 
@@ -20,7 +20,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "request_db"
-                ).build().also { instance = it }
+                ).fallbackToDestructiveMigration().build().also { instance = it }
             }
     }
 }

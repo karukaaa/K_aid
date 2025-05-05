@@ -1,21 +1,22 @@
 package com.example.myapplication.profileauth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.myapplication.HistoryFragment
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentProfileBinding
 import com.example.myapplication.requestcreation.RequestCreationFragment
-import com.example.myapplication.databinding.FragmentAdministratorProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class AdministratorProfileFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private var _binding: FragmentAdministratorProfileBinding? = null
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
@@ -25,7 +26,7 @@ class AdministratorProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAdministratorProfileBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -34,15 +35,11 @@ class AdministratorProfileFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
 
-        val uid = auth.currentUser?.uid
-        Toast.makeText(requireContext(), "UID: $uid", Toast.LENGTH_SHORT).show()
-
         val currentUser = auth.currentUser
         if (currentUser != null) {
             db.collection("users").document(currentUser.uid).get()
                 .addOnSuccessListener { document ->
                     val role = document.getString("role")
-                    Toast.makeText(requireContext(), "Роль: $role", Toast.LENGTH_SHORT).show()
                     if (role == "admin") {
                         binding.btnCreateRequest.visibility = View.VISIBLE
                     } else {
@@ -50,7 +47,11 @@ class AdministratorProfileFragment : Fragment() {
                     }
                 }
                 .addOnFailureListener {
-                    Toast.makeText(requireContext(), "Ошибка при получении роли", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Ошибка при получении роли",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     binding.btnCreateRequest.visibility = View.GONE
                 }
         }
@@ -66,6 +67,14 @@ class AdministratorProfileFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             (activity as? MainActivity)?.onLogout()
+        }
+
+        binding.historyButton.setOnClickListener{
+            val newFragment = HistoryFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null)
+                .commit()
         }
     }
 

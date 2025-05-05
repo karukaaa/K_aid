@@ -3,17 +3,23 @@ package com.example.myapplication.requestlist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.databinding.RequestBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RequestRecyclerViewAdapter(
     private val onItemClick: (Request) -> Unit
 ) : ListAdapter<Request, RequestRecyclerViewAdapter.ViewHolder>(RequestCallback()) {
 
+    private val db = FirebaseFirestore.getInstance()
+    val auth = FirebaseAuth.getInstance()
+    val uid = auth.currentUser?.uid
 
     inner class ViewHolder(private val binding: RequestBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -36,13 +42,26 @@ class RequestRecyclerViewAdapter(
                 else -> binding.line.setBackgroundResource(R.color.blue)
             }
 
-            // Show "Mark as done" button (admin functionality, visible always for now)
-            binding.markAsDoneButton.visibility = View.VISIBLE
-            binding.markAsDoneButton.setOnClickListener {
-                markRequestAsDone(request)
+            val currentUser = auth.currentUser
+            if (currentUser != null) {
+                db.collection("users").document(currentUser.uid).get()
+                    .addOnSuccessListener { document ->
+                        val role = document.getString("role")
+                        if (role == "admin") {
+                            binding.markAsDoneButton.visibility = View.VISIBLE
+                            binding.markAsDoneButton.setOnClickListener {
+                                markRequestAsDone(request)
+                            }
+                        } else {
+                            binding.markAsDoneButton.visibility = View.GONE
+                        }
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this.itemView.context, "Ошибка при получении роли", Toast.LENGTH_SHORT).show()
+                        binding.markAsDoneButton.visibility = View.GONE
+                    }
             }
 
-            // Load child profile picture
             val db = FirebaseFirestore.getInstance()
             val childId = request.childID
             if (!childId.isNullOrEmpty()) {
