@@ -27,10 +27,14 @@ class RequestsViewModel : ViewModel() {
                 }
 
                 val list = snapshot?.documents?.mapNotNull { it.toObject(Request::class.java) }
+                    ?.filter { it.status in listOf("Waiting", "In process", "Done") }
                     ?: emptyList()
+                allRequests = list
+                _requests.value = list
+
 
                 allRequests = list
-                _requests.value = list.filter { it.status != "Waiting approval" } // filter by default
+                _requests.value = list.filter { it.status != "Waiting approval" && it.status != "Rejected"} // filter by default
             }
     }
 

@@ -128,8 +128,9 @@ class ChildProfileFragment : Fragment() {
                             .get()
                             .addOnSuccessListener { result ->
                                 val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }
-                                    .filter { it.status != "Waiting approval" }
+                                    .filter { it.status in listOf("Waiting", "In process", "Done") }
                                 requestAdapter?.submitList(requests)
+
                             }
                             .addOnFailureListener{
                                 Toast.makeText(requireContext(), "Failed to load requests", Toast.LENGTH_SHORT).show()

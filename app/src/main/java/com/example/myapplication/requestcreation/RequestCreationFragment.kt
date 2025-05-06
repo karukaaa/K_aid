@@ -92,7 +92,7 @@ class RequestCreationFragment : Fragment() {
             firestore.collection("requests")
                 .add(request)
                 .addOnSuccessListener {
-                    Toast.makeText(requireContext(), "Request uploaded!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Request sent to admin!", Toast.LENGTH_SHORT).show()
                     parentFragmentManager.popBackStack()
                 }
                 .addOnFailureListener {
