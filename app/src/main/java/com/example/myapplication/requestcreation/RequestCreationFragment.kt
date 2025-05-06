@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.databinding.FragmentRequestCreationBinding
 import com.example.myapplication.requestlist.Request
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.launch
@@ -24,7 +25,6 @@ class RequestCreationFragment : Fragment() {
     private val childNames = mutableListOf<String>()
     private val childIdMap = mutableMapOf<String, String>()
 
-    private val storage = FirebaseStorage.getInstance()
     private val firestore = FirebaseFirestore.getInstance()
 
     private lateinit var database: AppDatabase
@@ -79,7 +79,7 @@ class RequestCreationFragment : Fragment() {
                 price = price,
                 photoUrl = "",
                 kaspiUrl = kaspiUrl,
-                status = "Waiting"
+                status = "Waiting approval"
             )
             saveRequestToFirestore(request)
 
@@ -118,27 +118,42 @@ class RequestCreationFragment : Fragment() {
 
 
     private fun fetchChildren() {
-        firestore.collection("children").get()
-            .addOnSuccessListener { result ->
-                childNames.clear()
-                childIdMap.clear()
-                for (document in result) {
-                    val name = document.getString("childName") ?: continue
-                    val id = document.id
-                    childNames.add(name)
-                    childIdMap[name] = id
-                }
+        val currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
-                val adapter =
-                    ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, childNames)
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                binding.childSpinner.adapter = adapter
+        firestore.collection("users").document(currentUserId).get()
+            .addOnSuccessListener { userDoc ->
+                val userOrphanageId = userDoc.getString("orphanageID") ?: ""
+
+                firestore.collection("children")
+                    .whereEqualTo("orphanageID", userOrphanageId)
+                    .get()
+                    .addOnSuccessListener { result ->
+                        childNames.clear()
+                        childIdMap.clear()
+                        for (document in result) {
+                            val name = document.getString("childName") ?: continue
+                            val id = document.id
+                            childNames.add(name)
+                            childIdMap[name] = id
+                        }
+
+                        val adapter = ArrayAdapter(
+                            requireContext(),
+                            android.R.layout.simple_spinner_item,
+                            childNames
+                        )
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                        binding.childSpinner.adapter = adapter
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(requireContext(), "Failed to load children", Toast.LENGTH_SHORT).show()
+                    }
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to load children", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(requireContext(), "Failed to load user info", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

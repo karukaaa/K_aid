@@ -105,6 +105,18 @@
                 android:textColor="@color/white"
                 app:backgroundTint="@color/blue" />
 
+            <Button
+                android:id="@+id/approving_requests_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded_button_bg"
+                android:text="Approve the requests"
+                android:textAlignment="textStart"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/blue" />
+
 
             <Button
                 android:layout_width="match_parent"
