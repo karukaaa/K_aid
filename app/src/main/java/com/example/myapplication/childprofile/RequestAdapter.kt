@@ -9,14 +9,15 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ItemRequestBinding
 import com.example.myapplication.requestlist.Request
 import com.example.myapplication.requestlist.RequestCallback
-import com.google.android.material.button.MaterialButton
 
 
 class RequestAdapter(
-    private val onDonateClick: (Request) -> Unit
+    private val onDonateClick: (Request) -> Unit,
+    private val isAdmin: Boolean
 ) : ListAdapter<Request, RequestAdapter.ViewHolder>(RequestCallback()) {
 
-    class ViewHolder(val binding: ItemRequestBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemRequestBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(request: Request, onDonateClick: (Request) -> Unit) {
             binding.title.text = request.title
             binding.requestDescription.text = request.description
@@ -28,32 +29,51 @@ class RequestAdapter(
 
             when (request.status) {
                 "Waiting" -> {
-                    donateButton.visibility = View.VISIBLE
-                    statusText.visibility = View.GONE
                     lineView.setBackgroundResource(R.color.blue)
-                    donateButton.setOnClickListener {
-                        onDonateClick(request)
+                    statusText.setTextColor(binding.root.context.getColor(R.color.blue))
+
+                    if (isAdmin) {
+                        donateButton.visibility = View.GONE
+                        statusText.visibility = View.VISIBLE
+                        statusText.text = "Status: Waiting"
+                    } else {
+                        donateButton.visibility = View.VISIBLE
+                        statusText.visibility = View.GONE
+                        donateButton.setOnClickListener {
+                            onDonateClick(request)
+                        }
                     }
                 }
+
                 "In process" -> {
+                    lineView.setBackgroundResource(R.color.yellow)
+                    statusText.setTextColor(binding.root.context.getColor(R.color.yellow))
+
                     donateButton.visibility = View.GONE
                     statusText.visibility = View.VISIBLE
                     statusText.text = "Status: In process"
-                    lineView.setBackgroundResource(R.color.yellow)
                 }
+
                 "Done" -> {
+                    lineView.setBackgroundResource(R.color.green)
+                    statusText.setTextColor(binding.root.context.getColor(R.color.green))
+
                     donateButton.visibility = View.GONE
                     statusText.visibility = View.VISIBLE
                     statusText.text = "Status: Done"
-                    lineView.setBackgroundResource(R.color.green)
                 }
+
                 else -> {
+                    lineView.setBackgroundResource(R.color.blue)
+                    statusText.setTextColor(binding.root.context.getColor(R.color.blue))
+
                     donateButton.visibility = View.GONE
                     statusText.visibility = View.VISIBLE
                     statusText.text = "Status: Unknown"
-                    lineView.setBackgroundResource(R.color.blue)
                 }
             }
+
+
         }
 
 

@@ -48,6 +48,10 @@ class ProfileFragment : Fragment() {
                     } else if(role == "user"){
                         binding.reviewButton.visibility = View.VISIBLE
                         binding.historyButton.visibility = View.VISIBLE
+                    } else if(role == "orphanage employee"){
+                        binding.btnCreateRequest.visibility = View.VISIBLE
+                        binding.historyButton.visibility = View.VISIBLE
+                        Toast.makeText(requireContext(), "Вы вошли как employee", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnFailureListener {
