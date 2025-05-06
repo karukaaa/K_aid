@@ -117,6 +117,30 @@
                 android:textColor="@color/white"
                 app:backgroundTint="@color/blue" />
 
+            <Button
+                android:id="@+id/add_children"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded_button_bg"
+                android:text="Add children"
+                android:textAlignment="textStart"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/blue" />
+
+            <Button
+                android:id="@+id/approve_children"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded_button_bg"
+                android:text="Approve children"
+                android:textAlignment="textStart"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/blue" />
+
 
             <Button
                 android:layout_width="match_parent"

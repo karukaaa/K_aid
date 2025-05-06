@@ -1,18 +1,17 @@
-package com.example.myapplication
+package com.example.myapplication.requestcreation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.requestlist.Request
 import com.example.myapplication.requestlist.RequestRecyclerViewAdapter
-import com.example.myapplication.reviews.Review
-import com.example.myapplication.reviews.ReviewAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -22,9 +21,6 @@ class ApprovingRequestsFragment : Fragment() {
     private lateinit var adapter: RequestRecyclerViewAdapter
     private val firestore = FirebaseFirestore.getInstance()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
