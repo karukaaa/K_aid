@@ -13,7 +13,6 @@ class RequestsViewModel : ViewModel() {
 
     private var allRequests: List<Request> = emptyList()
 
-
     init {
         fetchRequests()
     }
@@ -29,20 +28,18 @@ class RequestsViewModel : ViewModel() {
 
                 val list = snapshot?.documents?.mapNotNull { it.toObject(Request::class.java) }
                     ?: emptyList()
+
                 allRequests = list
-                _requests.value = list
+                _requests.value = list.filter { it.status != "Waiting approval" } // filter by default
             }
     }
 
-
-    fun filterRequestsByStatus(status: String?) {
-        _requests.value = if (status == null || status == "All") {
-            allRequests
-        } else {
-            allRequests.filter { it.status == status }
+    fun filterRequestsByStatus(status: String) {
+        val filtered = when (status) {
+            "All" -> allRequests.filter { it.status != "Waiting approval" }
+            else -> allRequests.filter { it.status == status }
         }
+
+        _requests.value = filtered
     }
-
-
-
 }

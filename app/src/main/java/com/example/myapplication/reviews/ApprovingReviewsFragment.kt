@@ -18,7 +18,6 @@ class ApprovingReviewsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ReviewAdapter
     private val firestore = FirebaseFirestore.getInstance()
-    private val reviewList = mutableListOf<Review>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

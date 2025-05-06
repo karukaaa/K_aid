@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.myapplication.ApprovingRequestsFragment
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentProfileBinding
@@ -44,6 +45,7 @@ class ProfileFragment : Fragment() {
                     val role = document.getString("role")
                     if (role == "admin") {
                         binding.approvingReviewsButton.visibility = View.VISIBLE
+                        binding.approvingRequestsButton.visibility = View.VISIBLE
                     } else if(role == "user"){
                         binding.reviewButton.visibility = View.VISIBLE
                         binding.historyButton.visibility = View.VISIBLE
@@ -97,6 +99,13 @@ class ProfileFragment : Fragment() {
 
         binding.approvingReviewsButton.setOnClickListener {
             val newFragment = ApprovingReviewsFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null).commit()
+        }
+
+        binding.approvingRequestsButton.setOnClickListener {
+            val newFragment = ApprovingRequestsFragment()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, newFragment)
                 .addToBackStack(null).commit()

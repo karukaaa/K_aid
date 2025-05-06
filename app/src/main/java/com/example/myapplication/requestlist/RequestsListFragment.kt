@@ -29,9 +29,10 @@ class RequestsListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_requests_list, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        adapter = RequestRecyclerViewAdapter { request ->
-            openChildProfileFragment(request.childID)
-        }
+        adapter = RequestRecyclerViewAdapter(
+            onItemClick = { request -> openChildProfileFragment(request.childID) },
+            onStatusChanged = {}
+        )
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter

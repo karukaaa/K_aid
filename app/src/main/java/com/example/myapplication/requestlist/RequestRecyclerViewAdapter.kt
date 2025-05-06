@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -14,7 +14,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RequestRecyclerViewAdapter(
-    private val onItemClick: (Request) -> Unit
+    private val onItemClick: (Request) -> Unit,
+    private val onStatusChanged: () -> Unit
 ) : ListAdapter<Request, RequestRecyclerViewAdapter.ViewHolder>(RequestCallback()) {
 
     private val db = FirebaseFirestore.getInstance()
@@ -35,11 +36,46 @@ class RequestRecyclerViewAdapter(
             binding.childName.text = request.childName
             binding.price.text = "${request.price?.toInt()} ₸"
 
+            val approveButton = binding.approveButton
+            val rejectButton = binding.rejectButton
+
             // Change line color based on request status
             when (request.status) {
                 "Done" -> binding.line.setBackgroundResource(R.color.green)
                 "In process" -> binding.line.setBackgroundResource(R.color.yellow)
                 else -> binding.line.setBackgroundResource(R.color.blue)
+            }
+
+            if (request.status == "Waiting approval") {
+                approveButton.visibility = View.VISIBLE
+                rejectButton.visibility = View.VISIBLE
+                binding.markAsDoneButton.visibility = View.GONE
+
+                approveButton.setOnClickListener {
+                    request.firestoreId?.let { id ->
+                        db.collection("requests").document(id)
+                            .update("status", "Waiting")
+                            .addOnSuccessListener {
+                                Toast.makeText(itemView.context, "Approved", Toast.LENGTH_SHORT).show()
+                                onStatusChanged() // reload
+                            }
+                    }
+                }
+
+                rejectButton.setOnClickListener {
+                    request.firestoreId?.let { id ->
+                        db.collection("requests").document(id)
+                            .update("status", "Rejected")
+                            .addOnSuccessListener {
+                                Toast.makeText(itemView.context, "Rejected", Toast.LENGTH_SHORT).show()
+                                onStatusChanged() // reload
+                            }
+                    }
+                }
+
+            } else {
+                approveButton.visibility = View.GONE
+                rejectButton.visibility = View.GONE
             }
 
             val currentUser = auth.currentUser
@@ -48,16 +84,23 @@ class RequestRecyclerViewAdapter(
                     .addOnSuccessListener { document ->
                         val role = document.getString("role")
                         if (role == "admin") {
-                            binding.markAsDoneButton.visibility = View.VISIBLE
-                            binding.markAsDoneButton.setOnClickListener {
-                                markRequestAsDone(request)
+                            if (request.status != "Waiting approval") {
+                                binding.markAsDoneButton.visibility = View.VISIBLE
+                                binding.markAsDoneButton.setOnClickListener {
+                                    markRequestAsDone(request)
+                                }
+                            } else {
+                                binding.markAsDoneButton.visibility = View.GONE
                             }
-                        } else {
-                            binding.markAsDoneButton.visibility = View.GONE
                         }
+
                     }
                     .addOnFailureListener {
-                        Toast.makeText(this.itemView.context, "Ошибка при получении роли", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this.itemView.context,
+                            "Ошибка при получении роли",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         binding.markAsDoneButton.visibility = View.GONE
                     }
             }
@@ -109,4 +152,14 @@ class RequestRecyclerViewAdapter(
             }
     }
 
+}
+
+class RequestCallback : ItemCallback<Request>() {
+    override fun areItemsTheSame(oldItem: Request, newItem: Request): Boolean {
+        return oldItem.description == newItem.description
+    }
+
+    override fun areContentsTheSame(oldItem: Request, newItem: Request): Boolean {
+        return oldItem == newItem
+    }
 }
