@@ -8,11 +8,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
+import com.example.myapplication.RequestDoneConfirmationFragment
 import com.example.myapplication.databinding.RequestBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
@@ -169,6 +171,58 @@ class RequestRecyclerViewAdapter(
                                                         "Waiting" -> {
                                                             updateRequestFields(request.firestoreId, newStatus, null) // clear UID
                                                         }
+                                                        "Done" -> {
+                                                            val context = itemView.context
+                                                            if (!request.firestoreId.isNullOrEmpty()) {
+                                                                if (!request.donatedBy.isNullOrEmpty()) {
+                                                                    // Update status and open confirmation
+                                                                    updateRequestFields(request.firestoreId, "Done", request.donatedBy)
+                                                                    if (context is FragmentActivity) {
+                                                                        val fragment = RequestDoneConfirmationFragment.newInstance(
+                                                                            request.firestoreId!!,
+                                                                            request.donatedBy!!
+                                                                        )
+                                                                        context.supportFragmentManager.beginTransaction()
+                                                                            .replace(R.id.fragment_container, fragment)
+                                                                            .addToBackStack(null)
+                                                                            .commit()
+                                                                    }
+                                                                } else {
+                                                                    // DonatedBy is empty – ask for UID
+                                                                    val input = EditText(context)
+                                                                    input.hint = "Enter user UID"
+
+                                                                    AlertDialog.Builder(context)
+                                                                        .setTitle("Enter UID of donor")
+                                                                        .setView(input)
+                                                                        .setPositiveButton("OK") { _, _ ->
+                                                                            val uid = input.text.toString().trim()
+                                                                            if (uid.isNotEmpty()) {
+                                                                                updateRequestFields(request.firestoreId, "Done", uid)
+                                                                                if (context is FragmentActivity) {
+                                                                                    val fragment = RequestDoneConfirmationFragment.newInstance(
+                                                                                        request.firestoreId!!,
+                                                                                        uid
+                                                                                    )
+                                                                                    context.supportFragmentManager.beginTransaction()
+                                                                                        .replace(R.id.fragment_container, fragment)
+                                                                                        .addToBackStack(null)
+                                                                                        .commit()
+                                                                                }
+                                                                            } else {
+                                                                                Toast.makeText(context, "UID cannot be empty", Toast.LENGTH_SHORT).show()
+                                                                                spinner.setSelection(statuses.indexOf(request.status))
+                                                                            }
+                                                                        }
+                                                                        .setNegativeButton("Cancel") { dialog, _ ->
+                                                                            dialog.dismiss()
+                                                                            spinner.setSelection(statuses.indexOf(request.status))
+                                                                        }
+                                                                        .show()
+                                                                }
+                                                            }
+                                                        }
+
 
                                                         else -> {
                                                             updateRequestStatus(request.firestoreId, newStatus)
