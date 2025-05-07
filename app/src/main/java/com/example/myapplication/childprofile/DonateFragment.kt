@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.requestlist.Request
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DonateFragment : Fragment() {
@@ -48,7 +49,6 @@ class DonateFragment : Fragment() {
         }
 
         // Fetch orphanage address using childID
-        val firestore = FirebaseFirestore.getInstance()
         if (request != null) {
             val addressTextView = view.findViewById<TextView>(R.id.address)
             request.childID?.let { childId ->
@@ -62,7 +62,8 @@ class DonateFragment : Fragment() {
                                 .document(orphanageID)
                                 .get()
                                 .addOnSuccessListener { orphanageSnapshot ->
-                                    val address = orphanageSnapshot.getString("address") ?: "Unknown address"
+                                    val address =
+                                        orphanageSnapshot.getString("address") ?: "Unknown address"
                                     addressTextView.text = address
                                 }
                                 .addOnFailureListener {
@@ -82,13 +83,14 @@ class DonateFragment : Fragment() {
 
 
         emailButton.setOnClickListener {
+            val userId = FirebaseAuth.getInstance().currentUser?.uid ?: "Unknown"
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:")
                 putExtra(Intent.EXTRA_EMAIL, arrayOf("arukhanym.zhaidary@kbtu.kz"))
                 putExtra(Intent.EXTRA_SUBJECT, "Donation Receipt for \"${request?.title}\"")
                 putExtra(
                     Intent.EXTRA_TEXT,
-                    "Hi,\n\nPlease find attached the receipt for the donation of \"${request?.title}\".\n\nBest regards."
+                    "Hi,\n\nPlease find attached the receipt for the donation of \"${request?.title}\".\n My user id is: $userId \n\nBest regards."
                 )
             }
             startActivity(Intent.createChooser(emailIntent, "Send email via..."))

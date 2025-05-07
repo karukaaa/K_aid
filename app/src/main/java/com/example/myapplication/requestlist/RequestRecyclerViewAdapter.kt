@@ -1,11 +1,12 @@
 package com.example.myapplication.requestlist
 
-import android.util.Log
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.ListAdapter
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.databinding.RequestBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RequestRecyclerViewAdapter(
@@ -34,22 +36,39 @@ class RequestRecyclerViewAdapter(
 
         fun updateRequestStatus(requestId: String?, newStatus: String) {
             if (requestId == null) {
-                Log.d("RequestAdapter", "Request ID is null, cannot update status")
+//                Log.d("RequestAdapter", "Request ID is null, cannot update status")
                 return
             }
-
-            Log.d("RequestAdapter", "Attempting to update request $requestId to $newStatus")
 
             db.collection("requests").document(requestId)
                 .update("status", newStatus)
                 .addOnSuccessListener {
-                    Log.d("RequestAdapter", "Successfully updated status to $newStatus for $requestId")
                     Toast.makeText(itemView.context, "Status updated", Toast.LENGTH_SHORT).show()
                     onStatusChanged()
                 }
                 .addOnFailureListener { e ->
-                    Log.d("RequestAdapter", "Failed to update status: ${e.message}")
-                    Toast.makeText(itemView.context, "Failed to update status", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(itemView.context, "Failed to update status", Toast.LENGTH_SHORT)
+                        .show()
+                }
+        }
+
+        fun updateRequestFields(requestId: String?, newStatus: String, donatedBy: String?) {
+            if (requestId == null) return
+            val updates = mutableMapOf<String, Any>("status" to newStatus)
+            if (donatedBy != null) {
+                updates["donatedBy"] = donatedBy
+            } else {
+                updates["donatedBy"] = FieldValue.delete()
+            }
+
+            db.collection("requests").document(requestId)
+                .update(updates)
+                .addOnSuccessListener {
+                    Toast.makeText(itemView.context, "Updated successfully", Toast.LENGTH_SHORT).show()
+                    onStatusChanged()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(itemView.context, "Failed to update request", Toast.LENGTH_SHORT).show()
                 }
         }
 
@@ -119,34 +138,46 @@ class RequestRecyclerViewAdapter(
 
                                         var isFirstSelection = true
 
-                                        Log.d(tag, "Setting spinner for request: ${request.title} with status: ${request.status}")
-
                                         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                                            override fun onItemSelected(
-                                                parent: AdapterView<*>,
-                                                view: View?,
-                                                position: Int,
-                                                id: Long
-                                            ) {
+                                            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                                                 val newStatus = statuses[position]
-                                                Log.d(tag, "Spinner item selected: $newStatus (isFirstSelection=$isFirstSelection)")
-
-                                                if (isFirstSelection) {
-                                                    isFirstSelection = false
-                                                    return
-                                                }
-
                                                 if (newStatus != request.status) {
-                                                    Log.d(tag, "Updating Firestore for request: ${request.firestoreId} to status: $newStatus")
-                                                    updateRequestStatus(request.firestoreId, newStatus)
-                                                } else {
-                                                    Log.d(tag, "Selected status is the same as current. No update needed.")
+                                                    when (newStatus) {
+                                                        "In process" -> {
+                                                            val context = itemView.context
+                                                            val input = EditText(context)
+                                                            input.hint = "Enter user UID"
+
+                                                            AlertDialog.Builder(context)
+                                                                .setTitle("Enter UID of donor")
+                                                                .setView(input)
+                                                                .setPositiveButton("OK") { _, _ ->
+                                                                    val uid = input.text.toString().trim()
+                                                                    if (uid.isNotEmpty()) {
+                                                                        updateRequestFields(request.firestoreId, newStatus, uid)
+                                                                    } else {
+                                                                        Toast.makeText(context, "UID cannot be empty", Toast.LENGTH_SHORT).show()
+                                                                    }
+                                                                }
+                                                                .setNegativeButton("Cancel") { dialog, _ ->
+                                                                    dialog.dismiss()
+                                                                    spinner.setSelection(statuses.indexOf(request.status))
+                                                                }
+                                                                .show()
+                                                        }
+
+                                                        "Waiting" -> {
+                                                            updateRequestFields(request.firestoreId, newStatus, null) // clear UID
+                                                        }
+
+                                                        else -> {
+                                                            updateRequestStatus(request.firestoreId, newStatus)
+                                                        }
+                                                    }
                                                 }
                                             }
 
-                                            override fun onNothingSelected(parent: AdapterView<*>) {
-                                                Log.d(tag, "Nothing selected in spinner")
-                                            }
+                                            override fun onNothingSelected(parent: AdapterView<*>) {}
                                         }
 
                                     }
