@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,8 @@ import com.example.myapplication.reviews.Review
 import com.example.myapplication.reviews.ReviewAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.perf.FirebasePerformance
+import com.google.firebase.perf.metrics.Trace
 
 class HomeFragment : Fragment() {
 
@@ -51,6 +54,18 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
 
         loadApprovedReviews()
+
+        val trace: Trace = FirebasePerformance.getInstance().newTrace("load_child_profile")
+        trace.start()
+
+        FirebaseFirestore.getInstance()
+            .collection("children")
+            .limit(1)
+            .get()
+            .addOnSuccessListener {
+                trace.stop()
+                Log.d("PerformanceTest", "Custom trace stopped")
+            }
     }
 
     private fun loadApprovedReviews() {

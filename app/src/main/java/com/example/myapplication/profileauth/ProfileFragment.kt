@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.myapplication.AddChildrenFragment
-import com.example.myapplication.ApproveChildrenFragment
+import com.example.myapplication.addingchildren.AddChildrenFragment
+import com.example.myapplication.addingchildren.ApproveChildrenFragment
 import com.example.myapplication.requestcreation.ApprovingRequestsFragment
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R

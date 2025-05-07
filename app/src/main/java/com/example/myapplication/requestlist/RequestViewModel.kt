@@ -26,7 +26,11 @@ class RequestsViewModel : ViewModel() {
                     return@addSnapshotListener
                 }
 
-                val list = snapshot?.documents?.mapNotNull { it.toObject(Request::class.java) }
+                val list = snapshot?.documents?.mapNotNull { doc ->
+                    val request = doc.toObject(Request::class.java)
+                    request?.firestoreId = doc.id  // 👈 Set the Firestore document ID
+                    request
+                }
                     ?.filter { it.status in listOf("Waiting", "In process", "Done") }
                     ?: emptyList()
                 allRequests = list
@@ -34,7 +38,8 @@ class RequestsViewModel : ViewModel() {
 
 
                 allRequests = list
-                _requests.value = list.filter { it.status != "Waiting approval" && it.status != "Rejected"} // filter by default
+                _requests.value =
+                    list.filter { it.status != "Waiting approval" && it.status != "Rejected" } // filter by default
             }
     }
 

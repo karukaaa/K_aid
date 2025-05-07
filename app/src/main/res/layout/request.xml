@@ -94,18 +94,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/mark_as_done_button"
+            <Spinner
+                android:id="@+id/status_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/blue"
-                android:padding="8dp"
-                android:text="Mark as done"
-                android:textSize="12sp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/price" />
+                app:layout_constraintTop_toBottomOf="@id/price"
+                />
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/approve_button"
@@ -118,7 +116,7 @@
                 android:textSize="12sp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mark_as_done_button" />
+                app:layout_constraintTop_toBottomOf="@id/status_spinner" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/reject_button"

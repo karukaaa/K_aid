@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.addingchildren
 
 import android.R
 import android.os.Bundle

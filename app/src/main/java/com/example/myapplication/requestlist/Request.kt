@@ -7,7 +7,7 @@ import java.io.Serializable
 @Entity(tableName = "requests")
 data class Request(
     @PrimaryKey(autoGenerate = true) val id: Int = 0, // Local ID for Room
-    val firestoreId: String? = null,
+    var firestoreId: String? = null,
     val title: String? = null,
     val description: String? = null,
     val price: Double? = null,

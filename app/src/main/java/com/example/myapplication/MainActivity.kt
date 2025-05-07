@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -27,8 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setContentView(R.layout.activity_main)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
@@ -52,6 +51,15 @@ class MainActivity : AppCompatActivity() {
 
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         registerReceiver(networkReceiver, filter)
+
+        FirebaseFirestore.getInstance()
+            .collection("requests")
+            .limit(1)
+            .get()
+            .addOnSuccessListener {
+                Log.d("PerformanceTest", "Fetched 1 request successfully")
+            }
+
     }
 
     fun onLoginSuccess() {
