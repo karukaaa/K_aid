@@ -49,6 +49,9 @@ class DonateFragment : Fragment() {
         }
 
         // Fetch orphanage address using childID
+        var orphanageEmail: String? = null // To store the dynamic email
+
+        // Fetch orphanage address and email
         if (request != null) {
             val addressTextView = view.findViewById<TextView>(R.id.address)
             request.childID?.let { childId ->
@@ -65,6 +68,9 @@ class DonateFragment : Fragment() {
                                     val address =
                                         orphanageSnapshot.getString("address") ?: "Unknown address"
                                     addressTextView.text = address
+
+                                    orphanageEmail =
+                                        orphanageSnapshot.getString("email") // 👈 get email
                                 }
                                 .addOnFailureListener {
                                     addressTextView.text = "Failed to fetch orphanage address"
@@ -77,20 +83,21 @@ class DonateFragment : Fragment() {
                         addressTextView.text = "Failed to fetch child"
                     }
             } ?: run {
-                addressTextView.text = "No child ID provided"
+                view.findViewById<TextView>(R.id.address).text = "No child ID provided"
             }
         }
 
 
         emailButton.setOnClickListener {
             val userId = FirebaseAuth.getInstance().currentUser?.uid ?: "Unknown"
+
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:")
-                putExtra(Intent.EXTRA_EMAIL, arrayOf("arukhanym.zhaidary@kbtu.kz"))
+                putExtra(Intent.EXTRA_EMAIL, arrayOf(orphanageEmail))
                 putExtra(Intent.EXTRA_SUBJECT, "Donation Receipt for \"${request?.title}\"")
                 putExtra(
                     Intent.EXTRA_TEXT,
-                    "Hi,\n\nPlease find attached the receipt for the donation of \"${request?.title}\".\n My user id is: $userId \n\nBest regards."
+                    "Hi,\n\nPlease find attached the receipt for the donation of \"${request?.title}\".\nMy user ID is: $userId\n\nBest regards."
                 )
             }
             startActivity(Intent.createChooser(emailIntent, "Send email via..."))
