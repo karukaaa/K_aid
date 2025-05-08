@@ -15,6 +15,7 @@ import com.example.myapplication.R
 import com.example.myapplication.requestlist.Request
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.perf.FirebasePerformance
 
 class ChildProfileFragment : Fragment() {
 
@@ -85,8 +86,13 @@ class ChildProfileFragment : Fragment() {
 
                 recyclerView.adapter = requestAdapter
 
+                //Performance testing
+                var trace = FirebasePerformance.getInstance().newTrace("load_reviews")
+                trace.start()
+
                 firestore.collection("children").document(childID).get()
                     .addOnSuccessListener { doc ->
+                        trace.stop()
                         val name = doc.getString("childName") ?: "Unknown"
                         val age = doc.getLong("childAge")?.toInt() ?: -1
                         val bio = doc.getString("childBio") ?: "No bio available."

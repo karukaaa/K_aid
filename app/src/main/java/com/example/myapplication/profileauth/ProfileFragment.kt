@@ -13,6 +13,7 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentProfileBinding
 import com.example.myapplication.requestcreation.RequestCreationFragment
+import com.example.myapplication.requestshistory.HistoryFragment
 import com.example.myapplication.reviews.ApprovingReviewsFragment
 import com.example.myapplication.reviews.LeavingReviewFragment
 import com.google.firebase.auth.FirebaseAuth

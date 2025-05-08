@@ -1,4 +1,4 @@
-package com.example.myapplication.profileauth
+package com.example.myapplication.requestshistory
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,6 +15,7 @@ import com.example.myapplication.requestlist.Request
 import com.example.myapplication.requestlist.RequestRecyclerViewAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.perf.FirebasePerformance
 
 
 class HistoryFragment : Fragment() {
@@ -46,17 +47,41 @@ class HistoryFragment : Fragment() {
         recyclerView.adapter = adapter
 
         val currentUserId = FirebaseAuth.getInstance().currentUser?.uid
+
+        //Performance monitoring
+        val trace = FirebasePerformance.getInstance().newTrace("load_requests_history")
+        trace.start()
+
         if (currentUserId != null) {
             FirebaseFirestore.getInstance().collection("requests")
                 .whereEqualTo("donatedBy", currentUserId)
                 .get()
                 .addOnSuccessListener { result ->
+                    trace.stop()
                     val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }
                     adapter.submitList(requests)
                 }
                 .addOnFailureListener {
+                    trace.stop()
                     Toast.makeText(requireContext(), "Failed to load donation history", Toast.LENGTH_SHORT).show()
                 }
+
+            val confirmationRecycler: RecyclerView = view.findViewById(R.id.confirmation_recycler)
+            val confirmationAdapter = ConfirmationAdapter()
+            confirmationRecycler.layoutManager = LinearLayoutManager(requireContext())
+            confirmationRecycler.adapter = confirmationAdapter
+
+            FirebaseFirestore.getInstance().collection("confirmations")
+                .whereEqualTo("donorID", currentUserId)
+                .get()
+                .addOnSuccessListener { result ->
+                    val confirmations = result.documents.mapNotNull { it.toObject(Confirmation::class.java) }
+                    confirmationAdapter.submitList(confirmations)
+                }
+                .addOnFailureListener {
+                    Toast.makeText(requireContext(), "Failed to load confirmations", Toast.LENGTH_SHORT).show()
+                }
+
         }
 
         val backButton = view.findViewById<ImageView>(R.id.back_button)

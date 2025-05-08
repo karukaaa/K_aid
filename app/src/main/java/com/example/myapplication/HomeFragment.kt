@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +14,6 @@ import com.example.myapplication.reviews.ReviewAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.perf.FirebasePerformance
-import com.google.firebase.perf.metrics.Trace
 
 class HomeFragment : Fragment() {
 
@@ -37,7 +35,6 @@ class HomeFragment : Fragment() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser == null) {
-            // Если пользователь не авторизован, открываем логин
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LogInFragment())
                 .commit()
@@ -54,33 +51,28 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
 
         loadApprovedReviews()
-
-        val trace: Trace = FirebasePerformance.getInstance().newTrace("load_child_profile")
-        trace.start()
-
-        FirebaseFirestore.getInstance()
-            .collection("children")
-            .limit(1)
-            .get()
-            .addOnSuccessListener {
-                trace.stop()
-                Log.d("PerformanceTest", "Custom trace stopped")
-            }
     }
 
     private fun loadApprovedReviews() {
+        //Performance testing
+        val trace = FirebasePerformance.getInstance().newTrace("load_requests_history")
+        trace.start()
+
         firestore.collection("reviews")
             .whereEqualTo("status", "Approved")
             .get()
             .addOnSuccessListener { result ->
+                trace.stop()
                 val reviews = result.documents.mapNotNull { doc ->
                     val review = doc.toObject(Review::class.java)
-                    review?.copy(id = doc.id) // ensure ID is included
+                    review?.copy(id = doc.id)
                 }
                 adapter.submitList(reviews)
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to load reviews", Toast.LENGTH_SHORT).show()
+                trace.stop()
+                Toast.makeText(requireContext(), "Failed to load reviews", Toast.LENGTH_SHORT)
+                    .show()
             }
     }
 }

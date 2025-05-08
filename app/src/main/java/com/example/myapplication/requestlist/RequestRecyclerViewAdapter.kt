@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
-import com.example.myapplication.RequestDoneConfirmationFragment
+import com.example.myapplication.requestshistory.RequestDoneConfirmationFragment
 import com.example.myapplication.databinding.RequestBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
@@ -38,7 +38,6 @@ class RequestRecyclerViewAdapter(
 
         fun updateRequestStatus(requestId: String?, newStatus: String) {
             if (requestId == null) {
-//                Log.d("RequestAdapter", "Request ID is null, cannot update status")
                 return
             }
 

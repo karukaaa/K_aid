@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         networkReceiver = NetworkChangeReceiver {
-            // Call sync logic here
             lifecycleScope.launch {
                 syncLocalRequestsToFirestore()
             }
@@ -51,14 +50,6 @@ class MainActivity : AppCompatActivity() {
 
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         registerReceiver(networkReceiver, filter)
-
-        FirebaseFirestore.getInstance()
-            .collection("requests")
-            .limit(1)
-            .get()
-            .addOnSuccessListener {
-                Log.d("PerformanceTest", "Fetched 1 request successfully")
-            }
 
     }
 

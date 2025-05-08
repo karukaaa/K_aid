@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.perf.FirebasePerformance
 
 class RequestsViewModel : ViewModel() {
 
@@ -18,6 +19,11 @@ class RequestsViewModel : ViewModel() {
     }
 
     private fun fetchRequests() {
+        val trace = FirebasePerformance.getInstance().newTrace("load_requests_trace")
+        trace.start()
+
+        var firstSnapshotHandled = false
+
         db.collection("requests")
             .addSnapshotListener { snapshot, error ->
                 if (error != null) {
@@ -26,21 +32,22 @@ class RequestsViewModel : ViewModel() {
                     return@addSnapshotListener
                 }
 
+                if (!firstSnapshotHandled) {
+                    trace.stop()
+                    firstSnapshotHandled = true
+                }
+
                 val list = snapshot?.documents?.mapNotNull { doc ->
                     val request = doc.toObject(Request::class.java)
-                    request?.firestoreId = doc.id  // 👈 Set the Firestore document ID
+                    request?.firestoreId = doc.id
                     request
-                }
-                    ?.filter { it.status in listOf("Waiting", "In process", "Done") }
+                }?.filter { it.status in listOf("Waiting", "In process", "Done") }
                     ?: emptyList()
-                allRequests = list
-                _requests.value = list
-
 
                 allRequests = list
-                _requests.value =
-                    list.filter { it.status != "Waiting approval" && it.status != "Rejected" } // filter by default
+                _requests.value = list.filter { it.status != "Waiting approval" && it.status != "Rejected" }
             }
+
     }
 
     fun filterRequestsByStatus(status: String) {
