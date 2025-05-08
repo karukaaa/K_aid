@@ -8,10 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.myapplication.EditChildProfileFragment
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentChildProfileBinding
-import com.example.myapplication.requestcreation.ApprovingRequestsFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.perf.FirebasePerformance

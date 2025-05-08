@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">K\'aid</string>
     <string name="default_web_client_id">404387597078-jbn28crb7agnshsd53m09792iiu9q3n7.apps.googleusercontent.com</string>
+    <string name="admin_email">arukhanym.zhaidary@gmail.com</string>
 
     <string-array name="request_status_options">
         <item>All</item>
@@ -8,7 +9,6 @@
         <item>In process</item>
         <item>Done</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
