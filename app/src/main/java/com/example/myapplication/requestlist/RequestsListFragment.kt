@@ -28,6 +28,12 @@ class RequestsListFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_requests_list, container, false)
 
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         adapter = RequestRecyclerViewAdapter(
             onItemClick = { request -> openChildProfileFragment(request.childID) },
@@ -56,8 +62,6 @@ class RequestsListFragment : Fragment() {
         viewModel.requests.observe(viewLifecycleOwner) { newRequests ->
             adapter.submitList(newRequests)
         }
-
-        return view
     }
 
     companion object {
