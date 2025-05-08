@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/very_light_blue">
+    android:background="@color/very_light_blue"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,15 +23,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Child Name"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/child_name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter child's full name"
             android:background="@drawable/transparent_frame"
+            android:hint="Enter child's full name"
             android:padding="8dp" />
 
         <!-- Child Age -->
@@ -40,16 +40,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Age"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/child_age_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/transparent_frame"
             android:hint="Enter age"
             android:inputType="number"
-            android:background="@drawable/transparent_frame"
             android:padding="8dp" />
 
         <!-- Gender -->
@@ -58,8 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Gender"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/gender_spinner"
@@ -74,33 +74,33 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Short Bio"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/child_bio_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter a short description"
             android:background="@drawable/transparent_frame"
-            android:padding="8dp"
-            android:minLines="3"
-            android:gravity="top" />
+            android:gravity="top"
+            android:hint="Enter a short description"
+            android:minLines="2"
+            android:padding="8dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Profile Photo URL"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/profile_photo_url_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter a link"
             android:background="@drawable/transparent_frame"
+            android:hint="Enter a link"
             android:padding="8dp" />
 
         <!-- Photo URLs -->
@@ -109,23 +109,39 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Photo URLs (comma-separated)"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/photo_urls_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter links separated by commas"
             android:background="@drawable/transparent_frame"
+            android:hint="Enter links separated by commas"
             android:padding="8dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/child_documents"
+            android:textStyle="bold" />
+
         <!-- Submit Button -->
+        <Button
+            android:id="@+id/email_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/blue"
+            android:text="Send email"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
         <Button
             android:id="@+id/submit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:backgroundTint="@color/green"
             android:text="Submit for Approval"
             android:textColor="@android:color/white"

@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ApproveChildrenAdapter(
     private var children: List<Pair<PendingChild, String>> = emptyList(),
@@ -14,11 +15,14 @@ class ApproveChildrenAdapter(
     private val onReject: (String) -> Unit
 ) : RecyclerView.Adapter<ApproveChildrenAdapter.ViewHolder>() {
 
+    private val firestore = FirebaseFirestore.getInstance()
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val childName: TextView = view.findViewById(R.id.child_name)
         val childAge: TextView = view.findViewById(R.id.child_age)
         val childGender: TextView = view.findViewById(R.id.child_gender)
         val childBio: TextView = view.findViewById(R.id.child_bio)
+        val orphanage: TextView = view.findViewById(R.id.orphanage)
         val approveButton: Button = view.findViewById(R.id.approve_button)
         val rejectButton: Button = view.findViewById(R.id.reject_button)
     }
@@ -38,9 +42,26 @@ class ApproveChildrenAdapter(
         holder.childGender.text = "Gender: ${child.childGender}"
         holder.childBio.text = "Bio: ${child.childBio}"
 
+        holder.orphanage.text = "Orphanage: loading..."
+
+        child.orphanageID?.let { orphanageId ->
+            firestore.collection("orphanages").document(orphanageId)
+                .get()
+                .addOnSuccessListener { doc ->
+                    val name = doc.getString("orphanageName") ?: "Unknown"
+                    holder.orphanage.text = "Orphanage: $name"
+                }
+                .addOnFailureListener {
+                    holder.orphanage.text = "Orphanage: error"
+                }
+        } ?: run {
+            holder.orphanage.text = "Orphanage: not assigned"
+        }
+
         holder.approveButton.setOnClickListener {
             onApprove(child, docId)
         }
+
         holder.rejectButton.setOnClickListener {
             onReject(docId)
         }

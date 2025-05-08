@@ -1,11 +1,14 @@
 package com.example.myapplication.addingchildren
 
 import android.R
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.FragmentAddChildrenBinding
@@ -48,6 +51,19 @@ class AddChildrenFragment : Fragment() {
         }
 
         val userId = auth.currentUser?.uid ?: return
+
+        val emailButton = binding.emailButton
+        emailButton.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:")
+                putExtra(Intent.EXTRA_EMAIL, arrayOf("arukhanym.zhaidary@gmail.com"))
+                putExtra(Intent.EXTRA_SUBJECT, "Child Addition Approval Request")
+                putExtra(Intent.EXTRA_TEXT, "Hello,\n\nI'm sending you a request to approve adding a new child - [INSERT CHILD'S NAME] to the database, " +
+                        "please review the documents in the attachments.\n\nBest regards,\n[Your Name]")
+            }
+            startActivity(Intent.createChooser(emailIntent, "Send email via..."))
+        }
+
 
         firestore.collection("users").document(userId).get()
             .addOnSuccessListener { doc ->

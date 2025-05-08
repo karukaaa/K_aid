@@ -10,5 +10,9 @@
         <item>Done</item>
     </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="child_documents">Don\'t forget to send the following documents to administrators email - arukhanym.zhaidary@gmail.com:
+\n\n 1. Child\'s birth certificate
+\n 2. Certificate of absence of parents
+\n 3. Certificate of residence from an orphanage</string>
 
 </resources>
