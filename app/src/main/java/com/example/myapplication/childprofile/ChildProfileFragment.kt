@@ -4,21 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.myapplication.EditChildProfileFragment
 import com.example.myapplication.R
-import com.example.myapplication.requestlist.Request
+import com.example.myapplication.databinding.FragmentChildProfileBinding
+import com.example.myapplication.requestcreation.ApprovingRequestsFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.perf.FirebasePerformance
 
 class ChildProfileFragment : Fragment() {
-
+    private var _binding: FragmentChildProfileBinding? = null
+    private val binding get() = _binding!!
     private var requestAdapter: RequestAdapter? = null
 
     companion object {
@@ -37,7 +37,8 @@ class ChildProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_child_profile, container, false)
+        _binding = FragmentChildProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,21 +48,15 @@ class ChildProfileFragment : Fragment() {
         val auth = FirebaseAuth.getInstance()
         val userId = auth.currentUser?.uid ?: return
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.child_requests_recyclerview)
+        val editButton = binding.editButton
+        val recyclerView = binding.childRequestsRecyclerview
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val photosRecyclerView = view.findViewById<RecyclerView>(R.id.photosRecyclerView)
-        photosRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        val photosRecyclerView = binding.photosRecyclerView
+        photosRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        val nameText = view.findViewById<TextView>(R.id.child_name)
-        val ageText = view.findViewById<TextView>(R.id.child_age)
-        val aboutText = view.findViewById<TextView>(R.id.about_text)
-        val bioText = view.findViewById<TextView>(R.id.bio_text)
-        val orphanageNameText = view.findViewById<TextView>(R.id.orphanage_name)
-        val backButton = view.findViewById<ImageView>(R.id.back_button)
-        val profileImage = view.findViewById<ImageView>(R.id.profile_image)
-
-        backButton.setOnClickListener {
+        binding.backButton.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
 
@@ -72,82 +67,116 @@ class ChildProfileFragment : Fragment() {
             return
         }
 
-        firestore.collection("users").document(userId).get()
-            .addOnSuccessListener { userDoc ->
-                val isAdmin = userDoc.getString("role") == "admin"
+        editButton.setOnClickListener {
+            val newFragment = EditChildProfileFragment.newInstance(childID)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null)
+                .commit()
+        }
 
-                requestAdapter = RequestAdapter(onDonateClick = { request ->
-                    val fragment = DonateFragment.newInstance(request)
-                    requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .addToBackStack(null)
-                        .commit()
-                }, isAdmin = isAdmin)
+        firestore.collection("children").document(childID).get()
+            .addOnSuccessListener { childDoc ->
+                val orphanageID = childDoc.getString("orphanageID")
 
-                recyclerView.adapter = requestAdapter
+                // Check employee role + orphanage match
+                firestore.collection("users").document(userId).get()
+                    .addOnSuccessListener { userDoc ->
+                        val role = userDoc.getString("role")
+                        val userOrphanageID = userDoc.getString("orphanageID")
 
-                //Performance testing
-                var trace = FirebasePerformance.getInstance().newTrace("load_reviews")
-                trace.start()
+                        if (role == "orphanage employee" && userOrphanageID == orphanageID) {
+                            editButton.visibility = View.VISIBLE
+                        } else {
+                            editButton.visibility = View.GONE
+                        }
 
-                firestore.collection("children").document(childID).get()
-                    .addOnSuccessListener { doc ->
-                        trace.stop()
-                        val name = doc.getString("childName") ?: "Unknown"
-                        val age = doc.getLong("childAge")?.toInt() ?: -1
-                        val bio = doc.getString("childBio") ?: "No bio available."
-                        val orphanageID = doc.getString("orphanageID")
+                        val isAdmin = role == "admin"
 
-                        val photos = doc.get("photos") as? List<String>
+                        requestAdapter = RequestAdapter(onDonateClick = { request ->
+                            val fragment = DonateFragment.newInstance(request)
+                            requireActivity().supportFragmentManager.beginTransaction()
+                                .replace(R.id.fragment_container, fragment)
+                                .addToBackStack(null)
+                                .commit()
+                        }, isAdmin = isAdmin)
+
+                        recyclerView.adapter = requestAdapter
+
+                        val trace = FirebasePerformance.getInstance().newTrace("load_reviews")
+                        trace.start()
+
+                        val name = childDoc.getString("childName") ?: "Unknown"
+                        val age = childDoc.getLong("childAge")?.toInt() ?: -1
+                        val bio = childDoc.getString("childBio") ?: "No bio available."
+                        val photos = childDoc.get("photos") as? List<String>
+                        val profilePhotoUrl = childDoc.getString("photoUrl")
+
+                        binding.childName.text = name
+                        binding.childAge.text = if (age > 0) "$age years old" else "Age unknown"
+                        binding.bioText.text = bio
+                        binding.aboutText.text = "\u2728 About $name"
+
+                        if (!profilePhotoUrl.isNullOrEmpty()) {
+                            Glide.with(this)
+                                .load(profilePhotoUrl)
+                                .placeholder(R.drawable.baseline_account_circle_24)
+                                .into(binding.profileImage)
+                        }
+
                         if (!photos.isNullOrEmpty()) {
                             val photoAdapter = PhotoAdapter(photos)
                             photosRecyclerView.adapter = photoAdapter
                         }
 
-                        val profilePhotoUrl = doc.getString("photoUrl")
-                        if (!profilePhotoUrl.isNullOrEmpty()) {
-                            Glide.with(this)
-                                .load(profilePhotoUrl)
-                                .placeholder(R.drawable.baseline_account_circle_24)
-                                .into(profileImage)
-                        }
-
-                        nameText.text = name
-                        ageText.text = if (age > 0) "$age years old" else "Age unknown"
-                        bioText.text = bio
-                        aboutText.text = "\u2728 About $name"
-
                         if (!orphanageID.isNullOrEmpty()) {
                             firestore.collection("orphanages").document(orphanageID).get()
                                 .addOnSuccessListener { orphanageDoc ->
-                                    orphanageNameText.text = orphanageDoc.getString("orphanageName") ?: "Unknown orphanage"
+                                    binding.orphanageName.text =
+                                        orphanageDoc.getString("orphanageName")
+                                            ?: "Unknown orphanage"
                                 }
                                 .addOnFailureListener {
-                                    orphanageNameText.text = "Unknown orphanage"
+                                    binding.orphanageName.text = "Unknown orphanage"
                                 }
                         } else {
-                            orphanageNameText.text = "No orphanage assigned"
+                            binding.orphanageName.text = "No orphanage assigned"
                         }
 
                         firestore.collection("requests")
                             .whereEqualTo("childID", childID)
                             .get()
                             .addOnSuccessListener { result ->
-                                val requests = result.documents.mapNotNull { it.toObject(Request::class.java) }
-                                    .filter { it.status in listOf("Waiting", "In process", "Done") }
+                                trace.stop()
+                                val requests =
+                                    result.documents.mapNotNull { it.toObject(com.example.myapplication.requestlist.Request::class.java) }
+                                        .filter {
+                                            it.status in listOf(
+                                                "Waiting",
+                                                "In process",
+                                                "Done"
+                                            )
+                                        }
                                 requestAdapter?.submitList(requests)
-
                             }
-                            .addOnFailureListener{
-                                Toast.makeText(requireContext(), "Failed to load requests", Toast.LENGTH_SHORT).show()
+                            .addOnFailureListener {
+                                trace.stop()
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Failed to load requests",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT).show()
                     }
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to check user role", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT)
+                    .show()
             }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

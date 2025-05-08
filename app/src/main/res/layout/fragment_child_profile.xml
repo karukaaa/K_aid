@@ -76,6 +76,15 @@
                         tools:text="10 years old" />
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/edit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/blue"/>
             </LinearLayout>
 
             <LinearLayout
