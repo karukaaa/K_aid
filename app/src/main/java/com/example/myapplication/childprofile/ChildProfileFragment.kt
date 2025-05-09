@@ -1,10 +1,16 @@
 package com.example.myapplication.childprofile
 
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.MediaController
+import android.widget.TextView
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -140,6 +146,42 @@ class ChildProfileFragment : Fragment() {
                         } else {
                             binding.orphanageName.text = "No orphanage assigned"
                         }
+
+
+                        val videoView = view.findViewById<VideoView>(R.id.dream_video_view)
+                        val placeholder = view.findViewById<TextView>(R.id.video_placeholder)
+
+                        firestore.collection("children").document(childID).get()
+                            .addOnSuccessListener { doc ->
+                                val videoUrl = doc.getString("dreamVideoUrl")
+                                if (!videoUrl.isNullOrEmpty()) {
+                                    binding.videoPlayer.visibility = View.VISIBLE
+
+                                    val uri = Uri.parse(videoUrl)
+                                    videoView.setVideoURI(uri)
+
+                                    videoView.setOnPreparedListener { mp ->
+                                        mp.isLooping = false
+                                        videoView.start()
+
+                                        // Hide the placeholder when the video is ready
+                                        placeholder.visibility = View.GONE
+
+                                        val mediaController = MediaController(requireContext())
+                                        mediaController.setAnchorView(videoView)
+                                        videoView.setMediaController(mediaController)
+                                    }
+
+                                } else {
+                                    videoView.visibility = View.GONE
+                                    placeholder.visibility = View.GONE
+                                }
+                            }
+                            .addOnFailureListener {
+                                placeholder.visibility = View.GONE
+                                Toast.makeText(requireContext(), "Failed to load video", Toast.LENGTH_SHORT).show()
+                            }
+
 
                         firestore.collection("requests")
                             .whereEqualTo("childID", childID)

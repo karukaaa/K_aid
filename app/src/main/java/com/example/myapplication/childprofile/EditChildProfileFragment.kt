@@ -1,5 +1,8 @@
 package com.example.myapplication.childprofile
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +12,17 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.FragmentEditChildProfileBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 
 class EditChildProfileFragment : Fragment() {
     private var _binding: FragmentEditChildProfileBinding? = null
     private val binding get() = _binding!!
+
+    private val PICK_AUDIO_REQUEST = 1001
+    private val PICK_VIDEO_REQUEST = 1002
+    private var selectedAudioUri: Uri? = null
+    private var selectedVideoUri: Uri? = null
+
 
     companion object {
         private const val ARG_CHILD_ID = "childID"
@@ -50,6 +60,21 @@ class EditChildProfileFragment : Fragment() {
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.editGenderSpinner.adapter = genderAdapter
 
+
+
+        binding.selectAudioButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "audio/*"
+            startActivityForResult(intent, PICK_AUDIO_REQUEST)
+        }
+
+        binding.selectVideoButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "video/*"
+            startActivityForResult(intent, PICK_VIDEO_REQUEST)
+        }
+
+
         // Load existing data
         db.collection("children").document(childID).get()
             .addOnSuccessListener { doc ->
@@ -73,36 +98,82 @@ class EditChildProfileFragment : Fragment() {
                     val updatedGender = binding.editGenderSpinner.selectedItem.toString()
                     val updatedBio = binding.editBio.text.toString().trim()
                     val updatedProfilePhoto = binding.editProfilePhotoUrl.text.toString().trim()
-                    val updatedPhotos =
-                        binding.editExtraPhotos.text.toString().split(",").map { it.trim() }
-                            .filter { it.isNotEmpty() }
+                    val updatedPhotos = binding.editExtraPhotos.text.toString()
+                        .split(", ").map { it.trim() }.filter { it.isNotEmpty() }
 
-                    val updates = mapOf(
-                        "childAge" to updatedAge,
+                    val storageRef = FirebaseStorage.getInstance().reference
+                    val childDocRef = db.collection("children").document(childID)
+
+                    val updates = mutableMapOf<String, Any>(
+                        "childAge" to (updatedAge ?: 0),
                         "childGender" to updatedGender,
                         "childBio" to updatedBio,
                         "photoUrl" to updatedProfilePhoto,
                         "photos" to updatedPhotos
                     )
 
-                    db.collection("children").document(childID)
-                        .update(updates)
-                        .addOnSuccessListener {
-                            Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT)
-                                .show()
+                    fun uploadAndSave(uri: Uri, path: String, onComplete: (String) -> Unit) {
+                        val fileRef = storageRef.child("children/$childID/$path")
+                        fileRef.putFile(uri).continueWithTask { fileRef.downloadUrl }
+                            .addOnSuccessListener { uri -> onComplete(uri.toString()) }
+                            .addOnFailureListener {
+                                Toast.makeText(requireContext(), "Upload failed: $path", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+
+                    if (selectedAudioUri != null && selectedVideoUri != null) {
+                        uploadAndSave(selectedAudioUri!!, "dream_audio.mp3") { audioUrl ->
+                            updates["dreamAudioUrl"] = audioUrl
+                            uploadAndSave(selectedVideoUri!!, "dream_video.mp4") { videoUrl ->
+                                updates["dreamVideoUrl"] = videoUrl
+                                childDocRef.update(updates).addOnSuccessListener {
+                                    Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
+                                    parentFragmentManager.popBackStack()
+                                }
+                            }
+                        }
+                    } else if (selectedAudioUri != null) {
+                        uploadAndSave(selectedAudioUri!!, "dream_audio.mp3") { audioUrl ->
+                            updates["dreamAudioUrl"] = audioUrl
+                            childDocRef.update(updates).addOnSuccessListener {
+                                Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
+                                parentFragmentManager.popBackStack()
+                            }
+                        }
+                    } else if (selectedVideoUri != null) {
+                        uploadAndSave(selectedVideoUri!!, "dream_video.mp4") { videoUrl ->
+                            updates["dreamVideoUrl"] = videoUrl
+                            childDocRef.update(updates).addOnSuccessListener {
+                                Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
+                                parentFragmentManager.popBackStack()
+                            }
+                        }
+                    } else {
+                        // No media selected
+                        childDocRef.update(updates).addOnSuccessListener {
+                            Toast.makeText(requireContext(), "Profile updated", Toast.LENGTH_SHORT).show()
                             parentFragmentManager.popBackStack()
                         }
-                        .addOnFailureListener {
-                            Toast.makeText(requireContext(), "Update failed", Toast.LENGTH_SHORT)
-                                .show()
-                        }
+                    }
                 }
+
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "Failed to load child info", Toast.LENGTH_SHORT)
                     .show()
             }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            when (requestCode) {
+                PICK_AUDIO_REQUEST -> selectedAudioUri = data.data
+                PICK_VIDEO_REQUEST -> selectedVideoUri = data.data
+            }
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

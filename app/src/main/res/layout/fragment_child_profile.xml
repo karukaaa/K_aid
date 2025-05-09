@@ -129,7 +129,6 @@
                 android:overScrollMode="never"
                 android:scrollbars="none" />
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/child_requests_recyclerview"
                 android:layout_width="match_parent"
@@ -138,6 +137,33 @@
                 android:layout_marginTop="16dp"
                 android:nestedScrollingEnabled="false"
                 android:overScrollMode="never" />
+
+            <FrameLayout
+                android:id="@+id/video_player"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="40dp"
+                android:layout_height="200dp">
+
+                <VideoView
+                    android:id="@+id/dream_video_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/video_placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="24dp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_bold"
+                    android:background="@color/very_light_blue"
+                    android:text="Video is loading..."/>
+            </FrameLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

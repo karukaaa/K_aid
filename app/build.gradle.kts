@@ -83,6 +83,11 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-perf")
 
+
+    //Firebase Storage
+    implementation ("com.google.firebase:firebase-storage-ktx")
+
+
 }
 
 apply(plugin = "com.google.gms.google-services")
