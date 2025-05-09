@@ -207,13 +207,33 @@
         android:textSize="16sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/email_button"
+        android:id="@+id/upload_receipt_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
         android:backgroundTint="@color/blue"
-        android:text="Send receipt"
+        android:text="Upload receipt"
         android:textColor="@android:color/white"
         android:textSize="16sp" />
+    <TextView
+        android:id="@+id/receipt_status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/send_email_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:backgroundTint="@color/blue"
+        android:text="Send email"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
 
 </LinearLayout>
