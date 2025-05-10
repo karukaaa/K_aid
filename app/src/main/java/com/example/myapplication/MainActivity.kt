@@ -15,6 +15,7 @@ import com.example.myapplication.requestcreation.AppDatabase
 import com.example.myapplication.requestcreation.NetworkChangeReceiver
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 
@@ -22,13 +23,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private val auth = FirebaseAuth.getInstance()
-
     private lateinit var networkReceiver: NetworkChangeReceiver
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // 🔥 Firebase Crashlytics
+        FirebaseCrashlytics.getInstance().log("Приложение успешно запущено")
+        FirebaseCrashlytics.getInstance().setUserId("user_123")
+        FirebaseCrashlytics.getInstance().setCustomKey("screen", "MainActivity")
+        //throw RuntimeException("Тестовый краш") // для теста
+
+
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.visibility = View.GONE
@@ -50,7 +57,6 @@ class MainActivity : AppCompatActivity() {
 
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         registerReceiver(networkReceiver, filter)
-
     }
 
     fun onLoginSuccess() {
@@ -96,7 +102,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadLoginFragment() {
-        bottomNavigationView.visibility = View.GONE  // Убедимся, что скрыт
+        bottomNavigationView.visibility = View.GONE
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, LogInFragment())
             .commit()
@@ -129,9 +135,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener {
-                    // Retry later
+                    // Optionally log error
                 }
         }
     }
-
 }
