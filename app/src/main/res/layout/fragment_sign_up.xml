@@ -5,45 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/very_light_blue"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:orientation="vertical"
     android:paddingHorizontal="40dp"
     tools:context=".profileauth.LogInFragment">
 
 
-    <FrameLayout
+<!--    <FrameLayout-->
 
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@color/very_light_blue"
-        android:gravity="center">
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:background="@color/very_light_blue"-->
+<!--        android:gravity="center">-->
 
-        <!-- Circular Background -->
-        <View
-            android:id="@+id/upload_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/circle_background"
-            android:backgroundTint="@color/white" />
+<!--        &lt;!&ndash; Circular Background &ndash;&gt;-->
+<!--        <View-->
+<!--            android:id="@+id/upload_photo"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/circle_background"-->
+<!--            android:backgroundTint="@color/white" />-->
 
-        <!-- Upload Icon -->
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_gravity="center"
-            android:src="@drawable/baseline_upload_file_24"
-            app:tint="@color/gray" />
+<!--        &lt;!&ndash; Upload Icon &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:layout_width="32dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/baseline_upload_file_24"-->
+<!--            app:tint="@color/gray" />-->
 
-        <!-- Upload Text -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="24dp"
-            android:text="Upload photo"
-            android:textColor="@color/gray"
-            android:textSize="12sp" />
-    </FrameLayout>
+<!--        &lt;!&ndash; Upload Text &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal|bottom"-->
+<!--            android:layout_marginBottom="24dp"-->
+<!--            android:text="Upload photo"-->
+<!--            android:textColor="@color/gray"-->
+<!--            android:textSize="12sp" />-->
+<!--    </FrameLayout>-->
 
 
     <TextView

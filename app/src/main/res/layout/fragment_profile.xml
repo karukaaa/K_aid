@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -30,13 +29,14 @@
                     android:id="@+id/profileImage"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/circle_background"
+                    android:background="@drawable/baseline_account_circle_24"
                     android:backgroundTint="@color/blue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
@@ -46,6 +46,18 @@
                     app:layout_constraintBottom_toBottomOf="@id/profileImage"
                     app:layout_constraintStart_toEndOf="@id/profileImage"
                     app:layout_constraintTop_toTopOf="@id/profileImage" />
+
+                <TextView
+                    android:id="@+id/userRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Role"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/profileImage"
+                    app:layout_constraintTop_toBottomOf="@id/userName" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -76,9 +88,9 @@
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/rounded_button_bg"
                 android:text="Request history"
-                android:visibility="gone"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:backgroundTint="@color/blue" />
 
             <Button
@@ -89,8 +101,8 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Leave a review"
                 android:textAlignment="textStart"
-                android:visibility="gone"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:backgroundTint="@color/blue" />
 
             <Button
@@ -101,8 +113,8 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Approve the reviews"
                 android:textAlignment="textStart"
-                android:visibility="gone"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:backgroundTint="@color/blue" />
 
             <Button
@@ -113,8 +125,8 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Approve the requests"
                 android:textAlignment="textStart"
-                android:visibility="gone"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:backgroundTint="@color/blue" />
 
             <Button
@@ -125,8 +137,8 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Add children"
                 android:textAlignment="textStart"
-                android:visibility="gone"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:backgroundTint="@color/blue" />
 
             <Button
@@ -137,18 +149,18 @@
                 android:background="@drawable/rounded_button_bg"
                 android:text="Approve children"
                 android:textAlignment="textStart"
-                android:visibility="gone"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:backgroundTint="@color/blue" />
 
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/rounded_button_bg"
                 android:text="Language"
-                android:layout_marginTop="36dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/blue" />

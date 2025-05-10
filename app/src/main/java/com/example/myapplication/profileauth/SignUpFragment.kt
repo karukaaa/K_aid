@@ -37,9 +37,11 @@ class SignUpFragment : Fragment() {
             val email = binding.email.text.toString().trim()
             val password = binding.password.text.toString().trim()
             val confirmPassword = binding.confirmPassword.text.toString().trim()
+            val firstName = binding.firstName.text.toString().trim()
+            val lastName = binding.lastName.text.toString().trim()
 
             // Проверяем, что данные введены правильно
-            if (email.isNotEmpty() && password.length >= 6 && password == confirmPassword) {
+            if (email.isNotEmpty() && password.length >= 6 && password == confirmPassword && firstName.isNotEmpty() && lastName.isNotEmpty()) {
                 // Создание нового пользователя
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
@@ -48,17 +50,21 @@ class SignUpFragment : Fragment() {
                             val uid = user?.uid
 
                             val db = FirebaseFirestore.getInstance()
+
                             val userData = hashMapOf(
                                 "role" to "user",
-                                "email" to email
+                                "email" to email,
+                                "firstName" to firstName,
+                                "lastName" to lastName
                             )
+
 
                             db.collection("users").document(uid!!)
                                 .set(userData)
                                 .addOnSuccessListener {
                                     Toast.makeText(
                                         requireContext(),
-                                        "Регистрация прошла успешно!",
+                                        "Registration successful!",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                     parentFragmentManager.beginTransaction()
@@ -68,7 +74,7 @@ class SignUpFragment : Fragment() {
                                 .addOnFailureListener { e ->
                                     Toast.makeText(
                                         requireContext(),
-                                        "Ошибка при сохранении данных: ${e.message}",
+                                        "Error saving data: ${e.message}",
                                         Toast.LENGTH_LONG
                                     ).show()
                                 }
@@ -77,7 +83,7 @@ class SignUpFragment : Fragment() {
                             // Ошибка
                             Toast.makeText(
                                 requireContext(),
-                                "Ошибка: ${task.exception?.message}",
+                                "Error: ${task.exception?.message}",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -86,7 +92,7 @@ class SignUpFragment : Fragment() {
                 // Если данные невалидны
                 Toast.makeText(
                     requireContext(),
-                    "Проверьте Email, пароль (мин. 6 символов) и совпадение паролей",
+                    "Check Email, password (min. 6 characters) and confirm password",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -99,13 +105,10 @@ class SignUpFragment : Fragment() {
                 .commit()
         }
 
-        // Для отладки, чтобы убедиться, что фрагмент загружен и кнопка работает
-        binding.uploadPhoto.setOnClickListener {
-            Toast.makeText(requireContext(), "SignUpFragment открыт", Toast.LENGTH_SHORT).show()
-        }
+
 
         // Дополнительный Toast для проверки, что кнопка "Next" сработала
-        Toast.makeText(requireContext(), "SignUpFragment загружен", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(), "SignUpFragment загружен", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {

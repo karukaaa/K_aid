@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.myapplication.addingchildren.AddChildrenFragment
-import com.example.myapplication.addingchildren.ApproveChildrenFragment
-import com.example.myapplication.requestcreation.ApprovingRequestsFragment
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.addingchildren.AddChildrenFragment
+import com.example.myapplication.addingchildren.ApproveChildrenFragment
 import com.example.myapplication.databinding.FragmentProfileBinding
+import com.example.myapplication.requestcreation.ApprovingRequestsFragment
 import com.example.myapplication.requestcreation.RequestCreationFragment
 import com.example.myapplication.requestshistory.HistoryFragment
 import com.example.myapplication.reviews.ApprovingReviewsFragment
@@ -45,37 +45,51 @@ class ProfileFragment : Fragment() {
             db.collection("users").document(currentUser.uid).get()
                 .addOnSuccessListener { document ->
                     if (!isAdded || _binding == null) return@addOnSuccessListener
-                    val role = document.getString("role")
-                    if (role == "admin") {
-                        binding.approvingReviewsButton.visibility = View.VISIBLE
-                        binding.approvingRequestsButton.visibility = View.VISIBLE
-                        binding.approveChildren.visibility = View.VISIBLE
-                    } else if (role == "user") {
-                        binding.reviewButton.visibility = View.VISIBLE
-                        binding.historyButton.visibility = View.VISIBLE
-                    } else if (role == "orphanage employee") {
-                        binding.btnCreateRequest.visibility = View.VISIBLE
-                        binding.historyButton.visibility = View.VISIBLE
-                        binding.reviewButton.visibility = View.VISIBLE
-                        binding.addChildren.visibility = View.VISIBLE
-                        Toast.makeText(
-                            requireContext(),
-                            "Вы вошли как employee",
-                            Toast.LENGTH_SHORT
-                        ).show()
+
+                    val firstName = document.getString("firstName") ?: ""
+                    val lastName = document.getString("lastName") ?: ""
+                    val role = document.getString("role") ?: ""
+
+                    binding.userName.text = "$firstName $lastName"
+
+                    when (role) {
+                        "admin" -> {
+                            binding.userRole.text = "Admin"
+                            binding.userRole.visibility = View.VISIBLE
+                            binding.approvingReviewsButton.visibility = View.VISIBLE
+                            binding.approvingRequestsButton.visibility = View.VISIBLE
+                            binding.approveChildren.visibility = View.VISIBLE
+                        }
+
+                        "orphanage employee" -> {
+                            val orphanageId = document.getString("orphanageID")
+                            if (!orphanageId.isNullOrEmpty()) {
+                                db.collection("orphanages").document(orphanageId).get()
+                                    .addOnSuccessListener { orphanageDoc ->
+                                        val orphanageName =
+                                            orphanageDoc.getString("orphanageName") ?: ""
+                                        binding.userRole.text = "Employee at: $orphanageName"
+                                        binding.userRole.visibility = View.VISIBLE
+                                    }
+                            }
+                            binding.btnCreateRequest.visibility = View.VISIBLE
+                            binding.historyButton.visibility = View.VISIBLE
+                            binding.reviewButton.visibility = View.VISIBLE
+                            binding.addChildren.visibility = View.VISIBLE
+                        }
+
+                        "user" -> {
+                            binding.userRole.visibility = View.GONE
+                            binding.reviewButton.visibility = View.VISIBLE
+                            binding.historyButton.visibility = View.VISIBLE
+                        }
                     }
                 }
                 .addOnFailureListener {
                     if (!isAdded || _binding == null) return@addOnFailureListener
-                    Toast.makeText(
-                        requireContext(),
-                        "Ошибка при получении роли",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    binding.btnCreateRequest.visibility = View.GONE
-                    binding.reviewButton.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Error fetching user data", Toast.LENGTH_SHORT)
+                        .show()
                 }
-
         }
 
         binding.btnCreateRequest.setOnClickListener {
