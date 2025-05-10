@@ -1,10 +1,13 @@
 package com.example.myapplication.requestlist
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.EditText
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.childprofile.ChildProfileFragment
+import android.content.Context
+import android.view.inputmethod.InputMethodManager
+import androidx.activity.addCallback
 
 
 class RequestsListFragment : Fragment() {
@@ -25,14 +31,16 @@ class RequestsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val view = inflater.inflate(R.layout.fragment_requests_list, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_requests_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            hideKeyboard()
+        }
+
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         adapter = RequestRecyclerViewAdapter(
@@ -58,15 +66,23 @@ class RequestsListFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        // Observe the ViewModel for changes
+        val searchEditText: EditText = view.findViewById(R.id.search_bar)
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                viewModel.searchRequests(s.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
         viewModel.requests.observe(viewLifecycleOwner) { newRequests ->
-            adapter.submitList(newRequests)
+            if (isAdded) {
+                adapter.submitList(newRequests)
+            }
         }
+
     }
 
-    companion object {
-        fun newInstance() {}
-    }
 
     private fun openChildProfileFragment(childID: String?) {
         val fragment = ChildProfileFragment.newInstance(childID)
@@ -76,4 +92,11 @@ class RequestsListFragment : Fragment() {
             .commit()
     }
 
+
+    private fun hideKeyboard() {
+        val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        view?.let { v ->
+            imm.hideSoftInputFromWindow(v.windowToken, 0)
+        }
+    }
 }

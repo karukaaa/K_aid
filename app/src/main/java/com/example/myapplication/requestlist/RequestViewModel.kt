@@ -13,6 +13,8 @@ class RequestsViewModel : ViewModel() {
     val requests: LiveData<List<Request>> get() = _requests
 
     private var allRequests: List<Request> = emptyList()
+    private var currentStatus: String = "All"
+    private var currentSearchQuery: String = ""
 
     init {
         fetchRequests()
@@ -22,39 +24,50 @@ class RequestsViewModel : ViewModel() {
         val trace = FirebasePerformance.getInstance().newTrace("load_requests_trace")
         trace.start()
 
-        var firstSnapshotHandled = false
-
         db.collection("requests")
             .addSnapshotListener { snapshot, error ->
-                if (error != null) {
+                trace.stop()
+                if (error != null || snapshot == null) {
                     _requests.value = emptyList()
                     allRequests = emptyList()
                     return@addSnapshotListener
                 }
 
-                if (!firstSnapshotHandled) {
-                    trace.stop()
-                    firstSnapshotHandled = true
+                allRequests = snapshot.documents.mapNotNull { doc ->
+                    doc.toObject(Request::class.java)?.apply {
+                        firestoreId = doc.id
+                    }
+                }.filter {
+                    it.status in listOf("Waiting", "In process", "Done")
                 }
 
-                val list = snapshot?.documents?.mapNotNull { doc ->
-                    val request = doc.toObject(Request::class.java)
-                    request?.firestoreId = doc.id
-                    request
-                }?.filter { it.status in listOf("Waiting", "In process", "Done") }
-                    ?: emptyList()
-
-                allRequests = list
-                _requests.value = list.filter { it.status != "Waiting approval" && it.status != "Rejected" }
+                applyFilters()
             }
-
     }
 
+
     fun filterRequestsByStatus(status: String) {
-        val filtered = when (status) {
-            "All" -> allRequests.filter { it.status != "Waiting approval" }
-            else -> allRequests.filter { it.status == status }
-        }
+        currentStatus = status
+        applyFilters()
+    }
+
+    fun searchRequests(query: String) {
+        currentSearchQuery = query
+        applyFilters()
+    }
+
+    private fun applyFilters() {
+        val filtered = allRequests
+            .filter {
+                currentStatus == "All" || it.status == currentStatus
+            }
+            .filter {
+                currentSearchQuery.isBlank() || listOf(
+                    it.title ?: "",
+                    it.description ?: "",
+                    it.childName ?: ""
+                ).any { field -> field.contains(currentSearchQuery, ignoreCase = true) }
+            }
 
         _requests.value = filtered
     }
