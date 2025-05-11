@@ -12,6 +12,18 @@
 
 
     <TextView
+        android:id="@+id/resendVerificationEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить письмо повторно"
+        android:textColor="@color/light_blue"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"/>
+
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -68,16 +80,17 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/forgot_your_password"
-        android:layout_width="190dp"
-        android:layout_height="46dp"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/white"
-        android:padding="13dp"
-        android:text="Forgot your password?"
-        android:textAlignment="textEnd"
-        android:textColor="@color/gray"
-        android:textSize="12sp" />
+        android:id="@+id/forgotPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Забыли пароль?"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true" />
+
 
     <Button
         android:id="@+id/login_button"
@@ -110,12 +123,19 @@
         android:textColor="@color/gray"
         android:textSize="12sp" />
 
+
     <Button
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Sign Up" />
-
+    <!-- скрыто по умолчанию -->
+    <Button
+        android:id="@+id/resendVerificationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Повторно отправить письмо"
+        android:visibility="gone" />
 
 </LinearLayout>

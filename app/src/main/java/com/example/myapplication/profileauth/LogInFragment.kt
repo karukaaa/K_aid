@@ -40,6 +40,8 @@ class LogInFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
 
+        binding.resendVerificationEmail.visibility = View.GONE
+
         binding.loginButton.setOnClickListener {
             val email = binding.email.text.toString().trim()
             val password = binding.password.text.toString().trim()
@@ -48,7 +50,31 @@ class LogInFragment : Fragment() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
-                            onLoginSuccess()
+                            val user = auth.currentUser
+                            if (user != null) {
+                                // Проверка на подтверждение email
+                                if (user.isEmailVerified) {
+                                    onLoginSuccess()
+                                } else {
+                                    // Отправить письмо подтверждения
+                                    user.sendEmailVerification()
+                                        .addOnCompleteListener { verificationTask ->
+                                            if (verificationTask.isSuccessful) {
+                                                Toast.makeText(
+                                                    requireContext(),
+                                                    "Письмо отправлено на ${user.email}. Подтвердите ваш email.",
+                                                    Toast.LENGTH_LONG
+                                                ).show()
+                                            } else {
+                                                Toast.makeText(
+                                                    requireContext(),
+                                                    "Ошибка при отправке письма: ${verificationTask.exception?.message}",
+                                                    Toast.LENGTH_LONG
+                                                ).show()
+                                            }
+                                        }
+                                }
+                            }
                         } else {
                             Toast.makeText(
                                 requireContext(),
@@ -62,6 +88,28 @@ class LogInFragment : Fragment() {
             }
         }
 
+        binding.resendVerificationEmail.setOnClickListener {
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null && !user.isEmailVerified) {
+                user.sendEmailVerification()
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                requireContext(),
+                                "Письмо отправлено повторно на ${user.email}",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else {
+                            Toast.makeText(
+                                requireContext(),
+                                "Ошибка при отправке: ${task.exception?.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+            }
+        }
+
         binding.signup.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SignUpFragment())
@@ -70,6 +118,13 @@ class LogInFragment : Fragment() {
 
         binding.btnGoogleSignIn.setOnClickListener {
             signInWithGoogle()
+        }
+
+        binding.forgotPasswordText.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ResetPasswordFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 
@@ -117,23 +172,19 @@ class LogInFragment : Fragment() {
     private fun onLoginSuccess() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
-            Log.d("LogInFragment", "User UID: ${currentUser.uid}")
-
             val db = FirebaseFirestore.getInstance()
             db.collection("users").document(currentUser.uid).get()
                 .addOnSuccessListener { document ->
-                    if (document != null) {
-                        val role = document.getString("role")
-                        Log.d("LogInFragment", "User role: $role")
-                        // После успешного входа просто вызовем onLoginSuccess() у MainActivity,
-                        // чтобы MainActivity загрузила нужный интерфейс.
-                        (activity as? MainActivity)?.onLoginSuccess()
-                    } else {
-                        Toast.makeText(requireContext(), "Ошибка: Документ не найден", Toast.LENGTH_LONG).show()
-                    }
+                    val role = document.getString("role")
+                    Log.d("LogInFragment", "User role: $role")
+                    (activity as? MainActivity)?.onLoginSuccess()
                 }
                 .addOnFailureListener { exception ->
-                    Toast.makeText(requireContext(), "Ошибка получения данных: ${exception.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Ошибка получения данных: ${exception.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
         }
     }
